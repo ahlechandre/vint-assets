@@ -1,0 +1,20 @@
+{
+  "name": "vint-assets",
+  "version": "0.5.0",
+  "description": "vint frontend files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahlechandre/vint-assets.git"
+  },
+  "author": "Alexandre Thebaldi",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/ahlechandre/vint-assets/issues"
+  },
+  "homepage": "https://github.com/ahlechandre/vint-assets#readme"
+}
