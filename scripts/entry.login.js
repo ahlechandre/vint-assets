@@ -8,22 +8,19 @@ import './framework';
 
 /**
  * ================================================
- * VINT Modules.
- * ================================================
- */
-
-// Add to the search page "one page application" features (AJAX + History API).
-import './modules/search';
-// A module to create searchable lists in the DOM.
-import './modules/searchable';
-
-
-/**
- * ================================================
  * Forms - Handlers of all forms in the application.
  * ================================================
  */
 
 // A handler to multiple forms.
 import './formHandler';
-import './forms/contact';
+// Login form module.
+import './forms/login';
+// Login recover form module.
+import './forms/loginRecover';
+// Login reset form module.
+import './forms/loginReset';
+// Account disagree form module.
+import './forms/accountDisagree';
+// Account register form module.
+import './forms/accountRegister';

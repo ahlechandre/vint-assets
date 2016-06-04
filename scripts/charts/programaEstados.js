@@ -63,6 +63,22 @@
   };
 
   /**
+   * Stories the container element of chart.
+   * 
+   * @type {HTMLElement}
+   */
+  var container = {};
+  
+  /**
+   * Returns the container element of chart.
+   * 
+   * @return {HTMLElement}
+   */
+  var getContainer = function () {
+    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+  };
+  
+  /**
    * Returns the data config of chart.
    * 
    * @return {object}
@@ -193,6 +209,10 @@
    * 
    */
   var init = function () {
+    container = getContainer();
+    
+    if (!container) return;
+    
     renderChart();
   };
 

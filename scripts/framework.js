@@ -6,7 +6,7 @@
  *
  * ======================================================================== */
 
-if (window.jQuery === undefined)
+if (typeof jQuery === 'undefined')
     throw new Error('The jQuery library is not loaded. The October CMS framework cannot be initialized.');
 
 +function ($) { "use strict";
@@ -437,4 +437,4 @@ if (window.jQuery === undefined)
         $(document).on('render', callback)
     }
 
-}(window.jQuery);
+}(jQuery);

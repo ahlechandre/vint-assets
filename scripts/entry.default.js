@@ -26,4 +26,5 @@ import './modules/searchable';
 
 // A handler to multiple forms.
 import './formHandler';
+// Contact form module.
 import './forms/contact';

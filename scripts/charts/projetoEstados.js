@@ -61,7 +61,23 @@
     CHART_IS_3D: true,
     CHART_HEIGHT: 400,
   };
-
+  
+  /**
+   * Stories the container element of chart.
+   * 
+   * @type {HTMLElement}
+   */
+  var container = {};
+  
+  /**
+   * Returns the container element of chart.
+   * 
+   * @return {HTMLElement}
+   */
+  var getContainer = function () {
+    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+  };
+  
   /**
    * Returns the data config of chart.
    * 
@@ -191,6 +207,10 @@
    * 
    */
   var init = function () {
+    container = getContainer();
+    
+    if (!container) return;
+    
     renderChart();
   };
 

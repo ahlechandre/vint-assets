@@ -44,7 +44,23 @@
     CHART_ICON: 'insert_chart',
     CHART_NOT_FOUND_MESSAGE: 'Nenhum dado para ser exibido.',
   };
-
+  
+  /**
+   * Stories the container element of chart.
+   * 
+   * @type {HTMLElement}
+   */
+  var container = {};
+  
+  /**
+   * Returns the container element of chart.
+   * 
+   * @return {HTMLElement}
+   */
+  var getContainer = function () {
+    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+  };
+  
   /**
    * 
    * @return {HTMLElement} 
@@ -193,6 +209,10 @@
    * 
    */
   var init = function () {
+    container = getContainer();
+    
+    if (!container) return;
+    
     renderChart();
   };
 
