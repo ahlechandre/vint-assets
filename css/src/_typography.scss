@@ -1,0 +1,21 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "RobotoDraft","Roboto",sans-serif;
+  text-rendering: optimizeLegibility;  
+}
+
+p {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.88235;
+  padding-bottom: 12px;
+  color: $color-text-primary;
+}
+
+.vint-publicacao-referencia {
+  font-family: $font-family-title;
+  font-size: 1.5em;
+  line-height: 200%;
+  font-weight: 500;
+  color: $color-text-secondary;
+  margin-bottom: 24px;
+}

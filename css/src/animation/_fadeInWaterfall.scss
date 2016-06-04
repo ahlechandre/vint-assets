@@ -1,0 +1,9 @@
+@-webkit-keyframes fadeInWaterfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(-10px,-50px);
+  }
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,189 @@
+.#{ $base } {
+    @at-root &-card {
+        width: 100%;
+        @at-root &--form {
+            .vint-card__content {
+                text-align: center;
+            }
+        }
+        @at-root &--center-content {
+            .mdl-card__supporting-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+        @at-root &--primary-header {
+            & > .mdl-card__title {
+                background-color: $color-primary;
+                color: white;
+                & > .mdl-card__title-text {
+                    color: inherit;
+                    opacity: 0.9;
+                }
+                & > .mdl-card__subtitle-text {
+                    color: inherit;
+                    opacity: 0.6;
+                }
+            }
+        }
+        @at-root &--fixed-height {
+            .vint-card__supporting-text {
+                height: 240px;
+                @media only screen and ( min-width: 600px) {
+                    & {
+                        overflow-y: hidden;
+                        &:hover {
+                            overflow-y: overlay!important;
+                        }
+                    }
+                    &::-webkit-scrollbar {
+                        width: 6px;
+                    }
+                    &::-webkit-scrollbar-track {
+                        border-radius: 6px;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 6px;
+                        background-color: rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+        @at-root &--with-lists {
+            .vint-card__supporting-text {
+                width: initial;
+                .#{$base} {
+                    @at-root &-lists {
+                        @at-root &__item {
+                            & > span {}
+                            @at-root &-icon {
+                                @at-root &-text {
+                                    font-weight: bold;
+                                    margin-right: 6px;
+                                }
+                                float: right;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @at-root &__supporting-text {
+            & > div {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                padding-left: 36px;
+                text-indent: -18px;
+            }
+            i + span {
+                margin-left: 9px;
+                line-height: 160%;
+            }
+        }
+    }
+}
+
+// material design lite #1002
+.mdl-card__title {
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.mdl-card__title-text {
+    margin: 0px 0 8px 0;
+}
+
+.mdl-card__subtitle-text {
+    line-height: 26px;
+}
+
+.mdl-card__title-text,
+.mdl-card__subtitle-text {
+    align-self: flex-start;
+}
+
+.vint-card--login {
+    margin: 52px 0 0 0;
+    & > .mdl-card__title {
+        background-color: $color-primary;
+        color: white;
+    }
+    & .mdl-card__subtitle-text {
+        color: rgba(255,255,255,0.84);
+    }
+}
+
+.vint-card {
+    & .vint-card__header {
+        background-color: $color-primary-light;
+        height: 152px;
+    }
+}
+
+.vint-card--profile-membro {
+    & .vint-card__content {
+        text-align: center;
+        & .vint-profile__title {
+            margin-top: 60px;
+        }
+    }
+    & a.vint-avatar {
+        position: absolute;
+        top: 148px;
+        left: 50%;
+        @include transformTranslate(-50%, 0);
+        img {
+            border: 4px solid white;
+        }
+    }
+    & .vint-card__header--background-image {
+        height: 212px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: $color-primary-light;
+        background-position: center;
+    }
+}
+
+.vint-card--membro {
+    & .vint-card__header--background-image {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.vint-card--membro > .mdl-card__title {
+    color: #fff;
+    height: 152px;
+    @include DarkShadow();
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.vint-card--membro > .mdl-card__title > .mdl-card__title-text {
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.mdl-card__supporting-text {
+    font-size: 15px;
+}
+
+.vint-card--membro > .mdl-card__menu {
+    color: #fff;
+}
+
+.vint-card--membro > .mdl-card__media {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: initial;
+}
+
+.vint-card--membro > .mdl-card__media img {
+    border-radius: 100%;
+}

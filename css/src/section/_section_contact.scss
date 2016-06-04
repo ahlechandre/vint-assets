@@ -1,0 +1,7 @@
+.#{ $base } {
+  @at-root &-section {
+    @at-root &--contact {
+      text-align: center;
+    }
+  }
+}

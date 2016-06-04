@@ -1,0 +1,34 @@
+.#{ $base } {
+  @at-root &-loading {
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @at-root &--page {
+      position: absolute;
+      z-index: 9998;
+      height: 100%;
+      background-color: $html-background-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      @at-root &__component {
+        // @include animation( fadeIn, 0.5s, linear );
+      }
+    }
+
+    @at-root &--ajax {
+      position: fixed;
+      z-index: 4;
+      & > * {
+        width: inherit;
+      }
+    }
+  }
+}
+
+.mdl-spinner:not(.is-upgraded).is-active:after {
+  content: 'Carregando...';
+}

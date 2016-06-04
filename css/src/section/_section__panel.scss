@@ -1,0 +1,40 @@
+.#{ $base } {
+  @at-root &-section {
+    @at-root &__panel {
+      $panel-padding: 60px;
+      padding: $panel-padding 0;
+      text-align: center;
+      .vint-grid {
+        position: relative;
+      }
+      .vint-button--floating {
+        position: absolute;
+        bottom: -( $panel-padding + 26px );
+        right: 12px;
+        background-color: #EAEAEA!important;
+      }
+
+      @at-root &--primary {
+        background-color: $color-primary;
+        color: white;
+      }
+      @at-root &--paper {
+        background-color: white;
+        text-align: left;
+        @include BoxShadow(1);
+      }
+      @at-root &--main {
+        @at-root &-membro {
+          text-align: center!important;
+          color: $color-text-secondary;
+          h1 {
+            font-weight: 500;
+          }
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

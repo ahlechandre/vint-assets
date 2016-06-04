@@ -1,0 +1,30 @@
+.#{$base} {
+    @at-root &-avatar {
+        img {
+            border-radius: 100%;
+        }
+    }
+}
+
+.vint-avatar-upload {
+    position: relative;
+    height: 220px;
+}
+
+.vint-avatar-upload__thumb {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: calc( 100% + 32px);
+    height: calc( 100% + 16px);
+    background-position: center;
+    background-size: cover;
+    transition: 0.3s background-image ease-in-out;
+}
+
+.vint-avatar-upload__button {
+    position: absolute;
+    bottom: -28px;
+    right: 0;
+    z-index: 3;
+}

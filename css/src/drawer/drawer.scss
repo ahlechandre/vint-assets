@@ -1,0 +1,19 @@
+.#{ $base } {
+  @at-root &-drawer {
+    @at-root &__link-divider
+    {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
+    a {
+      &.is-active {
+        color: $color-accent!important;
+      }
+      i {
+        vertical-align: middle;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@import './_drawer_user.scss';

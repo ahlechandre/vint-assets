@@ -1,0 +1,9 @@
+@-webkit-keyframes fadeInBottomfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(0, 100px);
+  }
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,97 @@
+@mixin animation( $keyframe, $time, $style, $animation: null) {
+    -webkit-animation: $keyframe $time $style $animation;
+    -moz-animation: $keyframe $time $style $animation;
+    -ms-animation: $keyframe $time $style $animation;
+    animation: $keyframe $time $style $animation;
+}
+
+@mixin transformScale( $x, $y) {
+    -webkit-transform: scale( $x, $y);
+    -moz-transform: scale( $x, $y);
+    -ms-transform: scale( $x, $y);
+    transform: scale( $x, $y);
+}
+
+@mixin transformTranslate( $x, $y) {
+    -webkit-transform: translate( $x, $y);
+    -moz-transform: translate( $x, $y);
+    -ms-transform: translate( $x, $y);
+    transform: translate( $x, $y);
+}
+
+@mixin BoxShadow( $level: 1, $important: null) {
+    @if $level==1 {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) $important;
+    }
+    @else if $level==2 {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) $important;
+    }
+    @else if $level==3 {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) $important;
+    }
+    @else if $level==4 {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) $important;
+    }
+    @else if $level==5 {
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22) $important;
+    }
+}
+
+@mixin DarkShadow {
+background: -moz-linear-gradient(top,  rgba(0,0,0,0) -1%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0.4) 100%);
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0) -1%,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0.4) 100%);
+background: linear-gradient(to bottom,  rgba(0,0,0,0) -1%,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0.4) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=0 );
+}
+
+@mixin Scrollbar {
+        @media only screen and ( max-width: 899px) {
+            & {
+                overflow-y: overlay;
+            }
+        }
+        @media only screen and ( min-width: 900px) {
+            & {
+                overflow: hidden;
+                &:hover {
+                    overflow-y: overlay;
+                }
+            }
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+            &::-webkit-scrollbar-track {
+                border-radius: 6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+        }
+}
+
+@mixin displayFlex {
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flex;
+    display: flex;
+}
+
+@mixin justifyContent($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+}
+
+@mixin alignItems($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+@mixin flexWrap($flex) {
+    -webkit-flex-wrap: $flex;
+    flex-wrap: $flex;
+}

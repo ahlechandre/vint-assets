@@ -1,0 +1,13 @@
+.vint-list__item-avatar {
+    background-size: cover;
+    background-position: center;
+}
+
+.vint-list#lists-programas {
+    max-width: 615px;
+    @media only screen and (max-width: 768px) {
+        & .vint-list__item {
+            height: 110px;
+        }
+    }
+}

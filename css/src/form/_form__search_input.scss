@@ -1,0 +1,36 @@
+.#{ $base } {
+  @at-root &-form {
+    @at-root &--search {
+      font-size: 32px;
+      color: white;
+      .#{ $base } {
+        @at-root &-textfield {
+          margin-top: -20px;
+          width: 90%;
+        }
+      }
+      i {
+        margin-right: 22px;
+        font-size: inherit;
+        vertical-align: middle;
+        margin-bottom: 6px;
+      }
+      input {
+        border-bottom-color: rgba(255,255,255,0.5);
+        font-size: 32px;
+      }
+      label {
+        &::after {
+          background-color: $color-accent;
+        }
+      }
+    }
+  }
+}
+
+input[type="search"] {
+  font-weight: 500;
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}

@@ -1,0 +1,57 @@
+ .#{ $base } {
+     $base-selector: &;
+     @at-root &-layout {
+         @at-root &--no-overflow {
+             overflow: hidden;
+         }
+         @at-root &__content {
+            //  @include animation(fadeInBottomfall, .7s, ease-in-out);
+             height: inherit;
+         }
+         .page-content {
+             padding-bottom: 50px;
+             min-height: calc(100% - ( 64px + 68px));
+            //  @include animation(fadeInBottomfall, 0.3s, ease-in-out);
+         }
+         @at-root &--primary-light {
+             #{$base-selector} {
+                 @at-root &-header {
+                     background-color: $color-primary-light!important;
+                     color: $color-text-primary!important;
+                     a,
+                     .mdl-navigation__link {
+                         &:hover {
+                             border-bottom-color: rgba(0, 0, 0, 0.5);
+                         }
+                     }
+                 }
+             }
+             .mdl-layout__drawer-button {
+                 color: $color-text-primary!important
+             }
+         }
+         @at-root &--primary-dark {
+             #{$base-selector} {
+                 @at-root &-header {
+                     background-color: $color-primary-dark!important;
+                     color: $color-text-dark-background!important;
+                 }
+             }
+             .mdl-layout__drawer-button {
+                 color: $color-text-dark-background!important
+             }
+         }
+     }
+ }
+ 
+ .mdl-layout--fixed-drawer {
+     .vint-header {
+         @include BoxShadow(1, !important);
+     }
+     .vint-drawer {
+         @include BoxShadow(2, !important);
+     }
+     .vint-grid {
+         max-width: 100%;
+     }
+ }

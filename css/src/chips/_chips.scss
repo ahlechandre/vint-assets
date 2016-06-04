@@ -1,0 +1,79 @@
+.vint-chips {
+    @include displayFlex;
+    @include justifyContent(flex-start);
+    @include flexWrap(wrap);
+    text-indent: initial; 
+    & .vint-chip {
+        margin: 0 $dp6 $dp6 0;
+    }
+}
+
+.vint-card > .vint-card__supporting-text {
+  & .vint-chips {
+    padding:12px 0;
+  }
+}
+
+.vint-chip {
+    @include displayFlex;
+    @include alignItems(center);
+    @include justifyContent(center);
+    background-color: #E8E8E8;
+    padding: 0 $dp12;
+    height: $dp32;
+    border-radius: $dp30;
+    max-width: 100%;
+    & .vint-chip__contact {
+        background-repeat: no-repeat;
+        width: $dp32;
+        border-radius: 100%;
+        height: $dp32;
+        margin: (-$dp12) $dp8 (-$dp12) (-$dp12);
+        background-size: cover;
+        background-position: center;
+    }
+    & .vint-chip__title {
+        color: rgba(0, 0, 0, .87);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    & .vint-chip__remove-button {
+        display: none;
+    }
+    &:hover {
+        background-color: rgba(0, 0, 0, .54);
+        & .vint-chip__title {
+            color: white;
+        }
+    }
+}
+
+.vint-chip.vint-chip--deletable {
+    & .vint-chip__remove-button {
+        @include displayFlex;
+        @include alignItems(center);
+        @include justifyContent(center);
+        border-radius: 100%;
+        padding: $dp2;
+        margin-left: $dp8;
+        background-color: rgba(0, 0, 0, .54);
+        cursor: pointer;
+        & i {
+            font-size: $dp14;
+            color: white;
+        }
+    }
+    &:hover {
+        & .vint-chip__remove-button {
+            background-color: white;
+            & i {
+                color: rgba(0, 0, 0, .54);
+            }
+        }
+    }
+}
+
+.vint-chip.is-deleted {
+  display: none;
+}

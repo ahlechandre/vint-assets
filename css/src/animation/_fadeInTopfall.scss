@@ -1,0 +1,39 @@
+@-webkit-keyframes fadeInTopfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(0, -150px);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeInTopfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(0, -150px);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@-ms-keyframes fadeInTopfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(0, -150px);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInTopfall {
+  0% {
+    opacity: 0;
+    @include transformTranslate(0, -150px);
+  }
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,9 @@
+@-webkit-keyframes fadeInScale {
+  0% {
+    @include transformScale( 2, 2 );
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}

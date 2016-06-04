@@ -1,0 +1,29 @@
+.vint-active-circle {
+  width: 10px;
+  height: 10px;
+  background-color: #CFD8DC;
+  border-radius: 100%;
+  cursor: pointer;
+  &.vint-active-circle--account {
+    @include BoxShadow(1);
+    margin: auto 8px;
+  } 
+}
+
+.is-on {
+  & .vint-active-circle--account {
+    background-color: $color-green-a200;
+  }  
+}
+
+.is-removed {
+  & .vint-active-circle--account {
+    background-color: $color-red-a200;
+  }  
+}
+
+.is-off {
+  & .vint-active-circle--account {
+    background-color: $color-yellow-a200;
+  }  
+}

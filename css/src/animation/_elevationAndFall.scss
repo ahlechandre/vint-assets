@@ -1,0 +1,8 @@
+@-webkit-keyframes ElevationAndFall {
+  100% {
+    // opacity: 0;
+    box-shadow: none;
+    border-radius: 0;
+    @include transformTranslate(90vh, 90vw);
+  }
+}

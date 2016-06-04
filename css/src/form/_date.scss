@@ -1,0 +1,88 @@
+.#{ $base } {
+    @at-root &-datefield {
+        padding: 20px 0;
+        position: relative;
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        width: 300px;
+        margin: 0;
+        display: inline-block;
+        @at-root &__input {
+            width: 100%;
+            font-family: inherit;
+            background-color: transparent;
+            padding: 12px 0;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.89);
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        label {
+            bottom: 0;
+            color: rgba(0, 0, 0, .26);
+            font-size: 16px;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            position: absolute;
+            display: block;
+            top: 10px;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: left;
+        }
+        @at-root &__error {
+            color: #de3226;
+            position: absolute;
+            font-size: 12px;
+            margin-top: 3px;
+            visibility: hidden;
+            display: block;
+        }
+    }
+}
+
+.vint-datefield__input[disabled] {
+    opacity: 0.6;
+}
+
+.vint-datefield.is-invalid {
+    .vint-datefield__input {
+        border-bottom-color: #de3226;
+    }
+    .vint-datefield__error {
+        visibility: initial;
+    }
+}
+
+.vint-datefield__input:focus {
+    outline: none;
+}
+
+.vint-datefield__label:after {
+    background-color: rgb(103,58,183);
+    bottom: 20px;
+    content: '';
+    height: 2px;
+    left: 45%;
+    position: absolute;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    visibility: hidden;
+    width: 10px;
+}
+
+.vint-datefield.is-focused.is-invalid .vint-datefield__label:after {
+    background-color: #de3226!important;
+}
+
+.vint-datefield.is-focused .vint-datefield__label:after {
+    left: 0;
+    visibility: visible;
+    width: 100%;
+}

@@ -1,0 +1,39 @@
+// elements
+html {
+  background-color: $html-background-color;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-family-main;
+}
+
+a, .vint-card {
+  text-decoration: none;
+  i {
+    vertical-align: middle;
+  }
+}
+
+.vint-main {
+  @include animation(fadeIn, 0.7s, ease-in-out );  
+}
+
+.right {
+  float: right!important;
+}
+
+.left {
+  float: left!important;
+}
+
+.vint-flex-end {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+}

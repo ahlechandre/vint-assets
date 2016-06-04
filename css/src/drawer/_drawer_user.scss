@@ -1,0 +1,43 @@
+.#{ $base } {
+    @at-root &-drawer {
+        border-right-width: 0;
+        @include Scrollbar();
+        @at-root &__user {
+            $user-selector: &;
+            $user-horizontal-padding: 16px;
+            $user-vertical-padding: 40px;
+            padding: $user-horizontal-padding $user-vertical-padding;
+            background-color: $color-primary-dark;
+            background-position: center;
+            background-size: cover;
+            color: white;
+            position: relative;
+            a {
+                outline: none;
+            }
+            #{$user-selector}-menu {
+                position: absolute;
+                bottom: ( $user-horizontal-padding - 4px);
+                right: ( $user-horizontal-padding - 4px);
+            }
+            #{$user-selector}-photo {
+                margin-top: $user-horizontal-padding;
+            }
+            #{$user-selector}-photo + #{$user-selector}-name {
+                margin-top: $user-horizontal-padding;
+            }
+            #{$user-selector}-name,
+            #{$user-selector}-email {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            @at-root &-name {
+                font-weight: 600;
+            }
+            @at-root &-email {
+                opacity: 0.8;
+            }
+        }
+    }
+}

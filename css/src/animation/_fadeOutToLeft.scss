@@ -1,0 +1,39 @@
+@-webkit-keyframes fadeOutToLeft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transformTranslate(0, -50%);
+  }
+}
+
+@-moz-keyframes fadeOutToLeft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transformTranslate(0, -50%);
+  }
+}
+
+@-ms-keyframes fadeOutToLeft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transformTranslate(0, -50%);
+  }
+}
+
+@keyframes fadeOutToLeft {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include transformTranslate(0, -50%);
+  }
+}

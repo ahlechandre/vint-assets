@@ -1,0 +1,21 @@
+@import "./animation/_fadeIn.scss";
+@import "./animation/_fadeInScale.scss";
+@import "./animation/_fadeInWaterfall.scss";
+@import "./animation/_fadeInBottomfall.scss";
+@import "./animation/_fadeInTopfall.scss";
+@import "./animation/_elevationAndFall.scss";
+@import "./animation/_fadeOutToLeft.scss";
+
+.#{ $base } {
+  @at-root &-animate {
+    @at-root &-fade-in {
+      @include animation(fadeIn, 0.2s, ease-in-out);
+    }
+    @at-root &-fade-in-waterfall {
+      @include animation(fadeInWaterfall, 0.2s, ease-in-out);
+    }
+    @at-root &-fade-in-bottomfall {
+      @include animation(fadeInBottomfall, 0.2s, ease-in-out);
+    }
+  }
+}

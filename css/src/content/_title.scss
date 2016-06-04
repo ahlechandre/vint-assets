@@ -1,0 +1,93 @@
+.#{ $base } {
+
+  @at-root &-content {
+    @at-root &-title {
+      font-size: 25px;
+      line-height: 1.06667;
+      margin: 24px 0;
+      text-transform: uppercase;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.vint-title--chapter {
+    font-size: 21px;
+    margin: 12px 0;
+    & + p {
+      margin-bottom: 0;
+    }
+}
+
+.vint-dashboard-title {
+  text-align: center;
+}
+
+.vint-dashboard-title__text {
+  font-size: 3rem;
+  font-weight: 100!important;
+  margin: 12px 0;
+  color: $color-primary;
+}
+
+.vint-dashboard-title__icon {
+  margin: 12px 0 0 0; 
+
+  & i {
+    opacity: 0.6;
+    font-size: 3rem;
+    color: $color-primary;
+  }
+}
+
+/* MESSAGE */
+
+.vint-message {
+  font-size: 20px;
+  line-height: 32px;
+  padding: 10px 15px;
+  border-left-width: 3px;
+  border-left-style: solid;
+  background-color: white;
+  border-left-color: $color-primary;  
+  color: rgba(0,0,0,0.84);
+}
+
+.vint-message--warn {
+  background-color: $color-amber-50;
+  border-left-color: $color-amber-a500;  
+}
+.vint-message--wrong {
+  background-color: $color-red-50;
+  border-left-color: $color-red-a500;  
+}
+
+/* TITLE */
+
+.vint-title {
+  margin: 24px 0;
+  color: inherit;
+  & i {
+    font-size: inherit;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+}
+
+.vint-title__text {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 40px;
+  margin: 0 0 30px 0;
+  color: $color-primary;
+}
+
+.vint-title__intro, .vint-title__intro p {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+
+.vint-title--profile {
+  font-size: 5vh;
+}

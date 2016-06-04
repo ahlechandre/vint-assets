@@ -1,0 +1,64 @@
+.#{ $base } {
+    @at-root &-section {
+        @at-root &--child-top-spacing {
+            & > .#{ $base }-grid {
+                padding-top: 50px;
+            }
+        }
+    }
+}
+
+@import "./_section_contact.scss";
+@import "./_section__panel.scss";
+.vint-profile.vint-profile--membro {
+    padding: 40px 0 0 0;
+    color: rgba(0, 0, 0, .8);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        color: inherit;
+    }
+    & .vint-profile__title {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+    & .vint-profile__description {
+        font-size: 18px;
+        opacity: .8;
+    }
+}
+
+.vint-section {
+    &.vint-section--waterfall {
+        width: 100%;
+        padding: 50px 0;
+        background-color: $color-primary;
+        text-align: center;
+        & .vint-section__title {
+            color: white;
+            font-size: 33px;
+        }
+        & .vint-section__supporting-text {
+            color: white;
+        }
+    }
+}
+
+.vint-section--waterfall + .vint-section--profile-membro {
+    // margin-top: 240px;
+}
+
+.vint-section--profile-membro {
+    & .vint-section__background-fake {
+        position: absolute;
+        background-color: $color-primary;
+        width: 100%;
+        height: 168px;
+    }
+    & .vint-grid {
+        max-width: 800px;
+    }
+}

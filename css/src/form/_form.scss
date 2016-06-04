@@ -1,0 +1,17 @@
+input,
+textarea {
+    font-family: $font-family-main!important;
+}
+
+.vint-switch,.vint-checkbox {
+    max-width: 300px;
+}
+
+.vint-checkbox__label, .vint-switch__label {
+  float: right;
+  left: 0;
+}
+
+@import "./_form__search_input.scss";
+@import "./_select.scss";
+@import "./_date.scss";
