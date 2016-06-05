@@ -1,39 +1,44 @@
-@import './_variables.scss';
+@import './variables';
 
-@import './_mixins.scss';
+@import './mixins';
 
-@import './_functions.scss';
+@import './functions';
 
 // animations
-@import "./_animations.scss";
+@import "./animations";
 
 // components
-@import './loading/_loading.scss';
-@import './drawer/drawer.scss';
-@import './header/header.scss';
-@import './content/_title.scss';
-@import './grid/_grid.scss';
-@import './section/_section.scss';
-@import './textfield/_input.scss';
-@import './footer/_footer.scss';
-@import './card/_card.scss';
-@import './layout/_layout.scss';
-@import './form/_form.scss';
-@import './avatar/_avatar.scss';
-@import './lists/_lists.scss';
-@import './chart/_chart.scss';
-@import './tip/_tip.scss';
-@import './button/_button.scss';
-@import './menu/_menu.scss';
-@import './chips/_chips.scss';
-@import './stepper/_stepper.scss';
-@import './dialog/_dialog.scss';
-@import './settings/_settings.scss';
-@import './icons/_material_icons.scss';
-@import './activecircle/_active_circle.scss';
+@import './loading/loading';
+@import './drawer/drawer';
+@import './header/header';
+@import './content/title';
+@import './grid/grid';
+@import './section/section';
+@import './textfield/input';
+@import './footer/footer';
+@import './card/card';
+@import './layout/layout';
+@import './form/form';
+@import './avatar/avatar';
+@import './lists/lists';
+@import './chart/chart';
+@import './tip/tip';
+@import './button/button';
+@import './menu/menu';
+@import './chips/chips';
+@import './stepper/stepper';
+@import './stepper/stepper_vint';
+@import './dialog/dialog';
+@import './dialog/dialog_vint';
+@import './settings/settings';
+// @import './icons/material_icons';
+@import './activecircle/active_circle';
+
+// polyfills
+@import './polyfill/material_components_ext';
 
 // typography
-@import './_typography.scss';
+@import './typography';
 
 // html style
-@import './_style.scss';
+@import './style';

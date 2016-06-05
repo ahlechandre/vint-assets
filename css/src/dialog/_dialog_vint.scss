@@ -1,0 +1,18 @@
+.vint-dialog {
+    text-align: initial;
+    border-radius: 3px;
+    @include animation(fadeInTopfall, 0.3s, ease-in-out);
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    @media only screen and (min-width: 700px) {
+        & {
+            width: 600px;
+        }
+    }
+    @media only screen and (max-width: 699px) {
+        & {
+            width: 280px;
+        }
+    }
+}

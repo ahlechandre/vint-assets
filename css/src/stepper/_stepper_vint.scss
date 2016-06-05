@@ -1,0 +1,18 @@
+.mdl-step__content {
+    overflow-x: hidden!important;
+    & > .mdl-textfield.vint-flex-end {
+        padding: 20px 16px;
+    }
+    & .vint-chips {
+        padding: 20px 0;
+        & .vint-chip {
+            max-width: calc(100% - 36px);
+        }
+    }
+}
+
+.mdl-step__actions {
+    .mdl-button--colored[disabled] {
+        background-color: rgba(0, 0, 0, 0.1)!important;
+    }
+}

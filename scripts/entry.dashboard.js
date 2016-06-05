@@ -69,6 +69,8 @@ import '../libs/mdl-stepper/src/js/stepper';
 
 // Dialog polyfill.
 import '../libs/dialog-polyfill/dialog-polyfill';
+// Material input file polyfill. 
+import '../libs/mdl-components-ext/src/file/file';
 
 
 /**
