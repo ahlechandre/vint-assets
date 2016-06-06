@@ -24,6 +24,13 @@ import './modules/searchable';
 
 // A handler to multiple forms.
 import './formHandler';
+import './forms/profilePersonal';
+import './forms/profileAcademic';
+import './forms/profileGroup';
+import './forms/settingsEmail';
+import './forms/settingsAccount';
+import './forms/settingsSecurity';
+import './forms/settingsDelete';
 // Membro form module.
 import './forms/membro';
 // Programa form module.

@@ -56,6 +56,66 @@
 
 	__webpack_require__(6);
 
+	__webpack_require__(7);
+
+	__webpack_require__(8);
+
+	__webpack_require__(9);
+
+	__webpack_require__(10);
+
+	__webpack_require__(11);
+
+	__webpack_require__(12);
+
+	__webpack_require__(13);
+
+	__webpack_require__(14);
+
+	__webpack_require__(15);
+
+	__webpack_require__(16);
+
+	__webpack_require__(17);
+
+	__webpack_require__(18);
+
+	__webpack_require__(19);
+
+	__webpack_require__(20);
+
+	__webpack_require__(21);
+
+	__webpack_require__(22);
+
+	__webpack_require__(23);
+
+	__webpack_require__(24);
+
+	__webpack_require__(25);
+
+	__webpack_require__(26);
+
+	__webpack_require__(27);
+
+	__webpack_require__(28);
+
+	__webpack_require__(29);
+
+	__webpack_require__(30);
+
+	__webpack_require__(33);
+
+	__webpack_require__(34);
+
+	__webpack_require__(35);
+
+	__webpack_require__(36);
+
+	__webpack_require__(37);
+
+	__webpack_require__(38);
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -11521,6 +11581,4703 @@
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * VintProfilePersonal - A handler to Vint Profile Personal form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfilePersonal = function VintProfilePersonal(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._constants = {
+	    REQUEST_HANDLER: 'profilePersonal::onRequest',
+	    REQUEST_HANDLER_UPLOAD: 'profilePersonal::onUploadAvatar',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações pessoais foram atualizadas',
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER'
+	  };
+
+	  /**
+	   * Stories the css classes.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._cssClasses = {
+	    AVATAR_UPLOAD: 'vint-avatar-upload',
+	    AVATAR_UPLOAD_THUMB: 'vint-avatar-upload__thumb',
+	    AVATAR_UPLOAD_BUTTON: 'vint-avatar-upload__button'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._requiredFields = ['nome', 'descricao'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfilePersonal.prototype.fields = {};
+
+	  /**
+	   * Storie the valid avatar file or false
+	   * 
+	   * @type {File | boolean}
+	   */
+	  VintProfilePersonal.prototype._avatarFile = false;
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfilePersonal.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfilePersonal.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfilePersonal.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfilePersonal.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfilePersonal.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._patterns = function () {
+	    // input[type=file] pattern
+	    var addPhotoButton = this._form.querySelector('.' + this._cssClasses.AVATAR_UPLOAD_BUTTON);
+	    var onAddPhoto = function onAddPhoto(event) {
+	      event.preventDefault();
+	      // Simulates a click on input[type=file][name=avatar]
+	      // when add photo button is clicked
+	      this.fields.avatar.click();
+	    };
+	    var onChangePhoto = function onChangePhoto(event) {
+	      var isValid = this._avatarPattern(this.fields.avatar.files);
+	      if (isValid) {
+	        this._avatarFile = this.fields.avatar.files[0];
+	        this._displayAvatar(this.fields.avatar.files[0]);
+	      } else {
+	        this._avatarFile = false;
+	      }
+	    };
+	    addPhotoButton.addEventListener('click', onAddPhoto.bind(this));
+	    this.fields.avatar.addEventListener('change', onChangePhoto.bind(this));
+	  };
+
+	  /**
+	   * Shows the file that comes from input[type=file][name=avatar] 
+	   * 
+	   * @param {File}
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayAvatar = function (file) {
+	    var thumb = this._form.querySelector('.' + this._cssClasses.AVATAR_UPLOAD_THUMB);
+	    var onLoadEndFile = function onLoadEndFile(event) {
+	      thumb.style.backgroundImage = 'url(' + fileReader.result + ')';
+	    };
+	    var fileReader = new FileReader();
+
+	    if (file) {
+	      fileReader.readAsDataURL(file);
+	    }
+	    fileReader.addEventListener('loadend', onLoadEndFile.bind(this));
+	  };
+
+	  /**
+	   * Check if the files that comes from input[type=file][name=avatar]
+	   * is a valid image to be the avatar 
+	   * 
+	   * @param {FileList}
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._avatarPattern = function (fileList) {
+	    // No file selected
+	    if (!fileList.length) return false;
+
+	    // More than one file selected
+	    if (fileList.lenght > 1) {
+	      var message = 'Selecione apenas um arquivo';
+	      this.toast({
+	        message: message
+	      });
+	      return false;
+	    }
+	    var input = { 'photo': fileList[0] };
+	    var rules = {
+	      'photo': {
+	        'image': true,
+	        'mimes': ['jpg', 'png', 'jpeg'],
+	        'max_size': 1
+	      }
+	    };
+	    var messages = {
+	      'image': 'Selecione uma imagem',
+	      'mimes': 'Escolha uma imagem no formato jpg, jpeg ou png',
+	      'max_size': 'O limite de tamanho da imagem é 1MB'
+	    };
+	    var validator = this._filePatterns.make(input, rules, messages);
+	    if (validator.fails()) {
+	      for (var error in validator.errors) {
+	        var errorMessage = validator.errors[error];
+	        this.toast({
+	          message: errorMessage
+	        });
+	        break;
+	      }
+	      return false;
+	    }
+	    return true;
+	  };
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._filePatterns = {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the options to send a file to server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._getUploadRequestOptions = function (formData) {
+	    var requestHandler = this._constants.REQUEST_HANDLER_UPLOAD;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        // Show the first message error that comes from server
+	        // if exists
+	        for (var error in response[this._constants.RESPONSE_VALIDATION_ERRORS]) {
+	          this.toast({
+	            message: response[this._constants.RESPONSE_VALIDATION_ERRORS][error]
+	          });
+	          break;
+	        }
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      headers: headers,
+	      data: formData,
+	      type: 'post',
+	      cache: false,
+	      processData: false,
+	      contentType: false,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Send ajax request with file to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._sendAjaxRequestUpload = function (requestHandler, requestOptions) {
+	    // Test if current avatar file is valid
+	    if (!this._avatarFile) return false;
+	    var formData = new FormData();
+	    formData.append('avatar', this._avatarFile);
+	    var options = this._getUploadRequestOptions(formData);
+	    // Assumes that jQuery ($) is available globally
+	    $.ajax(options);
+	    return true;
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      // First, send the avatar file via ajax
+	      this._sendAjaxRequestUpload();
+	      // After, send the others fields via ajax
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfilePersonal.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfilePersonal,
+	    classAsString: 'VintProfilePersonal',
+	    cssClass: 'vint-form--profile-personal'
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintProfileAcademic - A handler to Vint Profile Academic form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfileAcademic = function VintProfileAcademic(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._constants = {
+	    REQUEST_HANDLER: 'profileAcademic::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_FATAL_ERROR: 'fatalError',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações acadêmicas foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._requiredFields = ['curso', 'titulacao'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfileAcademic.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfileAcademic.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfileAcademic.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfileAcademic.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfileAcademic.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfileAcademic.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._patterns = function () {
+	    var onChangeTitulacao = function onChangeTitulacao(event) {
+	      if (this.fields['titulacao'].value) {
+	        this.fields['titulacao-estado'].parentNode.MaterialSwitch.enable();
+	      } else {
+	        this.fields['titulacao-estado'].parentNode.MaterialSwitch.disable();
+	      }
+	    };
+	    this.fields['titulacao'].addEventListener('change', onChangeTitulacao.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._processResponse = function (response) {
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      var message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._formEvents = function () {
+	    var valid; /** @type {boolean} */
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfileAcademic.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfileAcademic,
+	    classAsString: 'VintProfileAcademic',
+	    cssClass: 'vint-form--profile-academic'
+	  });
+	})();
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintProfileGroup - A handler to Vint Profile Group form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfileGroup = function VintProfileGroup(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._constants = {
+	    REQUEST_HANDLER: 'profileGroup::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações no grupo foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._requiredFields = ['tipo', 'entrada'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfileGroup.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfileGroup.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfileGroup.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfileGroup.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfileGroup.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfileGroup.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfileGroup.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfileGroup.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._patterns = function () {
+	    // input[name=ativo] pattern
+	    var onChangeAtivo = function onChangeAtivo(event) {
+	      if (this.fields.ativo.checked) {
+	        // Case input[name=ativo] is checked, the input[name=saida] is not required
+	        // and remove it from _requiredFields array.
+	        if (this._requiredFields.indexOf('saida') !== -1) {
+	          this._requiredFields.splice(this._requiredFields.indexOf('saida'), 1);
+	        }
+	        this.fields.saida.setAttribute('disabled', '');
+	      } else {
+	        // Case input[name=ativo] is checked, the input[name=saida] is required
+	        // and add it to _requiredFields array.
+	        this._requiredFields[this._requiredFields.length] = 'saida';
+	        this.fields.saida.removeAttribute('disabled');
+	      }
+	    };
+	    this.fields.ativo.addEventListener('change', onChangeAtivo.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._processResponse = function (response) {
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      var message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfileGroup.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfileGroup,
+	    classAsString: 'VintProfileGroup',
+	    cssClass: 'vint-form--profile-group'
+	  });
+	})();
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsEmail - A handler to Vint Vint Settings Email form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsEmail = function VintSettingsEmail(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsEmail::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de e-mail foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._requiredFields = [];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsEmail.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsEmail.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsEmail.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsEmail.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsEmail.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsEmail.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsEmail.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsEmail,
+	    classAsString: 'VintSettingsEmail',
+	    cssClass: 'vint-form--settings-email'
+	  });
+	})();
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsAccount - A handler to Vint Settings Account form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsAccount = function VintSettingsAccount(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsAccount::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_USERNAME: 'username',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de conta foram atualizadas',
+	    ID_USERNAME_LINK: 'vint-field-username-link'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if was updated a item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._updated = false;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._requiredFields = ['username'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._filePatterns = {};
+
+	  /**
+	   * Stories the current username for future tests.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._currentUsername = '';
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsAccount.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsAccount.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsAccount.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsAccount.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsAccount.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsAccount.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._patterns = function () {
+	    // At the init, the current username is input[name=username] value
+	    this._currentUsername = this.fields.username.value;
+	    // Case the current username is equal of the current value of input
+	    // has nothing to update
+	    this.disableSubmit();
+	    var onKeypressUsername = function onKeypressUsername(event) {
+	      // Prevent the 'space' on username
+	      if (event.keyCode === 32) event.preventDefault();
+	    };
+	    var onKeyupUsername = function onKeyupUsername(event) {
+	      if (this.fields.username.value !== this._currentUsername && event.keyCode !== 13) {
+	        // Only able the submit if the current username is different
+	        // of the current value of input. Also if key code is not 'enter'
+	        // because this key dispatch 'onsubmit' event on form and must not
+	        // able the submit button while the request's pending. 
+	        this.ableSubmit();
+	      } else {
+	        this.disableSubmit();
+	      }
+	    };
+
+	    this.fields.username.addEventListener('keypress', onKeypressUsername.bind(this));
+	    this.fields.username.addEventListener('keyup', onKeyupUsername.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.toast({
+	        message: message
+	      });
+	      // Case the current username is equal of the current value of input
+	      // has nothing to update
+	      this.disableSubmit();
+	      this._updated = true;
+	      return;
+	    } else {
+	      this._updated = false;
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      var usernameLink /** @type {string} */;
+	      var usernameLinkElement /** @type {HTMLElement} */;
+
+	      this._processResponse(response);
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_USERNAME)) {
+	        // Change the current username value to the updated username
+	        // that comes from server
+	        this._currentUsername = response[this._constants.RESPONSE_USERNAME];
+	        usernameLinkElement = document.querySelector('#' + this._constants.ID_USERNAME_LINK);
+
+	        if (!usernameLinkElement) return;
+
+	        usernameLink = usernameLinkElement.getAttribute('href').split('@')[0] + '@' + this._currentUsername;
+	        usernameLinkElement.setAttribute('href', usernameLink);
+	        usernameLinkElement.textContent = usernameLink;
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      if (!this._updated) this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsAccount.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsAccount,
+	    classAsString: 'VintSettingsAccount',
+	    cssClass: 'vint-form--settings-account'
+	  });
+	})();
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsSecurity - A handler to Vint Vint Settings Security form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsSecurity = function VintSettingsSecurity(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsSecurity::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de segurança foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._requiredFields = ['old_senha', 'new_senha', 'new_senha_confirmation'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsSecurity.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsSecurity,
+	    classAsString: 'VintSettingsSecurity',
+	    cssClass: 'vint-form--settings-security'
+	  });
+	})();
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsDelete - A handler to Vint Settings Delete form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsDelete = function VintSettingsDelete(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._constants = {
+	    REQUEST_HANDLER: 'membroDisable::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    MESSAGE_UPDATED: 'Sua conta foi desativada',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._requiredFields = ['password'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsDelete.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsDelete.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsDelete.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsDelete.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsDelete.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsDelete.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      window.location.href = response[this._constants.RESPONSE_LOCATION] || '/';
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsDelete.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsDelete,
+	    classAsString: 'VintSettingsDelete',
+	    cssClass: 'vint-form--settings-delete'
+	  });
+	})();
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintMembro - A handler to Vint Membro form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintMembro = function VintMembro(form, isCreate, isUpdate) {
+	    this._form = form;
+	    this._isCreate = isCreate;
+	    this._isUpdate = isUpdate;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories messages.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._messages = {
+	    CREATED: 'O membro foi convidado',
+	    UPDATED: 'O membro foi atualizado'
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._constants = {
+	    REQUEST_HANDLER_CREATE: 'membroCreate::onRequest',
+	    REQUEST_HANDLER_UPDATE: 'membroUpdate::onRequest'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintMembro.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._requiredFields = ['nome', 'email', 'tipo'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintMembro.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintMembro.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintMembro.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintMembro.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintMembro.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintMembro.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintMembro.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintMembro.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintMembro.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintMembro.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintMembro.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintMembro.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintMembro.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._patterns = function () {
+	    var onChangeAtivo = function onChangeAtivo(event) {
+	      // input[name=saida] is required.
+	      if (!this.fields['saida']) return;
+
+	      if (event.target.checked) {
+	        this.fields['saida'].setAttribute('disabled', '');
+	      } else {
+	        this.fields['saida'].removeAttribute('disabled');
+	      }
+	    };
+
+	    if (this.fields['ativo']) {
+	      this.fields['ativo'].addEventListener('change', onChangeAtivo.bind(this));
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintMembro.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+
+	      if (this._isCreate && this._created) {
+	        // Clear all fields.
+	        this.resetValues();
+	      }
+	      this.ableActions();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintMembro.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      var requestHandler /** @type {string} */;
+	      var requestOptions /** @type {string} */;
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+	      requestOptions = this._getDefaultRequestOptions();
+
+	      if (this._isCreate) {
+	        requestHandler = this._constants.REQUEST_HANDLER_CREATE;
+	      } else if (this._isUpdate) {
+	        requestHandler = this._constants.REQUEST_HANDLER_UPDATE;
+	      }
+
+	      if (!valid) return false;
+	      this.disableActions();
+	      this._sendAjaxRequest(requestHandler, requestOptions);
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintMembro.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintMembro,
+	    classAsString: 'VintMembro',
+	    cssClass: 'vint-form--membro',
+	    maintenance: true,
+	    createName: 'membro-create',
+	    updateName: 'membro-update'
+	  });
+	})();
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintPrograma - A handler to Vint Programa form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintPrograma = function VintPrograma(form, isCreate, isUpdate) {
+	    this._form = form;
+	    this._isCreate = isCreate;
+	    this._isUpdate = isUpdate;
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPrograma.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if was created a new item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPrograma.prototype._created = false;
+
+	  /**
+	   * Flag used to check if was updated an item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPrograma.prototype._updated = false;
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintPrograma.prototype._filePatterns = {};
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._requiredFields = ['titulo', 'descricao', 'estado', 'inicio'];
+
+	  /**
+	   * Stories messages.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._messages = {
+	    CREATED: 'O programa foi criado',
+	    UPDATED: 'O programa foi atualizado'
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._constants = {
+	    CREATE_REQUEST_HANDLER: 'programaCreate::onRequest',
+	    UPDATE_REQUEST_HANDLER: 'programaUpdate::onRequest',
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER'
+	  };
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintPrograma.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintPrograma.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintPrograma.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintPrograma.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintPrograma.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintPrograma.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintPrograma.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintPrograma.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintPrograma.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintPrograma.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintPrograma.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._initialValues = {};
+
+	  /**
+	  * Change the current fields values to initial values (<Constructor>._initialValues). 
+	  * 
+	  */
+	  VintPrograma.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintPrograma.prototype._patterns = function () {
+	    // Fields_[fim] pattern
+	    var estadoOnChange = function estadoOnChange(event) {
+	      switch (this.fields.estado.value) {
+	        case 'andamento':
+	          {
+	            this.fields.fim.setAttribute('disabled', '');
+	            break;
+	          }
+	        case 'finalizado':
+	          {
+	            this.fields.fim.removeAttribute('disabled');
+	            break;
+	          }
+	      }
+	    };
+
+	    this.fields.estado.addEventListener('change', estadoOnChange.bind(this));
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintPrograma.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @param {string | boolean} - the form action ('update' | 'create' | false)
+	   * @private
+	   */
+	  VintPrograma.prototype._formEvents = function (action) {
+	    if (!action) return;
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableActions();
+	      var requestHandler;
+	      var requestOptions;
+
+	      switch (action) {
+	        case 'create':
+	          {
+	            requestHandler = this._constants.CREATE_REQUEST_HANDLER;
+	            requestOptions = this._getDefaultRequestOptions();
+	            break;
+	          }
+	        case 'update':
+	          {
+	            requestHandler = this._constants.UPDATE_REQUEST_HANDLER;
+	            requestOptions = this._getDefaultRequestOptions();
+	            break;
+	          }
+	      };
+
+	      this._sendAjaxRequest(requestHandler, requestOptions);
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintPrograma.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      var action = this._isCreate ? 'create' : this._isUpdate ? 'update' : false;
+	      this._formEvents(action);
+
+	      if (this._isCreate) {
+	        // Create a new item
+
+	      } else if (this._isUpdate) {
+	          // Update a item
+	        }
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintPrograma,
+	    classAsString: 'VintPrograma',
+	    cssClass: 'vint-form--programa',
+	    maintenance: true,
+	    createName: 'programa-create',
+	    updateName: 'programa-update'
+	  });
+	})();
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintProjeto - A handler to Vint Projeto form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProjeto = function VintProjeto(form, isCreate, isUpdate) {
+	    this._form = form;
+	    this._isCreate = isCreate;
+	    this._isUpdate = isUpdate;
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProjeto.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if was created a new item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProjeto.prototype._created = false;
+
+	  /**
+	   * Flag used to check if was updated a item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProjeto.prototype._updated = false;
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProjeto.prototype._filePatterns = {};
+
+	  /**
+	   * Stories the value [name] attribute of collection fields.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._collectionFields = ['membros[]', 'programa'];
+
+	  /**
+	   * Stories the value [name] attribute of all ignored fields.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._ignoredFields = ['search-membros', 'search-programas', 'membros[]', 'programa'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._requiredFields = ['titulo', 'descricao', 'estado', 'inicio'];
+
+	  /**
+	   * Stories messages.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._messages = {
+	    CREATED: 'O projeto foi criado',
+	    UPDATED: 'O projeto foi atualizado'
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._constants = {
+	    CREATE_REQUEST_HANDLER: 'projetoCreate::onRequest',
+	    UPDATE_REQUEST_HANDLER: 'projetoUpdate::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    CHIP_MODULE: 'VintChip',
+	    STEPPER_ID: 'stepper-projeto-create',
+	    STEP_MEMBROS_ID: 'step-projeto-create-membros',
+	    STEP_PROGRAMA_ID: 'step-projeto-create-programa',
+	    STEP_FIELDS_ID: 'step-projeto-create-fields',
+	    ON_STEP_CANCEL_LOCATION: '/dashboard',
+	    STEPPER_CONSTRUCTOR: 'MaterialStepper',
+	    MESSAGE_NO_MEMBROS_SELECTED: 'Selecione os membros do projeto',
+	    MESSAGE_NO_PROGRAMA_SELECTED: 'Selecione o programa do projeto'
+	  };
+
+	  /**
+	   * Stories dataset attributes.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._jsDatasets = {
+	    CHIP_INPUT_VALUE: 'input-value'
+	  };
+
+	  /**
+	   * Stories dataset attributes.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._cssClasses = {
+	    CHIP: 'vint-chip',
+	    CHIP_IS_DELETED: 'is-deleted',
+	    STEP: 'mdl-step'
+	  };
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Stories the instance of stepper component referred to the form.
+	   * 
+	   * @type {MaterialStepper}
+	   * @private
+	   */
+	  VintProjeto.prototype._stepperComponent = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProjeto.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProjeto.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProjeto.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProjeto.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProjeto.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProjeto.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProjeto.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProjeto.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProjeto.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProjeto.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintProjeto.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._initialValues = {};
+
+	  /**
+	  * Change the current fields values to initial values (<Constructor>._initialValues). 
+	  * 
+	  */
+	  VintProjeto.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._patterns = function () {
+	    // Fields_[fim] pattern
+	    var estadoOnChange = function estadoOnChange(event) {
+	      switch (this.fields.estado.value) {
+	        case 'andamento':
+	        case 'agendado':
+	          {
+	            // The input[name=fim] is not required
+	            // and remove it from _requiredFields array.
+	            if (this._requiredFields.indexOf('fim') !== -1) {
+	              this._requiredFields.splice(this._requiredFields.indexOf('fim'), 1);
+	            }
+	            this.fields.fim.setAttribute('disabled', '');
+	            break;
+	          }
+	        case 'finalizado':
+	          {
+	            // The input[name=fim] is required
+	            // and add it to _requiredFields array.
+	            this._requiredFields[this._requiredFields.length] = 'fim';
+	            this.fields.fim.removeAttribute('disabled');
+	            break;
+	          }
+	      }
+	    };
+	    this.fields.estado.addEventListener('change', estadoOnChange.bind(this));
+	    // [name='programa'] patterns
+	    var onChangePrograma = function (field) {
+	      // Get the related chip of input.
+	      // Searching by [data-input-value="fieldValue"]
+	      var chipCssSelector = '.' + this._cssClasses.CHIP + '[data-' + this._jsDatasets.CHIP_INPUT_VALUE + '="' + field.value + '"]';
+	      var chipElement = document.querySelector(chipCssSelector);
+	      var chipsParent = chipElement[this._constants.CHIP_MODULE].parent;
+
+	      if (!chipsParent) return;
+	      // Only one chip must be active for time.
+	      // Find the first child of chips that is not deleted
+	      // and turn off it.
+	      var toRemoveCssSelector = '.' + this._cssClasses.CHIP + ':not(.' + this._cssClasses.CHIP_IS_DELETED + ')';
+	      var chipToRemove = chipsParent.querySelector(toRemoveCssSelector);
+	      if (chipToRemove) {
+	        chipToRemove[this._constants.CHIP_MODULE].off();
+	      }
+	      var onDeleteChip = function onDeleteChip(event) {
+	        // Turn off the radio component of input field
+	        field.parentNode.MaterialRadio.uncheck();
+	        // Turn off the chip
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      };
+
+	      // Listening for clicks on chip remove button
+	      chipElement.addEventListener('ondelete', onDeleteChip.bind(this));
+
+	      if (field.checked) {
+	        // Display chip if the input is checked
+	        chipElement[this._constants.CHIP_MODULE].on();
+	      } else {
+	        // Turn off chip if the input is not checked
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      }
+	    }.bind(this);
+
+	    for (var i = 0; i < this.fields.programa.length; i++) {
+	      if (this.fields.programa[i].checked) {
+	        onChangePrograma(this.fields.programa[i]);
+	      }
+	      this.fields.programa[i].addEventListener('change', function (field) {
+	        return function () {
+	          onChangePrograma(field);
+	        }.bind(this);
+	      }.bind(this)(this.fields.programa[i]));
+	    }
+
+	    // [name='membros[]'] patterns
+	    var onChangeMembros = function (field) {
+	      // Get the related chip of input.
+	      // Searching by [data-input-value="fieldValue"]
+	      var chipCssSelector = '.' + this._cssClasses.CHIP + '[data-' + this._jsDatasets.CHIP_INPUT_VALUE + '="' + field.value + '"]';
+	      var chipElement = document.querySelector(chipCssSelector);
+	      var onDeleteChip = function onDeleteChip(event) {
+	        // Set checked property of field as false
+	        field.checked = false;
+	        // Turn off the switch component of input field
+	        field.parentNode.MaterialSwitch.off();
+	        // Turn off the chip
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      };
+
+	      // Listening for clicks on chip remove button
+	      chipElement.addEventListener('ondelete', onDeleteChip.bind(this));
+
+	      if (field.checked) {
+	        // Display chip if the input is checked
+	        chipElement[this._constants.CHIP_MODULE].on();
+	      } else {
+	        // Turn off chip if the input is not checked
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      }
+	    }.bind(this);
+
+	    for (var i = 0; i < this.fields['membros[]'].length; i++) {
+	      if (this.fields['membros[]'][i].checked) {
+	        onChangeMembros(this.fields['membros[]'][i]);
+	      }
+	      this.fields['membros[]'][i].addEventListener('change', function (field) {
+	        return function () {
+	          onChangeMembros(field);
+	        }.bind(this);
+	      }.bind(this)(this.fields['membros[]'][i]));
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProjeto.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) {
+	        // Check if exists response['success'].
+	        if (response[this._constants.RESPONSE_SUCCESS]) {
+	          // response['success'] == true.
+	          this._stepperComponent.next();
+	        } else if (response[this._constants.RESPONSE_VALIDATION_ERRORS]) {
+	          this._stepperComponent.error('Valide todos os campos');
+	        } else {
+	          this._stepperComponent.error();
+	        }
+	      } else {
+	        this._stepperComponent.error();
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	      this._stepperComponent.error();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @param {string | boolean} - the form action ('update' | 'create' | false)
+	   * @private
+	   */
+	  VintProjeto.prototype._formEvents = function (action) {};
+
+	  /**
+	   * Defines the behaviors of stepper 
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._stepperHandler = function () {
+	    var stepper = document.querySelector('#' + this._constants.STEPPER_ID);
+	    var steps = stepper.querySelectorAll('.' + this._cssClasses.STEP);
+	    var stepMembros = stepper.querySelector('#' + this._constants.STEP_MEMBROS_ID);
+	    var stepPrograma = stepper.querySelector('#' + this._constants.STEP_PROGRAMA_ID);
+	    var stepFields = stepper.querySelector('#' + this._constants.STEP_FIELDS_ID);
+	    var valid /** @type {boolean} */;
+	    // On clicks on [data-step-cancel] button
+	    var onStepsCancel = function onStepsCancel(event) {
+	      window.location.href = this._constants.ON_STEP_CANCEL_LOCATION;
+	    };
+	    // On clicks on [data-step-skip] button
+	    var onStepsSkip = function onStepsSkip(event) {
+	      this._stepperComponent.skip();
+	    };
+	    // On clicks on [data-step-next] button of step 'membros'
+	    var onStepNextMembros = function onStepNextMembros(event) {
+	      var hasMembros = false;
+	      for (var i = 0; i < this.fields['membros[]'].length; i++) {
+	        if (this.fields['membros[]'][i].checked) {
+	          hasMembros = true;
+	          break;
+	        }
+	      }
+
+	      if (hasMembros) {
+	        this._stepperComponent.next();
+	      } else {
+	        this._stepperComponent.error(this._constants.MESSAGE_NO_MEMBROS_SELECTED);
+	      }
+	    };
+	    // On clicks on [data-step-next] button of step 'programa'
+	    var onStepNextPrograma = function onStepNextPrograma(event) {
+	      var hasPrograma = false;
+	      for (var i = 0; i < this.fields.programa.length; i++) {
+	        if (this.fields.programa[i].checked) {
+	          hasPrograma = true;
+	          break;
+	        }
+	      }
+
+	      if (hasPrograma) {
+	        this._stepperComponent.next();
+	      } else {
+	        this._stepperComponent.error(this._constants.MESSAGE_NO_PROGRAMA_SELECTED);
+	      }
+	    };
+	    // On clicks on [data-step-next] button of step 'projeto'
+	    var onStepNextFields = function onStepNextFields(event) {
+	      valid = this._checkRequiredFields();
+	      if (valid) {
+	        this._onStepNextFields();
+	      } else {
+	        this._stepperComponent.error('Valide todos os campos');
+	      }
+	    };
+	    // On all required steps are completed
+	    var onStepperComplete = function onStepperComplete(event) {
+	      this._onStepperComplete();
+	    };
+	    stepMembros.addEventListener('onstepnext', onStepNextMembros.bind(this));
+	    stepPrograma.addEventListener('onstepnext', onStepNextPrograma.bind(this));
+	    stepFields.addEventListener('onstepnext', onStepNextFields.bind(this));
+	    stepper.addEventListener('onsteppercomplete', onStepperComplete.bind(this));
+	    // Adding to the steps their common events
+	    for (var i = 0; i < steps.length; i++) {
+	      steps[i].addEventListener('onstepcancel', onStepsCancel.bind(this));
+	      steps[i].addEventListener('onstepskip', onStepsSkip.bind(this));
+	    }
+	  };
+
+	  /**
+	   * Set attribute [disabled] on all buttons of step
+	   * 
+	   * @public
+	   */
+	  VintProjeto.prototype.disableActions = function () {
+	    var buttons = this._form.querySelectorAll('button');
+	    for (var i = 0; i < buttons.length; i++) {
+	      buttons[i].setAttribute('disabled', '');
+	    }
+	  };
+
+	  /**
+	   * Remove attribute [disabled] from all buttons of step
+	   * 
+	   * @public
+	   */
+	  VintProjeto.prototype.ableActions = function () {
+	    var buttons = this._form.querySelectorAll('button');
+	    for (var i = 0; i < buttons.length; i++) {
+	      buttons[i].removeAttribute('disabled');
+	    }
+	  };
+
+	  /** 
+	   * Handle when step with fields fire the onstepnext event 
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._onStepNextFields = function () {
+	    var requestHandler /** @type {string} */;
+	    var requestOptions /** @type {string} */;
+	    // Disable actions of step while the request is pending
+	    this.disableActions();
+
+	    requestOptions = this._getDefaultRequestOptions();
+	    if (this._isCreate) {
+	      requestHandler = this._constants.CREATE_REQUEST_HANDLER;
+	    } else if (this._isUpdate) {
+	      requestHandler = this._constants.UPDATE_REQUEST_HANDLER;
+	    }
+
+	    this._sendAjaxRequest(requestHandler, requestOptions);
+	  };
+
+	  /** 
+	   * Handle when the stepper is completed
+	   * 
+	   * @private
+	   */
+	  VintProjeto.prototype._onStepperComplete = function () {};
+
+	  /**
+	   * Get the MaterialStepper instance of stepper component present in the DOM
+	   * 
+	   * @return {MaterialStepper}
+	   * @private
+	   */
+	  VintProjeto.prototype._getStepperInstance = function () {
+	    var instance = document.querySelector('#' + this._constants.STEPPER_ID)[this._constants.STEPPER_CONSTRUCTOR];
+	    return instance;
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProjeto.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      // this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Set the stepper component
+	      this._stepperComponent = this._getStepperInstance();
+	      // Defines the behaviors of stepper
+	      this._stepperHandler();
+	      if (this._isCreate) {
+	        // Create a new item
+
+	      } else if (this._isUpdate) {
+	          // Update a item
+	        }
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProjeto,
+	    classAsString: 'VintProjeto',
+	    cssClass: 'vint-form--projeto',
+	    maintenance: true,
+	    createName: 'projeto-create',
+	    updateName: 'projeto-update'
+	  });
+	})();
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * VintPublicacao - A handler to Vint Publicacao form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintPublicacao = function VintPublicacao(form, isCreate, isUpdate) {
+	    this._form = form;
+	    this._isCreate = isCreate;
+	    this._isUpdate = isUpdate;
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPublicacao.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if was created a new item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPublicacao.prototype._created = false;
+
+	  /**
+	   * Flag used to check if was updated a item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintPublicacao.prototype._updated = false;
+
+	  /**
+	   * Stories the value [name] attribute of collection fields.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._collectionFields = ['membros[]', 'projeto', 'publicacao_type'];
+
+	  /**
+	   * Stories the value [name] attribute of all ignored fields.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._ignoredFields = ['search-membros', 'search-projetos', 'search-publicacao-type', 'membros[]', 'projeto', 'publicacao_type', '_type_token'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFields = [];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'padrao' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsPadrao = ['titulo'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'evento' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsEvento = ['titulo', 'nome_evento'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'periodico' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsPeriodico = ['titulo', 'nome_revista', 'mes'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'tcc' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsTcc = ['titulo', 'natureza_trabalho', 'area_curso', 'instituicao', 'nivel'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'livro' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsLivro = ['titulo', 'quantidade_paginas'];
+
+	  /**
+	   * Stories the value [name] attribute of all required fields for 'livro' type.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requiredFieldsMiscelanea = ['titulo'];
+
+	  /**
+	   * Stories messages.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._messages = {
+	    CREATED: 'A publicação foi criada',
+	    UPDATED: 'A publicação foi atualizada'
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._constants = {
+	    CREATE_REQUEST_HANDLER: 'publicacaoCreate::onRequest',
+	    UPDATE_REQUEST_HANDLER: 'publicacaoUpdate::onRequest',
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    REQUEST_HANDLER_ONCHANGETYPE: 'onChangePubType',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    CHIP_MODULE: 'VintChip',
+	    STEPPER_CREATE_ID: 'stepper-publicacao-create',
+	    STEPPER_UPDATE_ID: 'stepper-publicacao-update',
+	    STEP_MEMBROS_ID: 'step-publicacao-membros',
+	    STEP_PROJETO_ID: 'step-publicacao-projeto',
+	    STEP_TYPE_ID: 'step-publicacao-type',
+	    STEP_FIELDS_ID: 'step-publicacao-fields',
+	    ON_STEP_CANCEL_LOCATION: '/dashboard',
+	    STEPPER_CONSTRUCTOR: 'MaterialStepper',
+	    MESSAGE_NO_MEMBROS_SELECTED: 'Selecione os membros da publicação',
+	    MESSAGE_NO_PROJETO_SELECTED: 'Selecione o projeto da publicação',
+	    MESSAGE_NO_TYPE_SELECTED: 'Selecione o tipo da publicação',
+	    UPDATE_PARTIAL_FIELDS: 'forms/publicacao',
+	    UPDATE_ELEMENT_FIELDS: '#publicacao-inputs',
+	    RESPONSE_VALIDATION_ERROR_PROJETO: 'projeto',
+	    RESPONSE_VALIDATION_ERROR_AUTOR: 'autor',
+	    MESSAGE_VALIDATION_ERROR_PROJETO: 'Valide o passo de projeto',
+	    MESSAGE_VALIDATION_ERROR_AUTOR: 'Valide o passo de autores',
+	    MESSAGE_VALIDATION_ERROR_FIELDS: 'Valide todos os campos'
+	  };
+
+	  /**
+	   * Stories dataset attributes.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._jsDatasets = {
+	    CHIP_INPUT_VALUE: 'input-value',
+	    CHIP_INPUT_VALUE_CAMEL: 'inputValue'
+	  };
+
+	  /**
+	   * Stories dataset attributes.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._cssClasses = {
+	    CHIP: 'vint-chip',
+	    CHIP_IS_DELETED: 'is-deleted',
+	    STEP: 'mdl-step'
+	  };
+
+	  /**
+	   * Storie the valid document file or false
+	   * 
+	   * @type {File | boolean}
+	   */
+	  VintPublicacao.prototype._documentFile = false;
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Stories the instance of stepper component referred to the form.
+	   * 
+	   * @type {MaterialStepper}
+	   * @private
+	   */
+	  VintPublicacao.prototype._stepperComponent = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintPublicacao.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintPublicacao.prototype._setFields = function () {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintPublicacao.prototype._filePatterns = {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintPublicacao.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintPublicacao.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintPublicacao.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintPublicacao.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintPublicacao.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintPublicacao.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintPublicacao.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintPublicacao.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintPublicacao.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._initialValues = {};
+
+	  /**
+	  * Change the current fields values to initial values (<Constructor>._initialValues). 
+	  * 
+	  */
+	  VintPublicacao.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._patterns = function () {
+	    // [name='projeto'] patterns
+	    /**
+	     * Toggle the chip referred to an especific field
+	     * 
+	     * @param {HTMLElement}
+	     */
+	    var toggleChip = function (field) {
+	      // Get the related chip of input.
+	      // Searching by [data-input-value="fieldValue"]
+	      var chipCssSelector = '.' + this._cssClasses.CHIP + '[data-' + this._jsDatasets.CHIP_INPUT_VALUE + '="' + field.value + '"]';
+	      var chipElement = document.querySelector(chipCssSelector);
+	      var chipsParent = chipElement[this._constants.CHIP_MODULE].parent;
+
+	      if (!chipsParent) return;
+	      // Only one chip must be active for time.
+	      // Find the first child of chips that is not deleted
+	      // and turn off it.
+	      var toRemoveCssSelector = '.' + this._cssClasses.CHIP + ':not(.' + this._cssClasses.CHIP_IS_DELETED + ')';
+	      var chipToRemove = chipsParent.querySelector(toRemoveCssSelector);
+	      if (chipToRemove) {
+	        chipToRemove[this._constants.CHIP_MODULE].off();
+	      }
+	      var onDeleteChip = function onDeleteChip(event) {
+	        // Turn off the radio component of input field
+	        field.parentNode.MaterialRadio.uncheck();
+	        // Turn off the chip
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      };
+
+	      // Listening for clicks on chip remove button
+	      chipElement.addEventListener('ondelete', onDeleteChip.bind(this));
+
+	      if (field.checked) {
+	        // Display chip if the input is checked
+	        chipElement[this._constants.CHIP_MODULE].on();
+	      } else {
+	        // Turn off chip if the input is not checked
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      }
+	    }.bind(this);
+
+	    for (var i = 0; i < this.fields.projeto.length; i++) {
+	      if (this.fields.projeto[i].checked) {
+	        toggleChip(this.fields.projeto[i]);
+	      }
+	      this.fields.projeto[i].addEventListener('change', function (field) {
+	        return function () {
+	          toggleChip(field);
+	        }.bind(this);
+	      }.bind(this)(this.fields.projeto[i]));
+	    }
+
+	    if (this._isCreate) {
+	      for (var i = 0; i < this.fields.publicacao_type.length; i++) {
+	        this.fields.publicacao_type[i].addEventListener('change', function (field) {
+	          return function () {
+	            toggleChip(field);
+	          }.bind(this);
+	        }.bind(this)(this.fields.publicacao_type[i]));
+	      }
+	    }
+
+	    // [name='membros[]'] patterns
+	    var onChangeMembros = function (field) {
+	      // Get the related chip of input.
+	      // Searching by [data-input-value="fieldValue"]
+	      var chipCssSelector = '.' + this._cssClasses.CHIP + '[data-' + this._jsDatasets.CHIP_INPUT_VALUE + '="' + field.value + '"]';
+	      var chipElement = document.querySelector(chipCssSelector);
+	      var onDeleteChip = function onDeleteChip(event) {
+	        // Set checked property of field as false
+	        field.checked = false;
+	        // Turn off the switch component of input field
+	        field.parentNode.MaterialSwitch.off();
+	        // Turn off the chip
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      };
+
+	      // Listening for clicks on chip remove button
+	      chipElement.addEventListener('ondelete', onDeleteChip.bind(this));
+
+	      if (field.checked) {
+	        // Display chip if the input is checked
+	        chipElement[this._constants.CHIP_MODULE].on();
+	      } else {
+	        // Turn off chip if the input is not checked
+	        chipElement[this._constants.CHIP_MODULE].off();
+	      }
+	    }.bind(this);
+
+	    // Check the 'autores' keeping the original sequence.
+	    var autoresSequenceField = this.fields._autores_sequence || this._form.querySelector('input[name="_autores_sequence"]');
+	    if (autoresSequenceField && autoresSequenceField.value) {
+	      var autoresSequence = autoresSequenceField.value.split(',');
+	      var autorValue /** @type {string} */;
+	      var field /** @type {HTMLElement} */;
+	      for (var i = 0; i < autoresSequence.length; i++) {
+	        autorValue = autoresSequence[i];
+	        field = this._form.querySelector('input[name="membros[]"][value=' + autorValue + ']');
+	        if (field) {
+	          onChangeMembros(field);
+	        }
+	      }
+	    }
+
+	    for (var i = 0; i < this.fields['membros[]'].length; i++) {
+	      this.fields['membros[]'][i].addEventListener('change', function (field) {
+	        return function () {
+	          onChangeMembros(field);
+	        }.bind(this);
+	      }.bind(this)(this.fields['membros[]'][i]));
+	    }
+	  };
+
+	  /**
+	   * Define the required patterns for the fields of form loaded 
+	   * dinamically from ajax request or at initialization if the 
+	   * form is update
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._patternsRequestFields = function () {
+	    var onChangeDocument = function onChangeDocument(event) {
+	      var isValid = this._documentPattern(this.fields.document.files);
+	      if (isValid) {
+	        this._documentFile = this.fields.document.files[0];
+	        if (this.fields['document-filename']) {
+	          this.fields['document-filename'].parentNode.classList.remove('is-invalid');
+	        }
+	      } else {
+	        this._documentFile = false;
+	        if (this.fields['document-filename']) {
+	          this.fields['document-filename'].parentNode.classList.add('is-invalid');
+	        }
+	      }
+	    };
+	    this.fields.document.addEventListener('change', onChangeDocument.bind(this));
+	  };
+
+	  /**
+	   * Check if the files that comes from input[type=file][name=document]
+	   * is a valid file to be the uploaded 
+	   * 
+	   * @param {FileList}
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintPublicacao.prototype._documentPattern = function (fileList) {
+	    // No file selected
+	    if (!fileList.length) return false;
+
+	    // More than one file selected
+	    if (fileList.lenght > 1) {
+	      var message = 'Selecione apenas um arquivo';
+	      this.toast({
+	        message: message
+	      });
+	      return false;
+	    }
+	    var input = {
+	      'document': fileList[0]
+	    };
+	    var rules = {
+	      'document': {
+	        'extension': ['pdf'],
+	        'max_size': 2
+	      }
+	    };
+	    var messages = {
+	      'extension': 'Escolha um documento no formato PDF',
+	      'max_size': 'O tamanho máximo do documento deve ser 2MB'
+	    };
+	    var validator = this._filePatterns.make(input, rules, messages);
+
+	    if (validator.fails()) {
+	      for (var error in validator.errors) {
+	        var errorMessage = validator.errors[error];
+	        this.toast({
+	          message: errorMessage
+	        });
+	        break;
+	      }
+	      return false;
+	    }
+	    return true;
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._formEvents = function () {
+	    var onAjaxUpdateForm = function onAjaxUpdateForm(event, context, response, status, jqXHR) {
+	      // Triggered on a page element after it has been updated with the framework.
+	      // The handler gets 5 parameters: the event object, the context object,
+	      // the data object received from the server, the status text string, and the jqXHR object.
+	      if (status === 'success') {
+	        if (response['is-valid']) {
+	          // Able the actions after request is ok
+	          this.ableActions();
+	          // Moves the stepper one step forward
+	          this._stepperComponent.next();
+	          // Remove old loaded fields in this.fields array.
+	          this._resetFields(true, false);
+	          // Set new loaded fields in this.fields array.
+	          this._setFields(true, false);
+	          // Add flag 'is-focused' on focus fields
+	          this._fieldsFocusedEffect();
+	          // Set the patterns of loaded fields
+	          this._patternsRequestFields();
+	          // Set the autores sequence
+	          this._setSequenceAutores();
+	        }
+	      }
+	    };
+
+	    // Assumes that jQuery ($) object is available globally.
+	    $(this._form).on('ajaxUpdate', onAjaxUpdateForm.bind(this));
+	  };
+
+	  /**
+	   * Defines the sequence of 'autores' based on order of choice 
+	   * and stories in input[type=hidden][name=_autores_sequence] 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._setSequenceAutores = function () {
+	    var chip /** @type {HTMLElement} */;
+	    var orderedChips /** @type {object} */;
+	    var orderedAsString = /** @type {string} */'';
+	    // Check if the input[name=_autores_sequence] is registered on
+	    // VintPublicacao.fields object.
+	    if (!this.fields['_autores_sequence']) return;
+	    // Get current 'autores' sequence based on check order.
+	    // This can be done through the VintChip component that provides
+	    // the order of elements in the DOM.
+	    chip = this._form.querySelector('.' + this._cssClasses.CHIP);
+	    // Check if exists a chip element
+	    if (!chip) return;
+	    orderedChips = chip[this._constants.CHIP_MODULE].getParentOrder();
+	    // Loops at the ordered chips and fill the orderedAsString variable.
+	    for (var chip in orderedChips) {
+	      // Create a string with ordereds 'autores' separeted by ',' (comma).
+	      orderedAsString += orderedChips[chip].dataset[this._jsDatasets.CHIP_INPUT_VALUE_CAMEL] + ',';
+	    }
+	    this.fields['_autores_sequence'].setAttribute('value', orderedAsString);
+	  };
+
+	  /**
+	   * Defines the behaviors of stepper 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._stepperHandler = function () {
+	    var stepperId = this._isCreate ? this._constants.STEPPER_CREATE_ID : this._constants.STEPPER_UPDATE_ID;
+	    var stepper = document.querySelector('#' + stepperId);
+	    var steps = stepper.querySelectorAll('.' + this._cssClasses.STEP);
+	    var stepMembros = stepper.querySelector('#' + this._constants.STEP_MEMBROS_ID);
+	    var stepProjeto = stepper.querySelector('#' + this._constants.STEP_PROJETO_ID);
+	    var stepType = stepper.querySelector('#' + this._constants.STEP_TYPE_ID);
+	    var stepFields = stepper.querySelector('#' + this._constants.STEP_FIELDS_ID);
+	    var valid /** @type {boolean} */;
+	    /**
+	     * Verifies if a collection of checkboxes, radios has any element checked
+	     * 
+	     * @param {NodeList}
+	     * @return {boolean} 
+	     */
+	    var hasChecked = function hasChecked(fields) {
+	      var hasCheck = false;
+	      for (var i = 0; i < fields.length; i++) {
+	        if (fields[i].checked) {
+	          hasCheck = true;
+	          break;
+	        }
+	      }
+	      return hasCheck;
+	    };
+	    // On clicks on [data-step-cancel] button
+	    var onStepsCancel = function onStepsCancel(event) {
+	      window.location.href = this._constants.ON_STEP_CANCEL_LOCATION;
+	    };
+	    // On clicks on [data-step-skip] button
+	    var onStepsSkip = function onStepsSkip(event) {
+	      this._stepperComponent.skip();
+	    };
+	    // On clicks on [data-step-next] button of step 'membros'
+	    var onStepNextMembros = function onStepNextMembros(event) {
+	      var hasMembros = hasChecked(this.fields['membros[]']);
+
+	      if (hasMembros) {
+	        this._stepperComponent.next();
+	      } else {
+	        this._stepperComponent.error(this._constants.MESSAGE_NO_MEMBROS_SELECTED);
+	      }
+	    };
+	    // On clicks on [data-step-next] button of step 'programa'
+	    var onStepNextProjeto = function onStepNextProjeto(event) {
+	      var hasProjeto = hasChecked(this.fields.projeto);
+
+	      if (hasProjeto) {
+	        this._stepperComponent.next();
+	      } else {
+	        this._stepperComponent.error(this._constants.MESSAGE_NO_PROJETO_SELECTED);
+	      }
+	    };
+	    // Step 'type' only when is create
+	    if (this._isCreate) {
+	      // On clicks on [data-step-next] button of step 'tipo'
+	      var onStepNextType = function onStepNextType(event) {
+	        var hasType = hasChecked(this.fields.publicacao_type);
+
+	        if (hasType) {
+	          // Load from server the fields referred to the type
+	          this._requestFields();
+	        } else {
+	          this._stepperComponent.error(this._constants.MESSAGE_NO_TYPE_SELECTED);
+	        }
+	      };
+	    }
+	    // On clicks on [data-step-next] button of step 'publicação'
+	    var onStepNextFields = function onStepNextFields(event) {
+	      var pubType /** @type {string} */;
+	      var requireds /** @type {Array} */;
+	      // Get the selected 'publicacao' type
+	      for (var i = 0; i < this.fields.publicacao_type.length; i++) {
+	        if (this._isUpdate) {
+	          // Case form is update, the publicacao_type is a NodeList
+	          // with only one input[type=hidden]
+	          pubType = this.fields.publicacao_type[i].value;
+	          break;
+	        } else {
+	          // Case form is create, the publicacao_type is a NodeList
+	          // of input[type=radio]
+	          if (this.fields.publicacao_type[i].checked) {
+	            pubType = this.fields.publicacao_type[i].value;
+	            break;
+	          }
+	        }
+	      }
+	      switch (pubType) {
+	        case 'padrao':
+	          {
+	            requireds = this._requiredFieldsPadrao;
+	            break;
+	          }
+	        case 'evento':
+	          {
+	            requireds = this._requiredFieldsEvento;
+	            break;
+	          }
+	        case 'periodico':
+	          {
+	            requireds = this._requiredFieldsPeriodico;
+	            break;
+	          }
+	        case 'tcc':
+	          {
+	            requireds = this._requiredFieldsTcc;
+	            break;
+	          }
+	        case 'livro':
+	          {
+	            requireds = this._requiredFieldsLivro;
+	            break;
+	          }
+	        case 'miscelanea':
+	          {
+	            requireds = this._requiredFieldsMiscelanea;
+	            break;
+	          }
+	      }
+	      valid = this._checkRequiredFields(requireds);
+
+	      if (valid) {
+	        // Set the autores sequence
+	        this._setSequenceAutores();
+	        this._onStepNextFields();
+	      } else {
+	        this._stepperComponent.error('Valide todos os campos');
+	      }
+	    };
+	    // On all required steps are completed
+	    var onStepperComplete = function onStepperComplete(event) {
+	      this._onStepperComplete();
+	    };
+	    stepMembros.addEventListener('onstepnext', onStepNextMembros.bind(this));
+	    stepProjeto.addEventListener('onstepnext', onStepNextProjeto.bind(this));
+	    if (this._isCreate) {
+	      stepType.addEventListener('onstepnext', onStepNextType.bind(this));
+	    }
+	    stepFields.addEventListener('onstepnext', onStepNextFields.bind(this));
+	    stepper.addEventListener('onsteppercomplete', onStepperComplete.bind(this));
+	    // Adding to the steps their common events
+	    for (var i = 0; i < steps.length; i++) {
+	      steps[i].addEventListener('onstepcancel', onStepsCancel.bind(this));
+	      steps[i].addEventListener('onstepskip', onStepsSkip.bind(this));
+	    }
+	  };
+
+	  /**
+	   * Set attribute [disabled] on all buttons of step
+	   * 
+	   * @public
+	   */
+	  VintPublicacao.prototype.disableActions = function () {
+	    var buttons = this._form.querySelectorAll('button');
+	    for (var i = 0; i < buttons.length; i++) {
+	      buttons[i].setAttribute('disabled', '');
+	    }
+	  };
+
+	  /**
+	   * Remove attribute [disabled] from all buttons of step
+	   * 
+	   * @public
+	   */
+	  VintPublicacao.prototype.ableActions = function () {
+	    var buttons = this._form.querySelectorAll('button');
+	    for (var i = 0; i < buttons.length; i++) {
+	      buttons[i].removeAttribute('disabled');
+	    }
+	  };
+
+	  /**
+	   * Send ajax request with file to backend handler with request options 
+	   * 
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintPublicacao.prototype._sendAjaxRequestWithFile = function () {
+	    // Create a new form data with all fields on this._form
+	    var formData = new FormData(this._form);
+
+	    if (!this._documentFile) {
+	      // If current input[name=document] file is not valid
+	      // remove it from formData.
+	      formData.delete('document');
+	    }
+	    var options = this._getUploadRequestOptions(formData);
+	    // Assumes that jQuery ($) is available globally
+	    $.ajax(options);
+	    return true;
+	  };
+
+	  /**
+	   * Validates the steps with error.
+	   * 
+	   * @param {object}
+	   * @return 
+	   */
+	  VintPublicacao.prototype._validateStepErrors = function (response) {
+	    var errors /** @type {array} */;
+	    var message /** @type {string} */;
+
+	    if (response[this._constants.RESPONSE_VALIDATION_ERRORS]) {
+	      // Set stepper error state.
+	      this._stepperComponent.error(this._constants.MESSAGE_VALIDATION_ERROR_FIELDS);
+	      errors = response[this._constants.RESPONSE_VALIDATION_ERRORS];
+
+	      if (errors[this._constants.RESPONSE_VALIDATION_ERROR_PROJETO]) {
+	        // Error with 'projeto' step
+	        message = this._constants.MESSAGE_VALIDATION_ERROR_PROJETO;
+	        this.toast({
+	          message: message
+	        });
+	        // Activates the 'projeto' step (2)
+	        this._stepperComponent.error();
+	        this._stepperComponent.goto(2);
+	        this._stepperComponent.error(message);
+	      } else if (errors[this._constants.RESPONSE_VALIDATION_ERROR_AUTOR]) {
+	        // Error with 'autores' step
+	        message = this._constants.MESSAGE_VALIDATION_ERROR_AUTOR;
+	        this.toast({
+	          message: message
+	        });
+	        // Activates the 'autores' step (1)
+	        this._stepperComponent.error();
+	        this._stepperComponent.goto(1);
+	        this._stepperComponent.error(message);
+	      } else if (errors['document']) {
+	        // Error with 'document' file
+	        this._stepperComponent.error();
+	        message = response[this._constants.RESPONSE_VALIDATION_ERRORS]['document'][0];
+	        this.toast({
+	          message: message
+	        });
+	      } else {
+	        this._processResponseSuccess(response);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send a file to server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintPublicacao.prototype._getUploadRequestOptions = function (formData) {
+	    var requestHandler = this._isUpdate ? this._constants.UPDATE_REQUEST_HANDLER : this._constants.CREATE_REQUEST_HANDLER;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) {
+	        // Check if exists response['success'].
+	        if (!response[this._constants.RESPONSE_SUCCESS] && response[this._constants.RESPONSE_VALIDATION_ERRORS]) {
+	          // Check for errors in previous steps.
+	          this._validateStepErrors(response);
+	        } else if (response[this._constants.RESPONSE_SUCCESS]) {
+	          this._processResponseSuccess(response);
+	          // response['success'] == true.
+	          this._stepperComponent.next();
+	        } else {
+	          this._stepperComponent.error();
+	        }
+	      } else {
+	        this._stepperComponent.error();
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	      this._stepperComponent.error();
+	    };
+
+	    return {
+	      headers: headers,
+	      data: formData,
+	      type: 'post',
+	      cache: false,
+	      processData: false,
+	      contentType: false,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /** 
+	   * Handle when step with fields fire the onstepnext event 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._onStepNextFields = function () {
+	    // Disable actions while the request is pending.
+	    this.disableActions();
+	    this._sendAjaxRequestWithFile();
+	  };
+
+	  /** 
+	   * Handle when the stepper is completed
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._onStepperComplete = function () {};
+
+	  /**
+	   * Get the MaterialStepper instance of stepper component present in the DOM
+	   * 
+	   * @return {MaterialStepper}
+	   * @private
+	   */
+	  VintPublicacao.prototype._getStepperInstance = function () {
+	    var selector /** @type {string} */;
+
+	    if (this._isCreate) {
+	      selector = '#' + this._constants.STEPPER_CREATE_ID;
+	    } else {
+	      selector = '#' + this._constants.STEPPER_UPDATE_ID;
+	    }
+	    var instance = document.querySelector(selector)[this._constants.STEPPER_CONSTRUCTOR];
+	    return instance;
+	  };
+
+	  /**
+	   * Send request to server and update partial with new fields 
+	   * 
+	   * @private
+	   */
+	  VintPublicacao.prototype._requestFields = function () {
+	    var requestHandler = this._constants.REQUEST_HANDLER_ONCHANGETYPE;
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	      this._stepperComponent.error();
+	      this.ableActions();
+	    };
+
+	    /**
+	     * Prepares the object to send as options with ajax request
+	     * 
+	     */
+	    var getRequestOptions = function getRequestOptions() {
+	      // Backend partial name to update
+	      var updatePartial = this._constants.UPDATE_PARTIAL_FIELDS;
+	      // {HTMLElement} to be updated
+	      var updateElement = this._constants.UPDATE_ELEMENT_FIELDS;
+	      var update = {};
+	      update[updatePartial] = updateElement;
+
+	      return {
+	        update: update,
+	        error: onError.bind(this)
+	      };
+	    };
+	    var requestOptions = getRequestOptions.bind(this)();
+	    // Disable the actions while request is pending
+	    this.disableActions();
+	    this._sendAjaxRequest(requestHandler, requestOptions);
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintPublicacao.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      if (this._isCreate) {
+	        // Stories only the specifieds VintPublicacao._collectionFields
+	        // in this.fields.
+	        this._setFields(false, true);
+	      } else if (this._isUpdate) {
+	        // Stories all fields in this.fields.
+	        this._setFields();
+	        // Add flag 'is-focused' on focus fields
+	        this._fieldsFocusedEffect();
+	        // Set the patterns of loaded fields
+	        this._patternsRequestFields();
+	      }
+	      // Basic fields patterns
+	      this._patterns();
+	      // Set the stepper component
+	      this._stepperComponent = this._getStepperInstance();
+	      // Defines the events of form
+	      this._formEvents();
+	      // Defines the behaviors of stepper
+	      this._stepperHandler();
+	      if (this._isCreate) {
+	        // Create a new item
+
+	      } else if (this._isUpdate) {
+	          // Update a item
+	        }
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintPublicacao,
+	    classAsString: 'VintPublicacao',
+	    cssClass: 'vint-form--publicacao',
+	    maintenance: true,
+	    createName: 'publicacao-create',
+	    updateName: 'publicacao-update'
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11824,6 +16581,6226 @@
 	    cssClass: 'vint-form--contact'
 	  });
 	})();
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintLogin - A handler to Vint Login form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintLogin = function VintLogin(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._constants = {
+	    REQUEST_HANDLER: 'login::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintLogin.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if the login was successfully.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintLogin.prototype.success = false;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._requiredFields = ['email', 'senha'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintLogin.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintLogin.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._jqueryForm = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintLogin.prototype._filePatterns = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintLogin.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintLogin.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintLogin.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintLogin.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintLogin.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintLogin.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintLogin.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintLogin.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintLogin.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintLogin.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._patterns = function () {};
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintLogin.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintLogin.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableActions();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintLogin.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintLogin,
+	    classAsString: 'VintLogin',
+	    cssClass: 'vint-form--login'
+	  });
+	})();
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintLoginRecover - A handler to Vint Login Recover form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintLoginRecover = function VintLoginRecover(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._constants = {
+	    REQUEST_HANDLER: 'loginRecover::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_WARNING_MESSAGE: 'warningMessage',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_EMAIL_SENT: 'A recuperação foi enviada',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_SERVER_ERROR: 'Algo deu errado. Tente novamente',
+	    MESSAGE_DEFAULT_WARNING: 'Algo deu errado. Tente mais tarde',
+	    MESSAGE_WAIT_MESSAGE: 'Aguarde...'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintLoginRecover.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._requiredFields = ['email'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintLoginRecover.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintLoginRecover.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintLoginRecover.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintLoginRecover.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintLoginRecover.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintLoginRecover.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintLoginRecover.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintLoginRecover.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintLoginRecover.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintLoginRecover.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintLoginRecover.prototype._checkRequiredFields = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintLoginRecover.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintLoginRecover.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._patterns = function () {};
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintLoginRecover.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      var message /** @type {string} */;
+	      var newLocation /** @type {string} */;
+	      var timeout /** @type {number} */;
+
+	      this._processResponseSuccess(response);
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_SUCCESS) && response[this._constants.RESPONSE_SUCCESS] && response.hasOwnProperty(this._constants.RESPONSE_LOCATION)) {
+	        newLocation = response[this._constants.RESPONSE_LOCATION];
+	        timeout = 1000 * 30;
+	        message = this._constants.MESSAGE_EMAIL_SENT;
+	        this.toast({
+	          message: message,
+	          actionText: 'Ok',
+	          timeout: timeout,
+	          actionHandler: function actionHandler(e) {
+	            window.location.href = location;
+	          }
+	        });
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintLoginRecover.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var waitMessage /** @type {string} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      waitMessage = this._constants.MESSAGE_WAIT_MESSAGE;
+	      this.toast({
+	        message: waitMessage,
+	        timeout: 1000
+	      });
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintLoginRecover.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintLoginRecover,
+	    classAsString: 'VintLoginRecover',
+	    cssClass: 'vint-form--login-recover'
+	  });
+	})();
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintLoginReset - A handler to Vint Login Reset form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintLoginReset = function VintLoginReset(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._constants = {
+	    REQUEST_HANDLER: 'loginReset::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_FATAL_ERROR: 'fatalError',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_SERVER_ERROR: 'Algo deu errado. Tente novamente'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintLoginReset.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._requiredFields = ['new_senha', 'new_senha_confirmation'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintLoginReset.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintLoginReset.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintLoginReset.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintLoginReset.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintLoginReset.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintLoginReset.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintLoginReset.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintLoginReset.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintLoginReset.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintLoginReset.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintLoginReset.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintLoginReset.prototype._checkRequiredFields = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintLoginReset.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintLoginReset.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._patterns = function () {};
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintLoginReset.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintLoginReset.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintLoginReset.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintLoginReset,
+	    classAsString: 'VintLoginReset',
+	    cssClass: 'vint-form--login-reset'
+	  });
+	})();
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintAccountDisagree - A handler to Vint Account Disagree form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintAccountDisagree = function VintAccountDisagree(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._constants = {
+	    REQUEST_HANDLER: 'accountDisagree::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_FATAL_ERROR: 'fatalError',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    RESPONSE_WARNING_MESSAGE: 'warningMessage',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_SERVER_ERROR: 'Algo deu errado. Tente novamente',
+	    MESSAGE_DEFAULT_WARNING: 'Algo deu errado. Tente mais tarde'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._requiredFields = ['email'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintAccountDisagree.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintAccountDisagree.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintAccountDisagree.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintAccountDisagree.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintAccountDisagree.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintAccountDisagree.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintAccountDisagree.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintAccountDisagree.prototype._checkRequiredFields = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintAccountDisagree.prototype.toast = function (data) {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._filePatterns = {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintAccountDisagree.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._patterns = function () {};
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintAccountDisagree.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintAccountDisagree.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintAccountDisagree,
+	    classAsString: 'VintAccountDisagree',
+	    cssClass: 'vint-form--account-disagree'
+	  });
+	})();
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintAccountRegister - A handler to Vint Account Register form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintAccountRegister = function VintAccountRegister(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._constants = {
+	    REQUEST_HANDLER: 'accountRegister::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_FATAL_ERROR: 'fatalError',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    RESPONSE_WARNING_MESSAGE: 'warningMessage',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_SERVER_ERROR: 'Algo deu errado. Tente novamente',
+	    MESSAGE_DEFAULT_WARNING: 'Algo deu errado. Tente mais tarde'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintAccountRegister.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._requiredFields = ['senha', 'senha_confirmation'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintAccountRegister.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintAccountRegister.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintAccountRegister.prototype._filePatterns = {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintAccountRegister.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintAccountRegister.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintAccountRegister.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintAccountRegister.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintAccountRegister.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintAccountRegister.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintAccountRegister.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintAccountRegister.prototype._checkRequiredFields = function () {};
+
+	  /**
+	  * Displays a MDL snackbar. 
+	  * 
+	  * @param {object} data Snackbar options
+	  * @param {string} data.message
+	  * @param {number} data.timeout 
+	  * @param {function} data.actionHandler 
+	  * @param {string} data.actionText 
+	  */
+	  VintAccountRegister.prototype.toast = function (data) {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintAccountRegister.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._patterns = function () {};
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintAccountRegister.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponseSuccess(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._processResponseComplete();
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintAccountRegister.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintAccountRegister.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintAccountRegister,
+	    classAsString: 'VintAccountRegister',
+	    cssClass: 'vint-form--account-register'
+	  });
+	})();
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * settingsHandler - A handler to settings pages
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+
+	// Pre-defining the settingsHandler interface, for closure documentation and
+	// static verification.
+	var settingsHandler = {
+
+	  /**
+	   * Registers a form for future use.
+	   *
+	   * @param {settingsHandler.FormConfigPublic} config the registration configuration
+	   */
+	  register: function register(config) {},
+
+	  /**
+	   * Upgrade all registered forms.
+	   *
+	   */
+	  upgradeAllRegistered: function upgradeAllRegistered() {}
+	};
+
+	settingsHandler = function () {
+	  'use strict';
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   */
+
+	  var _constants = {
+	    SNACKBAR_ID: 'vint-snackbar-default'
+	  };
+
+	  /**
+	   * Stories messages.
+	   * 
+	   */
+	  var messages = {
+	    RESPONSE_403: 'Você não tem permissão para fazer isso',
+	    RESPONSE_401: 'O VINT não reconhece você',
+	    RESPONSE_500: 'Algo não funcionou. Tente novamente'
+	  };
+
+	  /** @type {!Array<settingsHandler.ConfigPublic>} */
+	  var _registeredSettings = [];
+
+	  var _register = function _register(config) {
+	    var newConfig = {
+	      ClassConstructor: config.constructor || config['constructor'],
+	      classAsString: config.classAsString || config['classAsString'],
+	      cssClass: config.cssClass || config['cssClass']
+	    };
+
+	    _registeredSettings.forEach(function (item) {
+	      if (item.cssClass === newConfig.cssClass) {
+	        throw new Error('The provided cssClass has already been registered: ' + item.cssClass);
+	      }
+	    });
+
+	    _registeredSettings.push(newConfig);
+	  };
+
+	  /**
+	   * Upgrade all registered settings in the document DOM
+	   * 
+	   */
+	  var _upgradeAllRegistered = function _upgradeAllRegistered() {
+	    for (var i = 0; i < _registeredSettings.length; i++) {
+	      _upgradeClass(_registeredSettings[i]);
+	    }
+	  };
+
+	  /**
+	   * Defines all essential methods prototypes to settings
+	   * 
+	   * @param {settingsHandler.ConfigPublic.<ClassConstructor>}
+	   */
+	  var _settingsEssentials = function _settingsEssentials(ClassConstructor) {
+
+	    /**
+	    * Displays a MDL snackbar. 
+	    * 
+	    * @param {object} data Snackbar options
+	    * @param {string} data.message
+	    * @param {number} data.timeout 
+	    * @param {function} data.actionHandler 
+	    * @param {string} data.actionText 
+	    */
+	    ClassConstructor.prototype.toast = function (data) {
+	      var container = document.querySelector('#' + _constants.SNACKBAR_ID);
+	      if (!container) {
+	        throw new Error('Snackbar container is not defined.');
+	        return false;
+	      }
+
+	      if (!data.timeout) {
+	        data.timeout = 5000;
+	      }
+
+	      container.MaterialSnackbar.showSnackbar(data);
+	    };
+
+	    /**
+	     * Set attribute [disabled] on all buttons of step
+	     * 
+	     * @public
+	     */
+	    ClassConstructor.prototype.disableActions = function () {
+	      var buttons = this._element.querySelectorAll('button');
+	      for (var i = 0; i < buttons.length; i++) {
+	        buttons[i].setAttribute('disabled', '');
+	      }
+	    };
+
+	    /**
+	     * Remove attribute [disabled] from all buttons of step
+	     * 
+	     * @public
+	     */
+	    ClassConstructor.prototype.ableActions = function () {
+	      var buttons = this._element.querySelectorAll('button');
+	      for (var i = 0; i < buttons.length; i++) {
+	        buttons[i].removeAttribute('disabled');
+	      }
+	    };
+
+	    /**
+	     * Get the menu settings data 
+	     *
+	     * @return {object} 
+	     * @private
+	     */
+	    ClassConstructor.prototype._getMenu = function () {
+	      var getMenu = function getMenu() {
+	        var itemEdit /** @type {HTMLElement} */;
+	        var itemDelete /** @type {HTMLElement} */;
+	        var menuElement = this._element.querySelector('.' + this._cssClasses.SETTINGS_MENU);
+	        var menuButton = this._element.querySelector('.' + this._cssClasses.SETTINGS_MENU_BUTTON);
+	        if (menuElement) {
+	          itemEdit = menuElement.querySelector('.' + this._cssClasses.SETTINGS_MENU_EDIT);
+	          itemDelete = menuElement.querySelector('.' + this._cssClasses.SETTINGS_MENU_DELETE);
+	        }
+
+	        return {
+	          element: menuElement,
+	          button: menuButton,
+	          items: {
+	            edit: itemEdit,
+	            delete: itemDelete
+	          }
+	        };
+	      };
+	      var menu = getMenu.bind(this)();
+
+	      return menu;
+	    };
+
+	    /**
+	     * Get the element settings data 
+	     *
+	     * @return {object|boolean} 
+	     * @private
+	     */
+	    ClassConstructor.prototype._getDialogs = function () {
+	      /**
+	       * Builds the data object
+	       * 
+	       * @param {HTMLElement} menu element
+	       * @return {object|boolean}
+	       */
+	      var getDialogs = function getDialogs(menu) {
+	        var deleteSelector = 'dialog[data-' + this._datasets.DIALOG + '="delete"]';
+	        var deleteTargetSelector = '[data-' + this._datasets.DIALOG_TARGET + '="delete"]';
+	        var deleteButtonConfirmSelector = '.' + this._cssClasses.DIALOG_BUTTON_CONFIRM;
+	        var deleteButtonCancelSelector = '.' + this._cssClasses.DIALOG_BUTTON_CANCEL;
+	        var dialogDelete = this._element.querySelector(deleteSelector);
+
+	        if (!dialogDelete) return false;
+	        var dialogDeleteTarget = menu.querySelector(deleteTargetSelector);
+	        var dialogDeleteButtonConfirm = dialogDelete.querySelector(deleteButtonConfirmSelector);
+	        var dialogDeleteButtonCancel = dialogDelete.querySelector(deleteButtonCancelSelector);
+
+	        return {
+	          delete: {
+	            target: dialogDeleteTarget,
+	            dialog: dialogDelete,
+	            buttonConfirm: dialogDeleteButtonConfirm,
+	            buttonCancel: dialogDeleteButtonCancel
+	          }
+	        };
+	      };
+
+	      var dialogs = getDialogs.bind(this)(this._menu.element);
+
+	      return dialogs;
+	    };
+
+	    /**
+	     * Show a settings element
+	     * 
+	     * @public
+	     */
+	    ClassConstructor.prototype.on = function () {
+	      this._element.classList.remove('is-deleted');
+	      var toOn /** @type {HTMLElement} */;
+	      if (this._element.parentNode.classList.contains('mdl-cell')) {
+	        toOn = this._element.parentNode;
+	      } else {
+	        toOn = this._element;
+	      }
+	      toOn.style.display = '';
+	    };
+
+	    /**
+	     * Hide a settings element
+	     * 
+	     * @public
+	     */
+	    ClassConstructor.prototype.off = function () {
+	      this._element.classList.add('is-deleted');
+	      setTimeout(function () {
+	        var toOff /** @type {HTMLElement} */;
+	        if (this._element.parentNode.classList.contains('mdl-cell')) {
+	          toOff = this._element.parentNode;
+	        } else {
+	          toOff = this._element;
+	        }
+	        toOff.style.display = 'none';
+	      }.bind(this), 400);
+	    };
+
+	    /**
+	     * Process a response with error.
+	     * 
+	     * @param {object} jqXHR
+	     * @param {string} textStatus
+	     * @param {string} errorThrown
+	     */
+	    ClassConstructor.prototype._processResponseError = function (jqXHR, textStatus, errorThrown) {
+	      switch (jqXHR.status) {
+	        case 401:
+	          this.toast({
+	            message: messages.RESPONSE_401,
+	            actionHandler: function actionHandler() {
+	              window.location.href = constants.LOCATION_LOGIN;
+	            },
+	            actionText: 'Fazer login'
+	          });
+	          break;
+	        case 403:
+	          this.toast({
+	            message: messages.RESPONSE_403
+	          });
+	          break;
+	        case 500:
+	          this.toast({
+	            message: messages.RESPONSE_500
+	          });
+	          break;
+
+	      }
+	    };
+
+	    /**
+	     * Hide a settings element
+	     * 
+	     * @public
+	     */
+	    ClassConstructor.prototype._sendAjaxRequest = function (options) {
+	      // Assumes that jQuery object is available gloabally.
+	      $.ajax(options);
+	    };
+	  };
+
+	  /**
+	   * Initialize the instance of the registered settings for each cssClass
+	   * 
+	   */
+	  var _upgradeClass = function _upgradeClass(registeredSettings) {
+	    // All elements with the same registerd cssClass
+	    var _settingsElements = document.querySelectorAll('.' + registeredSettings.cssClass);
+
+	    for (var i = 0; i < _settingsElements.length; i++) {
+	      var element = _settingsElements[i];
+	      var instance;
+	      _settingsEssentials(registeredSettings.ClassConstructor);
+	      instance = new registeredSettings.ClassConstructor(element);
+	      element[registeredSettings.classAsString] = instance;
+	    }
+	  };
+
+	  // Now return the functions that should be made public with their publicly
+	  // facing names...
+	  return {
+	    register: _register,
+	    upgradeAllRegistered: _upgradeAllRegistered
+	  };
+	}();
+
+	/**
+	 * Describes the type of a registered component type managed by
+	 * settingsHandler. Provided for benefit of the Closure compiler.
+	 *
+	 * @typedef {{
+	 *   constructor: Function,
+	 *   classAsString: string,
+	 *   cssClass: string,
+	 * }}
+	 */
+	settingsHandler.ConfigPublic; // jshint ignore:line
+
+	window['settingsHandler'] = settingsHandler;
+
+	window.addEventListener('load', function () {
+	  // Upgrade all registered forms after page loaded
+	  settingsHandler.upgradeAllRegistered();
+	});
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsPublicacao - A handler to Vint Settings Publicacao.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsPublicacao = function VintSettingsPublicacao(element) {
+	    this._element = element;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._datasets = {
+	    DIALOG: 'vint-dialog',
+	    DIALOG_TARGET: 'vint-dialog-target',
+	    DIALOG_TARGET_CAMEL: 'vintDialogTarget',
+	    MENU_SETTINGS: 'vint-menu',
+	    MENU_SETTINGS_CAMEL: 'vintMenu',
+	    SETTINGS_HREF: 'vint-href',
+	    SETTINGS_HREF_CAMEL: 'vintHref'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    // DELETE_REQUEST_HANDLER: 'forms::onDeletePublicacaoSettings',
+	    DELETE_REQUEST_HANDLER: 'publicacaoSettings::onRequest',
+	    MESSAGE_PUBLICACAO_DELETED: 'A publicação foi removida'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._cssClasses = {
+	    SETTINGS: 'vint-settings',
+	    SETTINGS_MENU: 'vint-settings__menu',
+	    SETTINGS_MENU_BUTTON: 'vint-settings__menu-button',
+	    SETTINGS_MENU_EDIT: 'vint-settings__menu-edit',
+	    SETTINGS_MENU_DELETE: 'vint-settings__menu-delete',
+	    DIALOG_BUTTON_CONFIRM: 'vint-dialog__buton-confirm',
+	    DIALOG_BUTTON_CANCEL: 'vint-dialog__buton-cancel'
+	  };
+
+	  /**
+	   * Stories the flag that indicates state of settings 
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._deleted = false;
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._menu = {};
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._dialogs = {};
+
+	  /**
+	   * Handle the behavior of menu
+	   *
+	   * @private 
+	   */
+	  VintSettingsPublicacao.prototype._menuHandler = function () {
+	    var onClickEdit = function onClickEdit(event) {
+	      var location = this._menu.items.edit.dataset[this._datasets.SETTINGS_HREF_CAMEL];
+	      if (location) {
+	        window.location.href = location;
+	      }
+	    };
+	    this._menu.items.edit.addEventListener('click', onClickEdit.bind(this));
+	  };
+
+	  /**
+	   * Handle the behavior of dialogs
+	   *
+	   * @private 
+	   */
+	  VintSettingsPublicacao.prototype._dialogsHandler = function () {
+	    var deleteTarget /** @type {HTMLElement} */ = this._dialogs.delete.target;
+	    var deleteDialog /** @type {HTMLElement} */ = this._dialogs.delete.dialog;
+	    var deleteButtonConfirm /** @type {HTMLElement} */ = this._dialogs.delete.buttonConfirm;
+	    var deleteButtonCancel /** @type {HTMLElement} */ = this._dialogs.delete.buttonCancel;
+	    var onClickTargetDelete = function onClickTargetDelete(event) {
+	      event.preventDefault();
+	      deleteDialog.showModal();
+	    };
+	    var onDeleteConfirm = function onDeleteConfirm(event) {
+	      this._onDelete();
+	    };
+	    var onDeleteCancel = function onDeleteCancel(event) {
+	      deleteDialog.close();
+	    };
+
+	    // Show delete dialog
+	    deleteTarget.addEventListener('click', onClickTargetDelete.bind(this));
+	    // On confirm delete
+	    deleteButtonConfirm.addEventListener('click', onDeleteConfirm.bind(this));
+	    // On cancel delete
+	    deleteButtonCancel.addEventListener('click', onDeleteCancel.bind(this));
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._onDelete = function () {
+	    // Slug of 'publicacao' to delete
+	    var slug = this._menu.element.dataset[this._datasets.MENU_SETTINGS_CAMEL];
+	    var ajaxOptions = this._getAjaxOptions(slug);
+	    // Disable actions while the request is pending.
+	    this.disableActions();
+	    this._sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @param {string} publicacao slug
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._getAjaxOptions = function (slug) {
+	    var requestHandler = this._constants.DELETE_REQUEST_HANDLER;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var data = {
+	      slug: slug
+	    };
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._dialogs.delete.dialog.close();
+	      if (this._deleted) {
+	        // Removes the deleted element from page
+	        this.off();
+	      } else {
+	        // Only able the actions if the operation was unsucessfuly
+	        this.ableActions();
+	      }
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      headers: headers,
+	      type: 'post',
+	      data: data,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Handle the request response that's comes from server
+	   * 
+	   * @param {object}
+	   * @private
+	   */
+	  VintSettingsPublicacao.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+	    if (!response.hasOwnProperty('success')) return;
+
+	    if (response.success) {
+	      // Deleted with success
+	      this._deleted = true;
+	      message = this._constants.MESSAGE_PUBLICACAO_DELETED;
+	      this.toast({
+	        message: message
+	      });
+	    } else {
+	      // Problems to delete
+	      this._deleted = false;
+	      this.toast({
+	        message: 'Não foi possível remover a publicação'
+	      });
+	      // window.location.reload();
+	    }
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   * @public
+	   */
+	  VintSettingsPublicacao.prototype.init = function () {
+	    if (this._element) {
+	      // Exists the container
+	      this._menu = this._getMenu();
+	      this._dialogs = this._getDialogs();
+	      this._menuHandler();
+	      this._dialogsHandler();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  settingsHandler.register({
+	    constructor: VintSettingsPublicacao,
+	    classAsString: 'VintSettingsPublicacao',
+	    cssClass: 'vint-settings--publicacao'
+	  });
+	})();
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsProjeto - A handler to Vint Settings Projeto.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsProjeto = function VintSettingsProjeto(element) {
+	    this._element = element;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._datasets = {
+	    DIALOG: 'vint-dialog',
+	    DIALOG_TARGET: 'vint-dialog-target',
+	    DIALOG_TARGET_CAMEL: 'vintDialogTarget',
+	    MENU_SETTINGS: 'vint-menu',
+	    MENU_SETTINGS_CAMEL: 'vintMenu',
+	    SETTINGS_HREF: 'vint-href',
+	    SETTINGS_HREF_CAMEL: 'vintHref'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    DELETE_REQUEST_HANDLER: 'projetoSettings::onRequest',
+	    MESSAGE_PUBLICACAO_DELETED: 'O projeto foi removido'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._cssClasses = {
+	    SETTINGS: 'vint-settings',
+	    SETTINGS_MENU: 'vint-settings__menu',
+	    SETTINGS_MENU_BUTTON: 'vint-settings__menu-button',
+	    SETTINGS_MENU_EDIT: 'vint-settings__menu-edit',
+	    SETTINGS_MENU_DELETE: 'vint-settings__menu-delete',
+	    DIALOG_BUTTON_CONFIRM: 'vint-dialog__buton-confirm',
+	    DIALOG_BUTTON_CANCEL: 'vint-dialog__buton-cancel'
+	  };
+
+	  /**
+	   * Stories the flag that indicates state of settings 
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._deleted = false;
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._menu = {};
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._dialogs = {};
+
+	  /**
+	   * Handle the behavior of menu
+	   *
+	   * @private 
+	   */
+	  VintSettingsProjeto.prototype._menuHandler = function () {
+	    var onClickEdit = function onClickEdit(event) {
+	      var location = this._menu.items.edit.dataset[this._datasets.SETTINGS_HREF_CAMEL];
+	      if (location) {
+	        window.location.href = location;
+	      }
+	    };
+	    this._menu.items.edit.addEventListener('click', onClickEdit.bind(this));
+	  };
+
+	  /**
+	   * Handle the behavior of dialogs
+	   *
+	   * @private 
+	   */
+	  VintSettingsProjeto.prototype._dialogsHandler = function () {
+	    var deleteTarget /** @type {HTMLElement} */ = this._dialogs.delete.target;
+	    var deleteDialog /** @type {HTMLElement} */ = this._dialogs.delete.dialog;
+	    var deleteButtonConfirm /** @type {HTMLElement} */ = this._dialogs.delete.buttonConfirm;
+	    var deleteButtonCancel /** @type {HTMLElement} */ = this._dialogs.delete.buttonCancel;
+	    var onClickTargetDelete = function onClickTargetDelete(event) {
+	      event.preventDefault();
+	      deleteDialog.showModal();
+	    };
+	    var onDeleteConfirm = function onDeleteConfirm(event) {
+	      this._onDelete();
+	    };
+	    var onDeleteCancel = function onDeleteCancel(event) {
+	      deleteDialog.close();
+	    };
+
+	    // Show delete dialog
+	    deleteTarget.addEventListener('click', onClickTargetDelete.bind(this));
+	    // On confirm delete
+	    deleteButtonConfirm.addEventListener('click', onDeleteConfirm.bind(this));
+	    // On cancel delete
+	    deleteButtonCancel.addEventListener('click', onDeleteCancel.bind(this));
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._onDelete = function () {
+	    // Slug of 'publicacao' to delete
+	    var slug = this._menu.element.dataset[this._datasets.MENU_SETTINGS_CAMEL];
+	    var ajaxOptions = this._getAjaxOptions(slug);
+	    // Disable actions while the request is pending.
+	    this.disableActions();
+	    this._sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @param {string} publicacao slug
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._getAjaxOptions = function (slug) {
+	    var requestHandler = this._constants.DELETE_REQUEST_HANDLER;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var data = {
+	      slug: slug
+	    };
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this._dialogs.delete.dialog.close();
+	      if (this._deleted) {
+	        // Removes the deleted element from page
+	        this.off();
+	      } else {
+	        // Only able the actions if the operation was unsucessfuly
+	        this.ableActions();
+	      }
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+
+	    return {
+	      headers: headers,
+	      type: 'post',
+	      data: data,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Handle the request response that's comes from server
+	   * 
+	   * @param {object}
+	   * @private
+	   */
+	  VintSettingsProjeto.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+	    if (!response.hasOwnProperty('success')) return;
+
+	    if (response.success) {
+	      // Deleted with success
+	      this._deleted = true;
+	      message = this._constants.MESSAGE_PUBLICACAO_DELETED;
+	      this.toast({
+	        message: message
+	      });
+	    } else {
+	      // Problems to delete
+	      this._deleted = false;
+	      this.toast({
+	        message: 'Não foi possível remover a projeto'
+	      });
+	      // window.location.reload();
+	    }
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   * @public
+	   */
+	  VintSettingsProjeto.prototype.init = function () {
+	    if (this._element) {
+	      // Exists the container
+	      this._menu = this._getMenu();
+	      this._dialogs = this._getDialogs();
+	      this._menuHandler();
+	      this._dialogsHandler();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  settingsHandler.register({
+	    constructor: VintSettingsProjeto,
+	    classAsString: 'VintSettingsProjeto',
+	    cssClass: 'vint-settings--projeto'
+	  });
+	})();
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsPrograma - A handler to Vint Settings Programa.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsPrograma = function VintSettingsPrograma(element) {
+	    this._element = element;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._datasets = {
+	    DIALOG: 'vint-dialog',
+	    DIALOG_TARGET: 'vint-dialog-target',
+	    DIALOG_TARGET_CAMEL: 'vintDialogTarget',
+	    MENU_SETTINGS: 'vint-menu',
+	    MENU_SETTINGS_CAMEL: 'vintMenu',
+	    SETTINGS_HREF: 'vint-href',
+	    SETTINGS_HREF_CAMEL: 'vintHref'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    DELETE_REQUEST_HANDLER: 'programaSettings::onRequest',
+	    MESSAGE_PUBLICACAO_DELETED: 'O programa foi removido'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._cssClasses = {
+	    SETTINGS: 'vint-settings',
+	    SETTINGS_MENU: 'vint-settings__menu',
+	    SETTINGS_MENU_BUTTON: 'vint-settings__menu-button',
+	    SETTINGS_MENU_EDIT: 'vint-settings__menu-edit',
+	    SETTINGS_MENU_DELETE: 'vint-settings__menu-delete',
+	    DIALOG_BUTTON_CONFIRM: 'vint-dialog__buton-confirm',
+	    DIALOG_BUTTON_CANCEL: 'vint-dialog__buton-cancel'
+	  };
+
+	  /**
+	   * Stories the flag that indicates state of settings 
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._deleted = false;
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._menu = {};
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._dialogs = {};
+
+	  /**
+	   * Handle the behavior of menu
+	   *
+	   * @private 
+	   */
+	  VintSettingsPrograma.prototype._menuHandler = function () {
+	    var onClickEdit = function onClickEdit(event) {
+	      var location = this._menu.items.edit.dataset[this._datasets.SETTINGS_HREF_CAMEL];
+	      if (location) {
+	        window.location.href = location;
+	      }
+	    };
+	    this._menu.items.edit.addEventListener('click', onClickEdit.bind(this));
+	  };
+
+	  /**
+	   * Handle the behavior of dialogs
+	   *
+	   * @private 
+	   */
+	  VintSettingsPrograma.prototype._dialogsHandler = function () {
+	    var deleteTarget /** @type {HTMLElement} */ = this._dialogs.delete.target;
+	    var deleteDialog /** @type {HTMLElement} */ = this._dialogs.delete.dialog;
+	    var deleteButtonConfirm /** @type {HTMLElement} */ = this._dialogs.delete.buttonConfirm;
+	    var deleteButtonCancel /** @type {HTMLElement} */ = this._dialogs.delete.buttonCancel;
+	    var onClickTargetDelete = function onClickTargetDelete(event) {
+	      event.preventDefault();
+	      deleteDialog.showModal();
+	    };
+	    var onDeleteConfirm = function onDeleteConfirm(event) {
+	      this._onDelete();
+	    };
+	    var onDeleteCancel = function onDeleteCancel(event) {
+	      deleteDialog.close();
+	    };
+
+	    // Show delete dialog
+	    deleteTarget.addEventListener('click', onClickTargetDelete.bind(this));
+	    // On confirm delete
+	    deleteButtonConfirm.addEventListener('click', onDeleteConfirm.bind(this));
+	    // On cancel delete
+	    deleteButtonCancel.addEventListener('click', onDeleteCancel.bind(this));
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._onDelete = function () {
+	    // Slug of 'publicacao' to delete
+	    var slug = this._menu.element.dataset[this._datasets.MENU_SETTINGS_CAMEL];
+	    var ajaxOptions = this._getAjaxOptions(slug);
+	    // Disable actions while the request is pending.
+	    this.disableActions();
+	    this._sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @param {string} publicacao slug
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._getAjaxOptions = function (slug) {
+	    var requestHandler = this._constants.DELETE_REQUEST_HANDLER;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var data = {
+	      slug: slug
+	    };
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+	    var onComplete = function onComplete() {
+	      this._dialogs.delete.dialog.close();
+	      if (this._deleted) {
+	        // Removes the deleted element from page
+	        this.off();
+	      } else {
+	        // Only able the actions if the operation was unsucessfuly
+	        this.ableActions();
+	      }
+	    };
+
+	    return {
+	      headers: headers,
+	      type: 'post',
+	      data: data,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Handle the request response that's comes from server
+	   * 
+	   * @param {object}
+	   * @private
+	   */
+	  VintSettingsPrograma.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+	    if (!response.hasOwnProperty('success')) return;
+
+	    if (response.success) {
+	      // Deleted with success
+	      this._deleted = true;
+	      message = this._constants.MESSAGE_PUBLICACAO_DELETED;
+	      this.toast({
+	        message: message
+	      });
+	    } else {
+	      // Problems to delete
+	      this._deleted = false;
+	      this.toast({
+	        message: 'Não foi possível remover a programa'
+	      });
+	      // window.location.reload();
+	    }
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   * @public
+	   */
+	  VintSettingsPrograma.prototype.init = function () {
+	    if (this._element) {
+	      // Exists the container
+	      this._menu = this._getMenu();
+	      this._dialogs = this._getDialogs();
+	      this._menuHandler();
+	      this._dialogsHandler();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  settingsHandler.register({
+	    constructor: VintSettingsPrograma,
+	    classAsString: 'VintSettingsPrograma',
+	    cssClass: 'vint-settings--programa'
+	  });
+	})();
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsMembro - A handler to Vint Settings Programa.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsMembro = function VintSettingsMembro(element) {
+	    this._element = element;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._datasets = {
+	    DIALOG: 'vint-dialog',
+	    DIALOG_TARGET: 'vint-dialog-target',
+	    DIALOG_TARGET_CAMEL: 'vintDialogTarget',
+	    MENU_SETTINGS: 'vint-menu',
+	    MENU_SETTINGS_CAMEL: 'vintMenu',
+	    SETTINGS_HREF: 'vint-href',
+	    SETTINGS_HREF_CAMEL: 'vintHref'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    DELETE_REQUEST_HANDLER: 'membroToggleState::onRequest',
+	    MESSAGE_PUBLICACAO_DELETED: 'O membro foi atualizado',
+	    ACCOUNT_COLOR_ABLED: '#69F0AE',
+	    ACCOUNT_COLOR_DISABLED: '#FFFF00',
+	    ACCOUNT_COLOR_REMOVED: '#F44336'
+	  };
+
+	  /** 
+	   * Stories the css classes 
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._cssClasses = {
+	    SETTINGS: 'vint-settings',
+	    SETTINGS_MENU: 'vint-settings__menu',
+	    SETTINGS_MENU_BUTTON: 'vint-settings__menu-button',
+	    SETTINGS_MENU_EDIT: 'vint-settings__menu-edit',
+	    SETTINGS_MENU_DELETE: 'vint-settings__menu-delete',
+	    DIALOG_BUTTON_CONFIRM: 'vint-dialog__buton-confirm',
+	    DIALOG_BUTTON_CANCEL: 'vint-dialog__buton-cancel',
+	    ACCOUNT_ACTIVE_CIRCLE: 'vint-active-circle--account',
+	    TOOLTIP: 'mdl-tooltip'
+	  };
+
+	  /**
+	   * Stories the flag that indicates state of settings 
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._deleted = false;
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._menu = {};
+
+	  /**
+	   * Stories the menu settings data 
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._dialogs = {};
+
+	  /**
+	   * Handle the behavior of menu
+	   *
+	   * @private 
+	   */
+	  VintSettingsMembro.prototype._menuHandler = function () {
+	    if (!this._menu.items.edit || this._menu.items.edit.hasAttribute('disabled')) return;
+	    var onClickEdit = function onClickEdit(event) {
+	      var location = this._menu.items.edit.dataset[this._datasets.SETTINGS_HREF_CAMEL];
+	      if (location) {
+	        window.location.href = location;
+	      }
+	    };
+	    this._menu.items.edit.addEventListener('click', onClickEdit.bind(this));
+	  };
+
+	  /**
+	   * Handle the behavior of dialogs
+	   *
+	   * @private 
+	   */
+	  VintSettingsMembro.prototype._dialogsHandler = function () {
+	    if (!this._dialogs.delete) return;
+	    var deleteTarget /** @type {HTMLElement} */ = this._dialogs.delete.target;
+	    var deleteDialog /** @type {HTMLElement} */ = this._dialogs.delete.dialog;
+	    var deleteButtonConfirm /** @type {HTMLElement} */ = this._dialogs.delete.buttonConfirm;
+	    var deleteButtonCancel /** @type {HTMLElement} */ = this._dialogs.delete.buttonCancel;
+	    var onClickTargetDelete = function onClickTargetDelete(event) {
+	      event.preventDefault();
+	      deleteDialog.showModal();
+	    };
+	    var onDeleteConfirm = function onDeleteConfirm(event) {
+	      this._onDelete();
+	    };
+	    var onDeleteCancel = function onDeleteCancel(event) {
+	      deleteDialog.close();
+	    };
+
+	    // Show delete dialog
+	    deleteTarget.addEventListener('click', onClickTargetDelete.bind(this));
+	    // On confirm delete
+	    deleteButtonConfirm.addEventListener('click', onDeleteConfirm.bind(this));
+	    // On cancel delete
+	    deleteButtonCancel.addEventListener('click', onDeleteCancel.bind(this));
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._onDelete = function () {
+	    // Username to delete
+	    var username = this._menu.element.dataset[this._datasets.MENU_SETTINGS_CAMEL];
+	    var ajaxOptions = this._getAjaxOptions(username);
+	    // Disable actions while the request is pending.
+	    this.disableActions();
+	    this._sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Handle a delete of settings
+	   * 
+	   * @param {string} username
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._getAjaxOptions = function (username) {
+	    var requestHandler = this._constants.DELETE_REQUEST_HANDLER;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var data = {
+	      username: username
+	    };
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onError = function onError(jqXHR, textStatus, errorThrown) {
+	      this._processResponseError(jqXHR, textStatus, errorThrown);
+	    };
+	    var onComplete = function onComplete() {
+	      this._dialogs.delete.dialog.close();
+	      this.ableActions();
+	      if (this._deleted) {
+	        var newText /** @type {string} */;
+	        var activeCircleColor /** @type {string} */;
+	        var activeCircle = this._element.querySelector('.' + this._cssClasses.ACCOUNT_ACTIVE_CIRCLE);
+	        var tooltip = this._element.querySelector('.' + this._cssClasses.TOOLTIP + '[for="' + activeCircle.getAttribute('id') + '"]');
+	        if (this._element.classList.contains('is-off')) {
+	          newText = 'Desativar';
+	          activeCircleColor = this._constants.ACCOUNT_COLOR_ABLED;
+	          tooltip.textContent = 'Conta ativa';
+	          this._element.classList.remove('is-off');
+	        } else {
+	          newText = 'Ativar';
+	          activeCircleColor = this._constants.ACCOUNT_COLOR_DISABLED;
+	          tooltip.textContent = 'Conta desativada';
+	          this._element.classList.add('is-off');
+	        }
+	        // Update the text content of menu item
+	        this._menu.items.delete.textContent = newText;
+	        if (activeCircle) {
+	          activeCircle.style.backgroundColor = activeCircleColor;
+	        }
+	      }
+	    };
+
+	    return {
+	      headers: headers,
+	      type: 'post',
+	      data: data,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this),
+	      error: onError.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Handle the request response that's comes from server
+	   * 
+	   * @param {object}
+	   * @private
+	   */
+	  VintSettingsMembro.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+	    if (!response.hasOwnProperty('success')) return;
+
+	    if (response.success) {
+	      // Deleted with success
+	      this._deleted = true;
+	      message = this._constants.MESSAGE_PUBLICACAO_DELETED;
+	      this.toast({
+	        message: message
+	      });
+	    } else {
+	      // Problems to delete
+	      this._deleted = false;
+	      this.toast({
+	        message: 'Não foi possível atualizar a conta'
+	      });
+	    }
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   * @public
+	   */
+	  VintSettingsMembro.prototype.init = function () {
+	    if (this._element) {
+	      // Exists the container
+	      this._menu = this._getMenu();
+	      this._dialogs = this._getDialogs();
+	      this._menuHandler();
+	      this._dialogsHandler();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  settingsHandler.register({
+	    constructor: VintSettingsMembro,
+	    classAsString: 'VintSettingsMembro',
+	    cssClass: 'vint-settings--membro'
+	  });
+	})();
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * mdl-chip - A Material Design Lite chip component polyfill
+	 * @version v0.1.0
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+
+	(function () {
+	  'use strict';
+	  /**
+	   * Class constructor for Stepper MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} The element that will be upgraded.
+	   */
+
+	  var VintChip = function VintChip(element) {
+	    this._element = element;
+	    // initialize instance
+	    this.init();
+	  };
+
+	  window['VintChip'] = VintChip;
+
+	  /**
+	   * Store strings for states
+	   *
+	   * @enum {string}
+	   * @private
+	   */
+	  VintChip.prototype._states = {
+	    DELETED: 'deleted',
+	    ACTIVE: 'active'
+	  };
+
+	  /**
+	   * Store the custom events
+	   *
+	   * @private
+	   */
+	  VintChip.prototype._customEvents = {
+	    ondelete: new CustomEvent('ondelete', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onshow: new CustomEvent('onshow', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onoff: new CustomEvent('onoff', {
+	      bubbles: true,
+	      cancelable: true
+	    })
+	  };
+
+	  /**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */
+	  VintChip.prototype._cssClasses = {
+	    CHIPS: 'vint-chips',
+	    CHIP: 'vint-chip',
+	    CHIP_DELETABLE: 'vint-chip--deletable',
+	    CHIP_CONTACT: 'vint-chip__contact',
+	    CHIP_TITLE: 'vint-chip__title',
+	    CHIP_REMOVE_BUTTON: 'vint-chip__remove-button',
+	    IS_DELETED: 'is-deleted'
+	  };
+
+	  /**
+	   * Stories all the especifics data for the chip
+	   * 
+	   * @private
+	   */
+	  VintChip.prototype._chip = {};
+
+	  /**
+	   * Stories parent node for the chip
+	   * 
+	   * @private
+	   */
+	  VintChip.prototype.parent = {};
+
+	  /**
+	   * Turn off the chip
+	   * 
+	   * @public
+	   */
+	  VintChip.prototype.off = function () {
+	    // If chip already is off, do nothing.
+	    if (this._chip.state === this._states.DELETED) return;
+
+	    this._element.classList.add(this._cssClasses.IS_DELETED);
+	    this._chip.state = this._states.DELETED;
+	    this._dispatchEventOnOff();
+	  };
+
+	  /**
+	   * Turn up the chip
+	   * 
+	   * @public
+	   */
+	  VintChip.prototype.on = function () {
+	    // If chip already is on, do nothing.
+	    if (this._chip.state === this._states.ACTIVE) return;
+	    if (this.parent) {
+	      // Always display chips in order (append at the end)
+	      this.parent.appendChild(this._element);
+	    }
+	    this._element.classList.remove(this._cssClasses.IS_DELETED);
+	    this._chip.state = this._states.ACTIVE;
+	    this._dispatchEventOnShow();
+	  };
+
+	  /**
+	   * Set the custom events on chip
+	   * 
+	   * @private
+	   */
+	  VintChip.prototype._setCustomEvents = function () {
+	    this._dispatchEventOnShow();
+	    this._dispatchEventOnDelete();
+	  };
+
+	  /**
+	  * Dispatch "onshow" event on chip. 
+	  * 
+	  * @private
+	  */
+	  VintChip.prototype._dispatchEventOnShow = function () {
+	    // This event only occurs if chip is not deleted
+	    if (this._chip.state !== this._states.DELETED) {
+	      this._element.dispatchEvent(this._customEvents.onshow);
+	    }
+	  };
+
+	  /**
+	  * Dispatch "ondelete" event on chip. 
+	  * 
+	  * @private
+	  */
+	  VintChip.prototype._dispatchEventOnDelete = function () {
+	    // This event occurs when clicks on remove button (only if chip is deletable)
+	    if (!this._chip.isDeletable || !this._chip.removeButton) return;
+
+	    var onDeleteChip = function onDeleteChip() {
+	      this._element.dispatchEvent(this._customEvents.ondelete);
+	    };
+	    this._chip.removeButton.addEventListener('click', onDeleteChip.bind(this));
+	  };
+
+	  /**
+	  * Dispatch "ondelete" event on chip. 
+	  * 
+	  * @private
+	  */
+	  VintChip.prototype._dispatchEventOnOff = function () {
+	    // This event occurs when VintChip.off() public method is called
+	    this._element.dispatchEvent(this._customEvents.onoff);
+	  };
+
+	  /**
+	   * Get the chip config options
+	   * 
+	   * @return {Object<VintChip.ChipConfigPrivate>}
+	   * @private
+	   */
+	  VintChip.prototype._getChip = function () {
+	    var state = this._element.classList.contains(this._cssClasses.IS_DELETED) ? this._states.DELETED : this._states.ACTIVE;
+	    var isDeletable = this._element.classList.contains(this._cssClasses.CHIP_DELETABLE);
+	    var removeButton = this._element.querySelector('.' + this._cssClasses.CHIP_REMOVE_BUTTON) || null;
+
+	    return {
+	      state: state,
+	      isDeletable: isDeletable,
+	      removeButton: removeButton
+	    };
+	  };
+
+	  /**
+	    * Get the chip parent
+	    * 
+	    * @return {HTMLElement | boolean}
+	    * @private
+	    */
+	  VintChip.prototype._getParent = function () {
+	    var maxLoop = 10;
+	    var parent = this._element.parentNode;
+	    var found = false;
+	    var i = 0;
+	    while (!found) {
+	      if (parent.classList.contains(this._cssClasses.CHIPS)) {
+	        found = true;
+	      } else {
+	        parent = parent.parentNode;
+	      }
+	      i++;
+	      // Max number of attempts
+	      if (i >= maxLoop) {
+	        parent = false;
+	        break;
+	      }
+	    }
+	    return parent;
+	  };
+
+	  /**
+	   * Get object with chips ordered by node sequence at DOM 
+	   * 
+	   * @return {object}
+	   * @public
+	   */
+	  VintChip.prototype.getParentOrder = function () {
+	    var chips = this.parent.querySelectorAll('.' + this._cssClasses.CHIP);
+	    var order = {};
+	    var index /** @type {number} */;
+	    for (var i = 0; i < chips.length; i++) {
+	      // Check if chip is active (not deleted)
+	      if (!chips[i].classList.contains(this._cssClasses.IS_DELETED)) {
+	        index = Object.keys(order).length + 1;
+	        order[index] = chips[i];
+	      }
+	    }
+
+	    return order;
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * @public
+	   */
+	  VintChip.prototype.init = function () {
+	    if (!this._element) return;
+
+	    // Load all important data related to chip
+	    this._chip = this._getChip();
+	    // Get the parent of chip
+	    this.parent = this._getParent();
+	    // Initialize the custom events
+	    this._setCustomEvents();
+	  };
+
+	  /**
+	   * @type {{
+	   *  state: string,
+	   *  isDeletable: boolean,
+	   *  removeButton: HTMLElement | null,
+	   * }}
+	   * 
+	   * @private
+	   */
+	  VintChip.ChipConfigPrivate;
+
+	  // The component registers itself. It can assume componentHandler is available
+	  // in the global scope.
+	  componentHandler.register({
+	    constructor: VintChip,
+	    classAsString: 'VintChip',
+	    cssClass: 'vint-chip',
+	    widget: true
+	  });
+	})();
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * material-design-lite-stepper - A Material Design Lite Stepper component polyfill
+	 * @version v0.1.0
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 * @link https://github.com/ahlechandre/mdl-stepper
+	 */
+
+	(function () {
+	  'use strict';
+	  /**
+	   * Class constructor for Stepper MDL component.
+	   * Implements MDL component design pattern defined at:
+	   * https://github.com/jasonmayes/mdl-component-design-pattern
+	   *
+	   * @constructor
+	   * @param {HTMLElement} The element that will be upgraded.
+	   */
+
+	  var MaterialStepper = function MaterialStepper(element) {
+	    this.element_ = element;
+
+	    // initialize instance
+	    this.init();
+	  };
+
+	  window['MaterialStepper'] = MaterialStepper;
+
+	  /**
+	   * Store properties of stepper
+	   * @private
+	   */
+	  MaterialStepper.prototype.Stepper_ = {};
+
+	  /**
+	   * Get properties of stepper
+	   * @private
+	   */
+	  MaterialStepper.prototype.getStepper_ = function () {
+	    return {
+	      isLinear: this.element_.classList.contains(this.CssClasses_.STEPPER_LINEAR),
+	      hasFeedback: this.element_.classList.contains(this.CssClasses_.STEPPER_FEEDBACK)
+	    };
+	  };
+
+	  /**
+	   * Store strings for steps states
+	   *
+	   * @enum {string}
+	   * @private
+	   */
+	  MaterialStepper.prototype.StepState_ = {
+	    COMPLETED: 'completed',
+	    ERROR: 'error',
+	    NORMAL: 'normal'
+	  };
+
+	  /**
+	   * Store strings for dataset attributes defined by this component that are used for
+	   * JavaScript custom events.
+	   *
+	   * @enum {string}
+	   * @private
+	   */
+	  MaterialStepper.prototype.DatasetAttributes_ = {
+	    CONTINUE: 'stepper-next',
+	    CANCEL: 'stepper-cancel',
+	    SKIP: 'stepper-skip',
+	    BACK: 'stepper-back'
+	  };
+
+	  /**
+	   * Store the custom events applieds to the steps and stepper
+	   *
+	   * @private
+	   */
+	  MaterialStepper.prototype.CustomEvents_ = {
+	    onstepnext: new CustomEvent('onstepnext', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onstepcancel: new CustomEvent('onstepcancel', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onstepskip: new CustomEvent('onstepskip', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onstepback: new CustomEvent('onstepback', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onstepcomplete: new CustomEvent('onstepcomplete', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onsteperror: new CustomEvent('onsteperror', {
+	      bubbles: true,
+	      cancelable: true
+	    }),
+	    onsteppercomplete: new CustomEvent('onsteppercomplete', {
+	      bubbles: true,
+	      cancelable: true
+	    })
+	  };
+
+	  /**
+	   * Store strings for class names defined by this component that are used in
+	   * JavaScript. This allows us to simply change it in one place should we
+	   * decide to modify at a later date.
+	   *
+	   * @enum {string}
+	   * @private
+	   */
+	  MaterialStepper.prototype.CssClasses_ = {
+	    RIPPLE_EFFECT: 'mdl-js-ripple-effect',
+	    BUTTON_JS: 'mdl-js-button',
+	    STEPPER_LINEAR: 'mdl-stepper--linear',
+	    STEPPER_FEEDBACK: 'mdl-stepper--feedback',
+	    STEP_COMPLETED: 'mdl-step--completed',
+	    STEP_ERROR: 'mdl-step--error',
+	    STEP_TRANSIENT: 'mdl-step--transient',
+	    STEP_OPTIONAL: 'mdl-step--optional',
+	    STEP_EDITABLE: 'mdl-step--editable',
+	    IS_ACTIVE: 'is-active',
+	    TRANSIENT: 'mdl-step__transient',
+	    TRANSIENT_OVERLAY: 'mdl-step__transient-overlay',
+	    TRANSIENT_LOADER: 'mdl-step__transient-loader',
+	    SPINNER: 'mdl-spinner',
+	    SPINNER_JS: 'mdl-js-spinner',
+	    SPINNER_IS_ACTIVE: 'is-active',
+	    STEPPER: 'mdl-stepper',
+	    STEP: 'mdl-step',
+	    STEP_LABEL: 'mdl-step__label',
+	    STEP_LABEL_INDICATOR: 'mdl-step__label-indicator',
+	    STEP_LABEL_INDICATOR_CONTENT: 'mdl-step__label-indicator-content',
+	    STEP_TITLE: 'mdl-step__title',
+	    STEP_TITLE_TEXT: 'mdl-step__title-text',
+	    STEP_TITLE_MESSAGE: 'mdl-step__title-message',
+	    STEP_CONTENT: 'mdl-step__content',
+	    STEP_ACTIONS: 'mdl-step__actions'
+	  };
+
+	  /**
+	   * Store collection of steps and important data about them
+	   * @private
+	   */
+	  MaterialStepper.prototype.Steps_ = {};
+
+	  /**
+	   * @param {MaterialStepper.Steps_.collection.<step>} Step that will get the label indicator
+	   * @return {HTMLElement} Element that's represent the label indicator
+	   * @private
+	   */
+	  MaterialStepper.prototype.getIndicatorElement_ = function (step) {
+	    var indicatorElement = document.createElement('span');
+	    var indicatorContent = this.getIndicatorContentNormal_(step.label_indicator_text);
+	    indicatorElement.classList.add(this.CssClasses_.STEP_LABEL_INDICATOR);
+	    indicatorElement.appendChild(indicatorContent);
+	    return indicatorElement;
+	  };
+
+	  /**
+	   * Create a new element that's represent "normal" label indicator
+	   * @return {HTMLElement}
+	   * @private
+	   */
+	  MaterialStepper.prototype.getIndicatorContentNormal_ = function (text) {
+	    var normal = document.createElement('span');
+	    normal.classList.add(this.CssClasses_.STEP_LABEL_INDICATOR_CONTENT);
+	    normal.textContent = text;
+	    return normal;
+	  };
+
+	  /**
+	   * Create a new element that's represent "completed" label indicator
+	   * @return {HTMLElement}
+	   * @private
+	   */
+	  MaterialStepper.prototype.getIndicatorContentCompleted_ = function (isEditable) {
+	    // Creates a new material icon to represent the completed step
+	    var completed = document.createElement('i');
+	    completed.classList.add('material-icons', this.CssClasses_.STEP_LABEL_INDICATOR_CONTENT);
+	    // If step is editable the icon used will be "edit", else the icon will be "check"
+	    completed.textContent = isEditable ? 'edit' : 'check';
+	    return completed;
+	  };
+
+	  /**
+	   * Create a new element that's represent "error" label indicator
+	   * @return {HTMLElement}
+	   * @private
+	   */
+	  MaterialStepper.prototype.getIndicatorContentError_ = function (step) {
+	    var error = document.createElement('span');
+	    error.classList.add(this.CssClasses_.STEP_LABEL_INDICATOR_CONTENT);
+	    error.textContent = '!';
+	    return error;
+	  };
+
+	  /**
+	   * Defines a new step model
+	   * @private
+	   */
+	  MaterialStepper.prototype.getStepModel_ = function (step, id) {
+	    var model = {};
+	    model.container = step;
+	    model.id = id;
+	    model.label = step.querySelector('.' + this.CssClasses_.STEP_LABEL);
+	    model.label_indicator_text = id;
+	    model.label_title = step.querySelector('.' + this.CssClasses_.STEP_TITLE);
+	    model.label_title_text = step.querySelector('.' + this.CssClasses_.STEP_TITLE_TEXT).textContent;
+	    model.label_title_message = step.querySelector('.' + this.CssClasses_.STEP_TITLE_MESSAGE);
+	    model.label_title_message_text = model.label_title_message ? model.label_title_message.textContent : '';
+	    model.content = step.querySelector('.' + this.CssClasses_.STEP_CONTENT);
+	    model.actions = step.querySelector('.' + this.CssClasses_.STEP_ACTIONS);
+	    model.actions_next = model.actions.querySelector('[data-' + this.DatasetAttributes_.CONTINUE + ']') || null;
+	    model.actions_cancel = model.actions.querySelector('[data-' + this.DatasetAttributes_.CANCEL + ']') || null;
+	    model.actions_skip = model.actions.querySelector('[data-' + this.DatasetAttributes_.SKIP + ']') || null;
+	    model.actions_back = model.actions.querySelector('[data-' + this.DatasetAttributes_.BACK + ']') || null;
+	    model.label_indicator = model.label.querySelector('.' + this.CssClasses_.STEP_LABEL_INDICATOR);
+	    if (!model.label_indicator) {
+	      // Creates a new indicator for the label if not exists
+	      model.label_indicator = this.getIndicatorElement_(model);
+	      model.label.appendChild(model.label_indicator);
+	    }
+	    model.state = step.classList.contains(this.CssClasses_.STEP_COMPLETED) ? this.StepState_.COMPLETED : step.classList.contains(this.CssClasses_.STEP_ERROR) ? this.StepState_.ERROR : this.StepState_.NORMAL;
+	    model.isActive = step.classList.contains(this.CssClasses_.IS_ACTIVE);
+	    model.isOptional = step.classList.contains(this.CssClasses_.STEP_OPTIONAL);
+	    model.isEditable = step.classList.contains(this.CssClasses_.STEP_EDITABLE);
+	    return model;
+	  };
+
+	  /**
+	   * Get the active step container
+	   * @return {HTMLElement}
+	   */
+	  MaterialStepper.prototype.getActive = function () {
+	    var element = this.Steps_.collection[this.Steps_.active - 1].container;
+	    return element;
+	  };
+
+	  /**
+	   * Get the active step id
+	   * @return {number}
+	   */
+	  MaterialStepper.prototype.getActiveId = function () {
+	    var id = this.Steps_.collection[this.Steps_.active - 1].id;
+	    return id;
+	  };
+
+	  /**
+	   * Load the model of all steps and store inside a collection
+	   * @private
+	   */
+	  MaterialStepper.prototype.getSteps_ = function () {
+	    var collection = [];
+	    var total = 0;
+	    var completed = 0;
+	    var optional = 0;
+	    var active = 0;
+	    var stepElements = this.element_.querySelectorAll('.' + this.CssClasses_.STEP);
+	    for (var i = 0; i < stepElements.length; i++) {
+	      collection[i] = this.getStepModel_(stepElements[i], i + 1);
+	      if (collection[i].isOptional) {
+	        optional += 1;
+	      }
+
+	      if (collection[i].isActive) {
+	        active = collection[i].id;
+	      }
+	    }
+	    total = collection.length;
+	    return {
+	      collection: collection,
+	      total: total,
+	      completed: completed,
+	      optional: optional,
+	      active: active
+	    };
+	  };
+
+	  /**
+	   * Add material desing lite ripple effect classes on labels and upgrade the DOM.
+	   * 
+	   * @param {MaterialStepper.Steps_.collection[<number>]} 
+	   * @private
+	   */
+	  MaterialStepper.prototype.LabelRippleEffect_ = function (step) {
+	    var setEffect = function setEffect(step, index, steps) {
+	      step.label.classList.add(this.CssClasses_.BUTTON_JS);
+	      step.label.classList.add(this.CssClasses_.RIPPLE_EFFECT);
+	    };
+
+	    if (step) {
+	      setEffect.bind(this)(step);
+	    } else {
+	      this.Steps_.collection.forEach(setEffect.bind(this));
+	    }
+	    // Assume componentHandler is available in the global scope.
+	    componentHandler.upgradeDom();
+	  };
+
+	  /**
+	   * Defines a specific step as "active".
+	   * @private
+	   */
+	  MaterialStepper.prototype.setStepActive_ = function (step) {
+	    // The transient effect blocks the stepper to move
+	    if (this.hasTransient()) return false;
+	    var stepsDeactivator = function stepsDeactivator(step, index, steps) {
+	      step.container.classList.remove(this.CssClasses_.IS_ACTIVE);
+	      if (step.isActive) {
+	        step.isActive = false;
+	      }
+	    };
+	    this.Steps_.collection.forEach(stepsDeactivator.bind(this));
+	    // remove if step was in transient (feedback) effect
+	    step.container.classList.remove(this.CssClasses_.STEP_TRANSIENT);
+	    step.container.classList.add(this.CssClasses_.IS_ACTIVE);
+	    step.isActive = true;
+	    this.Steps_.active = step.id;
+	    return true;
+	  };
+
+	  /**
+	   * Defines as "active" the first step or a specific id.
+	   * @param {number|undefined} - step model id
+	   * @return {boolean}
+	   * @private
+	   */
+	  MaterialStepper.prototype.setActive_ = function (id) {
+	    // Return false if specified id is less or equal 0 and bigger than the last step
+	    if (!isNaN(id) && (id > this.Steps_.total || id <= 0)) return false;
+
+	    var moved = false;
+
+	    if (id) {
+	      for (var i = 0; i < this.Steps_.total; i++) {
+	        var step = this.Steps_.collection[i];
+	        if (step.id === id) {
+	          moved = this.setStepActive_(step);
+	          break;
+	        }
+	      }
+	    } else {
+	      var active = this.element_.querySelector('.' + this.CssClasses_.IS_ACTIVE);
+	      if (!active) {
+	        // Set the first step as "active" if none id was specified and
+	        // no "active" step was found at the DOM
+	        var first = this.Steps_.collection[0];
+	        moved = this.setStepActive_(first);
+	      }
+	    }
+
+	    if (this.Stepper_.isLinear) {
+	      // We know that all steps previous the "active" are "completed"
+	      // case the stepper is linear
+	      this.updateLinearStates_();
+	    }
+	    return moved;
+	  };
+
+	  /**
+	   * Change the state of a step
+	   * 
+	   * @param {MaterialStepper.Steps_.collection[<number>]}
+	   * @param {string} - state can be "completed", "error", "normal"
+	   * @return {boolean}
+	   * @private
+	   */
+	  MaterialStepper.prototype.updateStepState_ = function (step, state) {
+	    // We know that can't update the state for the same
+	    if (step.state === state) return false;
+
+	    // Case the current step state to change is "completed",
+	    // we can decrement the total number of completed        
+	    if (step.state === this.StepState_.COMPLETED) {
+	      this.Steps_.completed -= 1;
+	    }
+	    var stateClass;
+	    var indicatorContent;
+	    var currentIndicatorContent = step.label_indicator.querySelector('.' + this.CssClasses_.STEP_LABEL_INDICATOR_CONTENT);
+	    switch (state) {
+	      case this.StepState_.COMPLETED:
+	        {
+	          // Case changing the current step state to "completed",
+	          // we can increment the total number of completed
+	          this.Steps_.completed += 1;
+	          step.container.classList.remove(this.CssClasses_.STEP_ERROR);
+	          indicatorContent = this.getIndicatorContentCompleted_(step.isEditable);
+	          stateClass = this.CssClasses_.STEP_COMPLETED;
+	          break;
+	        }
+	      case this.StepState_.ERROR:
+	        {
+	          step.container.classList.remove(this.CssClasses_.STEP_COMPLETED);
+	          indicatorContent = this.getIndicatorContentError_();
+	          stateClass = this.CssClasses_.STEP_ERROR;
+	          break;
+	        }
+	      case this.StepState_.NORMAL:
+	        {
+	          step.container.classList.remove(this.CssClasses_.STEP_COMPLETED);
+	          step.container.classList.remove(this.CssClasses_.STEP_ERROR);
+	          indicatorContent = this.getIndicatorContentNormal_(step.label_indicator_text);
+	          break;
+	        }
+	    }
+
+	    // "normal" is the default state and don't have specific css class
+	    if (stateClass) {
+	      step.container.classList.add(stateClass);
+	    }
+	    step.label_indicator.replaceChild(indicatorContent, currentIndicatorContent);
+	    step.state = state;
+
+	    // Case the total number of completed steps
+	    // are equal the total number of steps less the optionals
+	    // or total number of completed steps are equal the total number of steps,
+	    // we can consider that the stepper are successfully complete and
+	    // dispatch the custom event
+	    var stepperCompleted = false;
+
+	    if (this.Steps_.completed === this.Steps_.total) {
+	      stepperCompleted = true;
+	    } else if (this.Steps_.completed === this.Steps_.total - this.Steps_.optional) {
+	      var hasRequired;
+	      for (var item in this.Steps_.collection) {
+	        var stepItem = this.Steps_.collection[item];
+	        hasRequired = !stepItem.isOptional && stepItem.state !== this.StepState_.COMPLETED;
+	        if (hasRequired) break;
+	      }
+	      stepperCompleted = !hasRequired;
+	    }
+
+	    if (stepperCompleted) {
+	      this.dispatchEventOnStepperComplete_();
+	    }
+	    return true;
+	  };
+
+	  /**
+	   * Change to "completed" the state of all steps previous the "active"
+	   * except the optionals
+	   * 
+	   * @private
+	   */
+	  MaterialStepper.prototype.updateLinearStates_ = function () {
+	    for (var i = 0; i < this.Steps_.total; i++) {
+	      if (!this.Steps_.collection[i].isActive) {
+	        if (this.Steps_.collection[i].isOptional) continue;
+	        this.updateStepState_(this.Steps_.collection[i], this.StepState_.COMPLETED);
+	      } else {
+	        break;
+	      }
+	    }
+	  };
+
+	  /**
+	   * Move "active" to the previous step. This operation can returns false 
+	   * if it does not regress the step.
+	   * 
+	   * @return {boolean}
+	   */
+	  MaterialStepper.prototype.back = function () {
+	    var moved = false;
+	    var moveStep = function moveStep(step) {
+	      var moved = this.setActive_(step.id);
+	      if (moved) {
+	        if (moved && this.Stepper_.hasFeedback) {
+	          // Remove the (feedback) transient effect before move
+	          this.removeTransientEffect_(step);
+	        }
+	      }
+	      return moved;
+	    };
+	    for (var model in this.Steps_.collection) {
+	      var step = this.Steps_.collection[model];
+
+	      if (step.isActive) {
+	        var previous = this.Steps_.collection[step.id - 2];
+	        if (!previous) return false;
+	        if (this.Stepper_.isLinear) {
+	          if (previous.isEditable) {
+	            moved = moveStep.bind(this)(previous);
+	          }
+	        } else {
+	          moved = moveStep.bind(this)(previous);
+	        }
+	        break;
+	      }
+	    }
+	    return moved;
+	  };
+
+	  /**
+	   * Move "active" to the next if the current step is optional. This operation can returns false 
+	   * if it does not advances the step.
+	   * 
+	   * @return {boolean}
+	   */
+	  MaterialStepper.prototype.skip = function () {
+	    var moved = false;
+	    for (var model in this.Steps_.collection) {
+	      var step = this.Steps_.collection[model];
+
+	      if (step.isActive) {
+	        if (step.isOptional) {
+	          moved = this.setActive_(step.id + 1);
+	          if (moved && this.Stepper_.hasFeedback) {
+	            // Remove the (feedback) transient effect before move
+	            this.removeTransientEffect_(step);
+	          }
+	        }
+	        break;
+	      }
+	    }
+	    return moved;
+	  };
+
+	  /**
+	   * Move "active" to specified step id. 
+	   * This operation is similar to the MaterialStepper.setActive_(<number>).
+	   * 
+	   * @return {boolean}
+	   */
+	  MaterialStepper.prototype.goto = function (id) {
+	    return this.setActive_(id);
+	  };
+
+	  /**
+	  * Defines the current state of step to "error" 
+	  * and display alert message instead of default title message. 
+	  *
+	  * @param {string} 
+	  */
+	  MaterialStepper.prototype.error = function (message) {
+	    for (var model in this.Steps_.collection) {
+	      var step = this.Steps_.collection[model];
+
+	      if (step.isActive) {
+	        if (this.Stepper_.hasFeedback) {
+	          // Remove the (feedback) transient effect before move
+	          this.removeTransientEffect_(step);
+	        }
+	        this.updateStepState_(step, this.StepState_.ERROR);
+	        if (message) {
+	          this.updateTitleMessage_(step, message);
+	        }
+	        // Now dispatch on step the custom event "onsteperror" 
+	        this.dispatchEventOnStepError_(step);
+	        break;
+	      }
+	    }
+	  };
+
+	  /**
+	  * Defines current step state to "completed" and move active to the next. 
+	  * This operation can returns false if it does not advance the step. 
+	  * 
+	  * @return {boolean}
+	  */
+	  MaterialStepper.prototype.next = function () {
+	    var moved = false;
+	    for (var model in this.Steps_.collection) {
+	      var step = this.Steps_.collection[model];
+
+	      if (step.isActive) {
+	        var activate = step.id + 1;
+
+	        if (this.Stepper_.hasFeedback) {
+	          // Remove the (feedback) transient effect before move
+	          this.removeTransientEffect_(step);
+	        }
+
+	        if (step.state === this.StepState_.ERROR) {
+	          // Case the current state of step is "error", update the error message
+	          // to the original title message or just remove it.
+	          if (step.label_title_message_text) {
+	            this.updateTitleMessage_(step, step.label_title_message_text);
+	          } else {
+	            this.removeTitleMessage_(step);
+	          }
+	        }
+
+	        if (step.isEditable && this.Stepper_.isLinear) {
+	          // In linear steppers if the current step is editable the stepper needs to find
+	          // the next step without "completed" state
+	          for (var item in this.Steps_.collection) {
+	            var stepItem = this.Steps_.collection[item];
+	            if (stepItem.id > step.id && stepItem.state !== this.StepState_.COMPLETED) {
+	              activate = stepItem.id;
+	              break;
+	            }
+	          }
+	        }
+	        moved = this.setActive_(activate);
+	        // Update "manually" the state of current step to "completed" because
+	        // MaterialStepper.setActive_(<number>) can't change the state of non-linears steppers
+	        // and can't change the state of optional or last step in linears steppers.
+	        if (this.Stepper_.isLinear) {
+	          if (step.isOptional || step.id === this.Steps_.total) {
+	            this.updateStepState_(step, this.StepState_.COMPLETED);
+	          }
+	          if (step.isEditable) {
+	            this.LabelRippleEffect_(step);
+	          }
+	        } else {
+	          this.updateStepState_(step, this.StepState_.COMPLETED);
+	        }
+
+	        // Now dispatch on step the custom event "onstepcomplete"
+	        this.dispatchEventOnStepComplete_(step);
+	        break;
+	      }
+	    }
+	    return moved;
+	  };
+
+	  /**
+	  * Update the title message or creates a new if it not exists. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  * @param {string}
+	  */
+	  MaterialStepper.prototype.updateTitleMessage_ = function (step, text) {
+	    var titleMessage = step.container.querySelector('.' + this.CssClasses_.STEP_TITLE_MESSAGE);
+
+	    if (!titleMessage) {
+	      titleMessage = document.createElement('span');
+	      titleMessage.classList.add(this.CssClasses_.STEP_TITLE_MESSAGE);
+	      step.label_title.appendChild(titleMessage);
+	    }
+
+	    titleMessage.textContent = text;
+	  };
+
+	  /**
+	  * Remove the title message if it exists. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.removeTitleMessage_ = function (step) {
+	    var titleMessage = step.container.querySelector('.' + this.CssClasses_.STEP_TITLE_MESSAGE);
+	    if (titleMessage) {
+	      titleMessage.parentNode.removeChild(titleMessage);
+	    }
+	  };
+
+	  /**
+	  * Remove (feedback) transient effect and applied to the step. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  * @return {boolean}
+	  */
+	  MaterialStepper.prototype.removeTransientEffect_ = function (step) {
+	    var transient = step.content.querySelector('.' + this.CssClasses_.TRANSIENT);
+	    if (!transient) return false;
+
+	    step.container.classList.remove(this.CssClasses_.STEP_TRANSIENT);
+	    step.content.removeChild(transient);
+	    return true;
+	  };
+
+	  /**
+	  * Create (feedback) transient effect and apply to the current step. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  * @return {boolean}
+	  */
+	  MaterialStepper.prototype.addTransientEffect_ = function (step) {
+	    if (step.content.querySelector('.' + this.CssClasses_.TRANSIENT)) return false;
+	    var transient = document.createElement('div');
+	    var overlay = document.createElement('div');
+	    var loader = document.createElement('div');
+	    var spinner = document.createElement('div');
+	    transient.classList.add(this.CssClasses_.TRANSIENT);
+	    overlay.classList.add(this.CssClasses_.TRANSIENT_OVERLAY);
+	    loader.classList.add(this.CssClasses_.TRANSIENT_LOADER);
+	    spinner.classList.add(this.CssClasses_.SPINNER);
+	    spinner.classList.add(this.CssClasses_.SPINNER_JS);
+	    spinner.classList.add(this.CssClasses_.SPINNER_IS_ACTIVE);
+	    loader.appendChild(spinner);
+	    transient.appendChild(overlay);
+	    transient.appendChild(loader);
+	    step.container.classList.add(this.CssClasses_.STEP_TRANSIENT);
+	    step.content.appendChild(transient);
+	    // Assume componentHandler is available in the global scope.
+	    componentHandler.upgradeDom();
+	    return true;
+	  };
+
+	  /**
+	  * Add event listener to linear, non-linear steppers and dispatch the custom events. 
+	  * 
+	  */
+	  MaterialStepper.prototype.setCustomEvents_ = function () {
+	    var linearLabels = function linearLabels(step, index, steps) {
+	      // We know that editable steps can be activated by click on label case it's completed
+	      if (step.isEditable) {
+	        step.label.addEventListener('click', function (event) {
+	          event.preventDefault();
+	          if (step.state === this.StepState_.COMPLETED) {
+	            this.setStepActive_(step);
+	          }
+	        }.bind(this));
+	      }
+	    };
+	    var nonLinearLabels = function nonLinearLabels(step, index, steps) {
+	      step.label.addEventListener('click', function (event) {
+	        event.preventDefault();
+	        this.setStepActive_(step);
+	      }.bind(this));
+	    };
+	    var dispatchCustomEvents = function dispatchCustomEvents(step, index, steps) {
+	      this.dispatchEventOnStepNext_(step);
+	      this.dispatchEventOnStepCancel_(step);
+	      this.dispatchEventOnStepSkip_(step);
+	      this.dispatchEventOnStepBack_(step);
+	    };
+
+	    if (this.Stepper_.isLinear) {
+	      this.Steps_.collection.forEach(linearLabels.bind(this));
+	    } else {
+	      this.Steps_.collection.forEach(nonLinearLabels.bind(this));
+	    }
+	    this.Steps_.collection.forEach(dispatchCustomEvents.bind(this));
+	  };
+
+	  /**
+	  * Dispatch "onstepcomplete" event on step when method stepper.next() is invoked to the 
+	  * current and return true. Or just when the active step change your state to "completed" 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepComplete_ = function (step) {
+	    step.container.dispatchEvent(this.CustomEvents_.onstepcomplete);
+	  };
+
+	  /**
+	  * Dispatch "onsteperror" event on step when method stepper.error('Your alert message') 
+	  * is invoked to the current step and return true. Or just when the active step 
+	  * change your state to "error" 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepError_ = function (step) {
+	    step.container.dispatchEvent(this.CustomEvents_.onsteperror);
+	  };
+
+	  /**
+	  * Dispatch "onsteppercomplete" event on stepper when all steps are completed. 
+	  * If there is optionals steps, they will be ignored.
+	  * 
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepperComplete_ = function () {
+	    this.element_.dispatchEvent(this.CustomEvents_.onsteppercomplete);
+	  };
+
+	  /**
+	  * Dispatch "onstepnext" event on step when the step action button/link with 
+	  * [data-stepper-next] attribute is clicked. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepNext_ = function (step) {
+	    if (!step.actions_next) return false;
+
+	    step.actions_next.addEventListener('click', function (event) {
+	      if (this.Stepper_.hasFeedback) {
+	        this.addTransientEffect_(step);
+	      }
+	      step.container.dispatchEvent(this.CustomEvents_.onstepnext);
+	    }.bind(this));
+	  };
+
+	  /**
+	  * Dispatch "onstepcancel" event on step when the step action button/link with 
+	  * [data-stepper-cancel] attribute is clicked. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepCancel_ = function (step) {
+	    if (!step.actions_cancel) return false;
+
+	    step.actions_cancel.addEventListener('click', function (event) {
+	      event.preventDefault();
+	      step.container.dispatchEvent(this.CustomEvents_.onstepcancel);
+	    }.bind(this));
+	  };
+
+	  /**
+	  * Dispatch "onstepskip" event on step when the step action button/link with 
+	  * [data-stepper-skip] attribute is clicked. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepSkip_ = function (step) {
+	    if (!step.actions_skip) return false;
+
+	    step.actions_skip.addEventListener('click', function (event) {
+	      event.preventDefault();
+	      step.container.dispatchEvent(this.CustomEvents_.onstepskip);
+	    }.bind(this));
+	  };
+
+	  /**
+	  * Dispatch "onstepback" event on step when the step action button/link with 
+	  * [data-stepper-back] attribute is clicked. 
+	  * 
+	  * @param {MaterialStepper.Steps_.collection[<number>]}
+	  */
+	  MaterialStepper.prototype.dispatchEventOnStepBack_ = function (step) {
+	    if (!step.actions_back) return false;
+
+	    step.actions_back.addEventListener('click', function (event) {
+	      event.preventDefault();
+	      step.container.dispatchEvent(this.CustomEvents_.onstepback);
+	    }.bind(this));
+	  };
+
+	  /**
+	  * Check if has some active transient effect on steps
+	  *
+	  * @return {boolean} 
+	  */
+	  MaterialStepper.prototype.hasTransient = function () {
+	    var cssClasseStep = '.' + this.CssClasses_.STEP;
+	    var cssClasseStepContent = '.' + this.CssClasses_.STEP_CONTENT;
+	    var cssClasseTransient = '.' + this.CssClasses_.TRANSIENT;
+	    var transient = this.element_.querySelector(cssClasseStep + ' > ' + cssClasseStepContent + ' > ' + cssClasseTransient);
+	    return transient ? true : false;
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * @public
+	   */
+	  MaterialStepper.prototype.init = function () {
+	    if (this.element_) {
+	      this.Stepper_ = this.getStepper_();
+	      this.Steps_ = this.getSteps_();
+	      if (!this.Stepper_.isLinear) {
+	        // non-linears stepper has ripple effect on labels
+	        this.LabelRippleEffect_();
+	      }
+	      this.setActive_();
+	      this.setCustomEvents_();
+	    }
+	  };
+
+	  // The component registers itself. It can assume componentHandler is available
+	  // in the global scope.
+	  componentHandler.register({
+	    constructor: MaterialStepper,
+	    classAsString: 'MaterialStepper',
+	    cssClass: 'mdl-stepper',
+	    widget: true
+	  });
+	})();
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {'use strict';
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
+	(function () {
+
+	  var supportCustomEvent = window.CustomEvent;
+	  if (!supportCustomEvent || (typeof supportCustomEvent === 'undefined' ? 'undefined' : _typeof(supportCustomEvent)) == 'object') {
+	    supportCustomEvent = function CustomEvent(event, x) {
+	      x = x || {};
+	      var ev = document.createEvent('CustomEvent');
+	      ev.initCustomEvent(event, !!x.bubbles, !!x.cancelable, x.detail || null);
+	      return ev;
+	    };
+	    supportCustomEvent.prototype = window.Event.prototype;
+	  }
+
+	  /**
+	   * Finds the nearest <dialog> from the passed element.
+	   *
+	   * @param {Element} el to search from
+	   * @return {HTMLDialogElement} dialog found
+	   */
+	  function findNearestDialog(el) {
+	    while (el) {
+	      if (el.nodeName.toUpperCase() == 'DIALOG') {
+	        return (/** @type {HTMLDialogElement} */el
+	        );
+	      }
+	      el = el.parentElement;
+	    }
+	    return null;
+	  }
+
+	  /**
+	   * Blur the specified element, as long as it's not the HTML body element.
+	   * This works around an IE9/10 bug - blurring the body causes Windows to
+	   * blur the whole application.
+	   *
+	   * @param {Element} el to blur
+	   */
+	  function safeBlur(el) {
+	    if (el && el.blur && el != document.body) {
+	      el.blur();
+	    }
+	  }
+
+	  /**
+	   * @param {!NodeList} nodeList to search
+	   * @param {Node} node to find
+	   * @return {boolean} whether node is inside nodeList
+	   */
+	  function inNodeList(nodeList, node) {
+	    for (var i = 0; i < nodeList.length; ++i) {
+	      if (nodeList[i] == node) {
+	        return true;
+	      }
+	    }
+	    return false;
+	  }
+
+	  /**
+	   * @param {!HTMLDialogElement} dialog to upgrade
+	   * @constructor
+	   */
+	  function dialogPolyfillInfo(dialog) {
+	    this.dialog_ = dialog;
+	    this.replacedStyleTop_ = false;
+	    this.openAsModal_ = false;
+
+	    // Set a11y role. Browsers that support dialog implicitly know this already.
+	    if (!dialog.hasAttribute('role')) {
+	      dialog.setAttribute('role', 'dialog');
+	    }
+
+	    dialog.show = this.show.bind(this);
+	    dialog.showModal = this.showModal.bind(this);
+	    dialog.close = this.close.bind(this);
+
+	    if (!('returnValue' in dialog)) {
+	      dialog.returnValue = '';
+	    }
+
+	    this.maybeHideModal = this.maybeHideModal.bind(this);
+	    if ('MutationObserver' in window) {
+	      // IE11+, most other browsers.
+	      var mo = new MutationObserver(this.maybeHideModal);
+	      mo.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+	    } else {
+	      dialog.addEventListener('DOMAttrModified', this.maybeHideModal);
+	    }
+	    // Note that the DOM is observed inside DialogManager while any dialog
+	    // is being displayed as a modal, to catch modal removal from the DOM.
+
+	    Object.defineProperty(dialog, 'open', {
+	      set: this.setOpen.bind(this),
+	      get: dialog.hasAttribute.bind(dialog, 'open')
+	    });
+
+	    this.backdrop_ = document.createElement('div');
+	    this.backdrop_.className = 'backdrop';
+	    this.backdropClick_ = this.backdropClick_.bind(this);
+	  }
+
+	  dialogPolyfillInfo.prototype = {
+
+	    get dialog() {
+	      return this.dialog_;
+	    },
+
+	    /**
+	     * Maybe remove this dialog from the modal top layer. This is called when
+	     * a modal dialog may no longer be tenable, e.g., when the dialog is no
+	     * longer open or is no longer part of the DOM.
+	     */
+	    maybeHideModal: function maybeHideModal() {
+	      if (!this.openAsModal_) {
+	        return;
+	      }
+	      if (this.dialog_.hasAttribute('open') && document.body.contains(this.dialog_)) {
+	        return;
+	      }
+
+	      this.openAsModal_ = false;
+	      this.dialog_.style.zIndex = '';
+
+	      // This won't match the native <dialog> exactly because if the user set
+	      // top on a centered polyfill dialog, that top gets thrown away when the
+	      // dialog is closed. Not sure it's possible to polyfill this perfectly.
+	      if (this.replacedStyleTop_) {
+	        this.dialog_.style.top = '';
+	        this.replacedStyleTop_ = false;
+	      }
+
+	      // Optimistically clear the modal part of this <dialog>.
+	      this.backdrop_.removeEventListener('click', this.backdropClick_);
+	      if (this.backdrop_.parentElement) {
+	        this.backdrop_.parentElement.removeChild(this.backdrop_);
+	      }
+	      dialogPolyfill.dm.removeDialog(this);
+	    },
+
+	    /**
+	     * @param {boolean} value whether to open or close this dialog
+	     */
+	    setOpen: function setOpen(value) {
+	      if (value) {
+	        this.dialog_.hasAttribute('open') || this.dialog_.setAttribute('open', '');
+	      } else {
+	        this.dialog_.removeAttribute('open');
+	        this.maybeHideModal(); // nb. redundant with MutationObserver
+	      }
+	    },
+
+	    /**
+	     * Handles clicks on the fake .backdrop element, redirecting them as if
+	     * they were on the dialog itself.
+	     *
+	     * @param {!Event} e to redirect
+	     */
+	    backdropClick_: function backdropClick_(e) {
+	      var redirectedEvent = document.createEvent('MouseEvents');
+	      redirectedEvent.initMouseEvent(e.type, e.bubbles, e.cancelable, window, e.detail, e.screenX, e.screenY, e.clientX, e.clientY, e.ctrlKey, e.altKey, e.shiftKey, e.metaKey, e.button, e.relatedTarget);
+	      this.dialog_.dispatchEvent(redirectedEvent);
+	      e.stopPropagation();
+	    },
+
+	    /**
+	     * Sets the zIndex for the backdrop and dialog.
+	     *
+	     * @param {number} backdropZ
+	     * @param {number} dialogZ
+	     */
+	    updateZIndex: function updateZIndex(backdropZ, dialogZ) {
+	      this.backdrop_.style.zIndex = backdropZ;
+	      this.dialog_.style.zIndex = dialogZ;
+	    },
+
+	    /**
+	     * Shows the dialog. This is idempotent and will always succeed.
+	     */
+	    show: function show() {
+	      this.setOpen(true);
+	    },
+
+	    /**
+	     * Show this dialog modally.
+	     */
+	    showModal: function showModal() {
+	      if (this.dialog_.hasAttribute('open')) {
+	        throw new Error('Failed to execute \'showModal\' on dialog: The element is already open, and therefore cannot be opened modally.');
+	      }
+	      if (!document.body.contains(this.dialog_)) {
+	        throw new Error('Failed to execute \'showModal\' on dialog: The element is not in a Document.');
+	      }
+	      if (!dialogPolyfill.dm.pushDialog(this)) {
+	        throw new Error('Failed to execute \'showModal\' on dialog: There are too many open modal dialogs.');
+	      }
+	      this.show();
+	      this.openAsModal_ = true;
+
+	      // Optionally center vertically, relative to the current viewport.
+	      if (dialogPolyfill.needsCentering(this.dialog_)) {
+	        dialogPolyfill.reposition(this.dialog_);
+	        this.replacedStyleTop_ = true;
+	      } else {
+	        this.replacedStyleTop_ = false;
+	      }
+
+	      // Insert backdrop.
+	      this.backdrop_.addEventListener('click', this.backdropClick_);
+	      this.dialog_.parentNode.insertBefore(this.backdrop_, this.dialog_.nextSibling);
+
+	      // Find element with `autofocus` attribute or first form control.
+	      var target = this.dialog_.querySelector('[autofocus]:not([disabled])');
+	      if (!target) {
+	        // TODO: technically this is 'any focusable area'
+	        var opts = ['button', 'input', 'keygen', 'select', 'textarea'];
+	        var query = opts.map(function (el) {
+	          return el + ':not([disabled])';
+	        }).join(', ');
+	        target = this.dialog_.querySelector(query);
+	      }
+	      safeBlur(document.activeElement);
+	      target && target.focus();
+	    },
+
+	    /**
+	     * Closes this HTMLDialogElement. This is optional vs clearing the open
+	     * attribute, however this fires a 'close' event.
+	     *
+	     * @param {string=} opt_returnValue to use as the returnValue
+	     */
+	    close: function close(opt_returnValue) {
+	      if (!this.dialog_.hasAttribute('open')) {
+	        throw new Error('Failed to execute \'close\' on dialog: The element does not have an \'open\' attribute, and therefore cannot be closed.');
+	      }
+	      this.setOpen(false);
+
+	      // Leave returnValue untouched in case it was set directly on the element
+	      if (opt_returnValue !== undefined) {
+	        this.dialog_.returnValue = opt_returnValue;
+	      }
+
+	      // Triggering "close" event for any attached listeners on the <dialog>.
+	      var closeEvent = new supportCustomEvent('close', {
+	        bubbles: false,
+	        cancelable: false
+	      });
+	      this.dialog_.dispatchEvent(closeEvent);
+	    }
+
+	  };
+
+	  var dialogPolyfill = {};
+
+	  dialogPolyfill.reposition = function (element) {
+	    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+	    var topValue = scrollTop + (window.innerHeight - element.offsetHeight) / 2;
+	    element.style.top = Math.max(scrollTop, topValue) + 'px';
+	  };
+
+	  dialogPolyfill.isInlinePositionSetByStylesheet = function (element) {
+	    for (var i = 0; i < document.styleSheets.length; ++i) {
+	      var styleSheet = document.styleSheets[i];
+	      var cssRules = null;
+	      // Some browsers throw on cssRules.
+	      try {
+	        cssRules = styleSheet.cssRules;
+	      } catch (e) {}
+	      if (!cssRules) continue;
+	      for (var j = 0; j < cssRules.length; ++j) {
+	        var rule = cssRules[j];
+	        var selectedNodes = null;
+	        // Ignore errors on invalid selector texts.
+	        try {
+	          selectedNodes = document.querySelectorAll(rule.selectorText);
+	        } catch (e) {}
+	        if (!selectedNodes || !inNodeList(selectedNodes, element)) continue;
+	        var cssTop = rule.style.getPropertyValue('top');
+	        var cssBottom = rule.style.getPropertyValue('bottom');
+	        if (cssTop && cssTop != 'auto' || cssBottom && cssBottom != 'auto') return true;
+	      }
+	    }
+	    return false;
+	  };
+
+	  dialogPolyfill.needsCentering = function (dialog) {
+	    var computedStyle = window.getComputedStyle(dialog);
+	    if (computedStyle.position != 'absolute') {
+	      return false;
+	    }
+
+	    // We must determine whether the top/bottom specified value is non-auto.  In
+	    // WebKit/Blink, checking computedStyle.top == 'auto' is sufficient, but
+	    // Firefox returns the used value. So we do this crazy thing instead: check
+	    // the inline style and then go through CSS rules.
+	    if (dialog.style.top != 'auto' && dialog.style.top != '' || dialog.style.bottom != 'auto' && dialog.style.bottom != '') return false;
+	    return !dialogPolyfill.isInlinePositionSetByStylesheet(dialog);
+	  };
+
+	  /**
+	   * @param {!Element} element to force upgrade
+	   */
+	  dialogPolyfill.forceRegisterDialog = function (element) {
+	    if (element.showModal) {
+	      console.warn('This browser already supports <dialog>, the polyfill ' + 'may not work correctly', element);
+	    }
+	    if (element.nodeName.toUpperCase() != 'DIALOG') {
+	      throw new Error('Failed to register dialog: The element is not a dialog.');
+	    }
+	    new dialogPolyfillInfo( /** @type {!HTMLDialogElement} */element);
+	  };
+
+	  /**
+	   * @param {!Element} element to upgrade
+	   */
+	  dialogPolyfill.registerDialog = function (element) {
+	    if (element.showModal) {
+	      console.warn('Can\'t upgrade <dialog>: already supported', element);
+	    } else {
+	      dialogPolyfill.forceRegisterDialog(element);
+	    }
+	  };
+
+	  /**
+	   * @constructor
+	   */
+	  dialogPolyfill.DialogManager = function () {
+	    /** @type {!Array<!dialogPolyfillInfo>} */
+	    this.pendingDialogStack = [];
+
+	    // The overlay is used to simulate how a modal dialog blocks the document.
+	    // The blocking dialog is positioned on top of the overlay, and the rest of
+	    // the dialogs on the pending dialog stack are positioned below it. In the
+	    // actual implementation, the modal dialog stacking is controlled by the
+	    // top layer, where z-index has no effect.
+	    this.overlay = document.createElement('div');
+	    this.overlay.className = '_dialog_overlay';
+	    this.overlay.addEventListener('click', function (e) {
+	      e.stopPropagation();
+	    });
+
+	    this.handleKey_ = this.handleKey_.bind(this);
+	    this.handleFocus_ = this.handleFocus_.bind(this);
+	    this.handleRemove_ = this.handleRemove_.bind(this);
+
+	    this.zIndexLow_ = 100000;
+	    this.zIndexHigh_ = 100000 + 150;
+	  };
+
+	  /**
+	   * @return {Element} the top HTML dialog element, if any
+	   */
+	  dialogPolyfill.DialogManager.prototype.topDialogElement = function () {
+	    if (this.pendingDialogStack.length) {
+	      var t = this.pendingDialogStack[this.pendingDialogStack.length - 1];
+	      return t.dialog;
+	    }
+	    return null;
+	  };
+
+	  /**
+	   * Called on the first modal dialog being shown. Adds the overlay and related
+	   * handlers.
+	   */
+	  dialogPolyfill.DialogManager.prototype.blockDocument = function () {
+	    document.body.appendChild(this.overlay);
+	    document.body.addEventListener('focus', this.handleFocus_, true);
+	    document.addEventListener('keydown', this.handleKey_);
+	    document.addEventListener('DOMNodeRemoved', this.handleRemove_);
+	  };
+
+	  /**
+	   * Called on the first modal dialog being removed, i.e., when no more modal
+	   * dialogs are visible.
+	   */
+	  dialogPolyfill.DialogManager.prototype.unblockDocument = function () {
+	    document.body.removeChild(this.overlay);
+	    document.body.removeEventListener('focus', this.handleFocus_, true);
+	    document.removeEventListener('keydown', this.handleKey_);
+	    document.removeEventListener('DOMNodeRemoved', this.handleRemove_);
+	  };
+
+	  dialogPolyfill.DialogManager.prototype.updateStacking = function () {
+	    var zIndex = this.zIndexLow_;
+
+	    for (var i = 0; i < this.pendingDialogStack.length; i++) {
+	      if (i == this.pendingDialogStack.length - 1) {
+	        this.overlay.style.zIndex = zIndex++;
+	      }
+	      this.pendingDialogStack[i].updateZIndex(zIndex++, zIndex++);
+	    }
+	  };
+
+	  dialogPolyfill.DialogManager.prototype.handleFocus_ = function (event) {
+	    var candidate = findNearestDialog( /** @type {Element} */event.target);
+	    if (candidate != this.topDialogElement()) {
+	      event.preventDefault();
+	      event.stopPropagation();
+	      safeBlur( /** @type {Element} */event.target);
+	      // TODO: Focus on the browser chrome (aka document) or the dialog itself
+	      // depending on the tab direction.
+	      return false;
+	    }
+	  };
+
+	  dialogPolyfill.DialogManager.prototype.handleKey_ = function (event) {
+	    if (event.keyCode == 27) {
+	      event.preventDefault();
+	      event.stopPropagation();
+	      var cancelEvent = new supportCustomEvent('cancel', {
+	        bubbles: false,
+	        cancelable: true
+	      });
+	      var dialog = this.topDialogElement();
+	      if (dialog.dispatchEvent(cancelEvent)) {
+	        dialog.close();
+	      }
+	    }
+	  };
+
+	  dialogPolyfill.DialogManager.prototype.handleRemove_ = function (event) {
+	    if (event.target.nodeName.toUpperCase() != 'DIALOG') {
+	      return;
+	    }
+
+	    var dialog = /** @type {HTMLDialogElement} */event.target;
+	    if (!dialog.open) {
+	      return;
+	    }
+
+	    // Find a dialogPolyfillInfo which matches the removed <dialog>.
+	    this.pendingDialogStack.some(function (dpi) {
+	      if (dpi.dialog == dialog) {
+	        // This call will clear the dialogPolyfillInfo on this DialogManager
+	        // as a side effect.
+	        dpi.maybeHideModal();
+	        return true;
+	      }
+	    });
+	  };
+
+	  /**
+	   * @param {!dialogPolyfillInfo} dpi
+	   * @return {boolean} whether the dialog was allowed
+	   */
+	  dialogPolyfill.DialogManager.prototype.pushDialog = function (dpi) {
+	    var allowed = (this.zIndexHigh_ - this.zIndexLow_) / 2 - 1;
+	    if (this.pendingDialogStack.length >= allowed) {
+	      return false;
+	    }
+	    this.pendingDialogStack.push(dpi);
+	    if (this.pendingDialogStack.length == 1) {
+	      this.blockDocument();
+	    }
+	    this.updateStacking();
+	    return true;
+	  };
+
+	  /**
+	   * @param {dialogPolyfillInfo} dpi
+	   */
+	  dialogPolyfill.DialogManager.prototype.removeDialog = function (dpi) {
+	    var index = this.pendingDialogStack.indexOf(dpi);
+	    if (index == -1) {
+	      return;
+	    }
+
+	    this.pendingDialogStack.splice(index, 1);
+	    this.updateStacking();
+	    if (this.pendingDialogStack.length == 0) {
+	      this.unblockDocument();
+	    }
+	  };
+
+	  dialogPolyfill.dm = new dialogPolyfill.DialogManager();
+
+	  /**
+	   * Global form 'dialog' method handler. Closes a dialog correctly on submit
+	   * and possibly sets its return value.
+	   */
+	  document.addEventListener('submit', function (ev) {
+	    var target = ev.target;
+	    if (!target || !target.hasAttribute('method')) {
+	      return;
+	    }
+	    if (target.getAttribute('method').toLowerCase() != 'dialog') {
+	      return;
+	    }
+	    ev.preventDefault();
+
+	    var dialog = findNearestDialog( /** @type {Element} */ev.target);
+	    if (!dialog) {
+	      return;
+	    }
+
+	    // FIXME: The original event doesn't contain the element used to submit the
+	    // form (if any). Look in some possible places.
+	    var returnValue;
+	    var cands = [document.activeElement, ev.explicitOriginalTarget];
+	    var els = ['BUTTON', 'INPUT'];
+	    cands.some(function (cand) {
+	      if (cand && cand.form == ev.target && els.indexOf(cand.nodeName.toUpperCase()) != -1) {
+	        returnValue = cand.value;
+	        return true;
+	      }
+	    });
+	    dialog.close(returnValue);
+	  }, true);
+
+	  dialogPolyfill['forceRegisterDialog'] = dialogPolyfill.forceRegisterDialog;
+	  dialogPolyfill['registerDialog'] = dialogPolyfill.registerDialog;
+
+	  if (( false ? 'undefined' : _typeof(module)) === 'object' && _typeof(module['exports']) === 'object') {
+	    // CommonJS support
+	    module['exports'] = dialogPolyfill;
+	  } else if ("function" === 'function' && 'amd' in __webpack_require__(32)) {
+	    // AMD support
+	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+	      return dialogPolyfill;
+	    }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else {
+	    // all others
+	    window['dialogPolyfill'] = dialogPolyfill;
+	  }
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)(module)))
+
+/***/ },
+/* 31 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 32 */
+/***/ function(module, exports) {
+
+	module.exports = function() { throw new Error("define cannot be used indirect"); };
+
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * MDL File input
+	 *
+	 * LICENSE
+	 *
+	 * This source file is subject to the new BSD license that is bundled
+	 * with this package in the file LICENSE.txt.
+	 * It is also available through the world-wide-web at this URL:
+	 * http://webhemi.gixx-web.com/license/new-bsd
+	 * If you did not receive a copy of the license and are unable to
+	 * obtain it through the world-wide-web, please send an email
+	 * to license@gixx-web.com so we can send you a copy immediately.
+	 *
+	 * @author    Gabor Ivan <gixx@gixx-web.com>
+	 * @copyright 2012 - 2016 Gixx-web (http://www.gixx-web.com)
+	 * @license   http://webhemi.gixx-web.com/license/new-bsd   New BSD License
+	 * @link      http://www.gixx-web.com
+	 */
+	(function () {
+	    'use strict';
+
+	    /**
+	     * Class constructor for file input MDL component.
+	     * Implements MDL component design pattern defined at:
+	     * https://github.com/jasonmayes/mdl-component-design-pattern
+	     *
+	     * @param {HTMLElement} element The element that will be upgraded.
+	     */
+
+	    var MaterialFile = function MaterialFile(element) {
+	        this.element_ = element;
+
+	        // Initialize instance.
+	        this.init();
+	    };
+	    window.MaterialFile = MaterialFile;
+
+	    /**
+	     * Store strings for class names defined by this component that are used in
+	     * JavaScript. This allows us to simply change it in one place should we
+	     * decide to modify at a later date.
+	     *
+	     * @enum {String}
+	     * @private
+	     */
+	    MaterialFile.prototype.CssClasses_ = {
+	        IS_UPGRADED: 'is-upgraded',
+	        JS_FILE: 'mdl-js-file',
+	        JS_TEXTFIELD: 'mdl-js-textfield',
+	        FILE_FLOATING: 'mdl-file--floating-label',
+	        FILE_LABEL: 'mdl-file__label',
+	        TEXTFIELD: 'mdl-textfield',
+	        TEXTFIELD_LABEL: 'mdl-textfield__label',
+	        TEXTFIELD_FLOATING: 'mdl-textfield--floating-label',
+	        TEXTFIELD_INPUT: 'mdl-textfield__input',
+	        BUTTON: 'mdl-button',
+	        BUTTON_PRIMARY: 'mdl-button--primary',
+	        BUTTON_ICON: 'mdl-button--icon',
+	        MATERIAL_ICONS: 'material-icons'
+	    };
+
+	    /**
+	     *
+	     * @type {string}
+	     * @private
+	     */
+	    MaterialFile.prototype.multipleFilesSelected_ = 'files are selected';
+
+	    /**
+	     * File upload identifier string.
+	     *
+	     * @type {string}
+	     * @private
+	     */
+	    MaterialFile.prototype.fileID_ = null;
+
+	    /**
+	     * File name input string;
+	     *
+	     * @type {string}
+	     * @private
+	     */
+	    MaterialFile.prototype.fileNameID_ = null;
+
+	    /**
+	     * Fallback function for check string ending
+	     *
+	     * @param string
+	     * @param search
+	     * @returns {boolean}
+	     * @private
+	     */
+	    MaterialFile.prototype.isStringEndsWith_ = function (string, search) {
+	        try {
+	            return string.endsWith(search);
+	        } catch (exp) {
+	            var stringLength = string.length;
+	            var searchLength = search.length;
+	            return string == string.substring(0, stringLength - searchLength) + search;
+	        }
+	    };
+
+	    /**
+	     * Create a variant name for the original field name.
+	     * Handles arrayed names as well.
+	     *
+	     * @param {*} inputElement
+	     * @param {string }variant
+	     * @returns {string}
+	     * @private
+	     */
+	    MaterialFile.prototype.getFieldNameVariant_ = function (inputElement, variant) {
+	        var fieldName = '';
+	        var nameVariant = '';
+
+	        if (typeof inputElement == 'string') {
+	            fieldName = inputElement;
+	        } else {
+	            fieldName = inputElement.getAttribute('name');
+	        }
+
+	        if (fieldName) {
+	            if (this.isStringEndsWith_(fieldName, ']')) {
+	                nameVariant = fieldName.substr(0, fieldName.length - 1) + '-' + variant + ']';
+	            } else {
+	                nameVariant = fieldName + '-' + variant;
+	            }
+	        } else {
+	            console.warn('No name defined');
+	        }
+
+	        return nameVariant;
+	    };
+
+	    /**
+	     * Input change event.
+	     *
+	     * @private
+	     */
+	    MaterialFile.prototype.inputChange_ = function (event) {
+	        event.preventDefault();
+	        var fileInput = event.target;
+	        var selector = this.fileNameID_.replace(/([^a-zA-Z0-9])/g, '\\$1') + '';
+	        var textInput = this.element_.querySelector('#' + selector);
+	        var fileCount = fileInput.files.length;
+
+	        if (!this.element_.classList.contains('is-focused') && !this.element_.classList.contains('is-dirty')) {
+	            try {
+	                var focusEvent = new Event('focus');
+	                textInput.dispatchEvent(focusEvent);
+	            } catch (exp) {
+	                textInput.click();
+	            }
+	        }
+
+	        if (fileCount > 0 && typeof fileInput.files[0].name != 'undefined') {
+	            if (fileCount == 1) {
+	                textInput.setAttribute('value', fileInput.files[0].name);
+	            } else {
+	                var label = this.element_.hasAttribute('data-placeholder-multiple') ? this.element_.getAttribute('data-placeholder-multiple') : this.multipleFilesSelected_;
+
+	                textInput.setAttribute('value', fileCount + ' ' + label);
+	            }
+	            textInput.parentNode.classList.add('is-dirty');
+	        } else {
+	            textInput.setAttribute('value', '');
+	            textInput.parentNode.classList.remove('is-dirty');
+	        }
+	    };
+
+	    /**
+	     * Initialize component.
+	     */
+	    MaterialFile.prototype.init = function () {
+	        if (this.element_) {
+	            // the file input
+	            var fileInput = this.element_.querySelector('input[type=file]');
+	            // the file input and label container
+	            var mdlContainer = fileInput.parentNode;
+	            // set the IDs
+	            this.fileID_ = fileInput.getAttribute('id');
+	            this.fileNameID_ = this.getFieldNameVariant_(this.fileID_, 'filename');
+
+	            // update container class list
+	            if (!mdlContainer.classList.contains(this.CssClasses_.TEXTFIELD)) {
+	                mdlContainer.classList.add(this.CssClasses_.TEXTFIELD);
+	            }
+
+	            if (!mdlContainer.classList.contains(this.CssClasses_.JS_TEXTFIELD)) {
+	                mdlContainer.classList.add(this.CssClasses_.JS_TEXTFIELD);
+	            }
+
+	            if (mdlContainer.classList.contains(this.CssClasses_.FILE_FLOATING)) {
+	                mdlContainer.classList.remove(this.CssClasses_.FILE_FLOATING);
+	                mdlContainer.classList.add(this.CssClasses_.TEXTFIELD_FLOATING);
+	            }
+
+	            // update the label
+	            var label = mdlContainer.querySelector('label');
+	            label.classList.remove(this.CssClasses_.FILE_LABEL);
+	            label.classList.add(this.CssClasses_.TEXTFIELD_LABEL);
+	            label.setAttribute('for', this.fileNameID_);
+
+	            // add input field
+	            var textInput = document.createElement('input');
+	            textInput.setAttribute('type', 'text');
+	            textInput.setAttribute('id', this.fileNameID_);
+	            textInput.setAttribute('name', this.fileNameID_);
+	            textInput.setAttribute('readonly', 'readonly');
+	            textInput.classList.add(this.CssClasses_.TEXTFIELD_INPUT);
+	            mdlContainer.insertBefore(textInput, label);
+
+	            // create new container for the file input
+	            var fileInputContainer = document.createElement('div');
+	            fileInputContainer.classList.add(this.CssClasses_.BUTTON);
+	            fileInputContainer.classList.add(this.CssClasses_.BUTTON_PRIMARY);
+	            fileInputContainer.classList.add(this.CssClasses_.BUTTON_ICON);
+	            mdlContainer.appendChild(fileInputContainer);
+
+	            // create attach button
+	            var attachButton = document.createElement('i');
+	            attachButton.classList.add(this.CssClasses_.MATERIAL_ICONS);
+	            fileInputContainer.appendChild(attachButton);
+
+	            // button icon
+	            var textNode = document.createTextNode("attach_file");
+	            attachButton.appendChild(textNode);
+
+	            // replace the file input
+	            var clonedInput = fileInput.cloneNode(true);
+	            clonedInput.classList.remove();
+	            fileInputContainer.appendChild(clonedInput);
+	            fileInput.remove();
+
+	            // Add event listeners
+	            clonedInput.addEventListener('change', this.inputChange_.bind(this));
+
+	            // apply MDL on new elements
+	            componentHandler.upgradeDom();
+	            this.element_.classList.add(this.CssClasses_.IS_UPGRADED);
+	        }
+	    };
+
+	    // The component registers itself. It can assume componentHandler is available
+	    // in the global scope.
+	    componentHandler.register({
+	        constructor: MaterialFile,
+	        classAsString: 'MaterialFile',
+	        cssClass: 'mdl-js-file',
+	        widget: true
+	    });
+	})();
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * Chart Handler - A module that handles the registration of multiple google charts 
+	 * to render automatically on document load and also handle upgrades to be rendered 
+	 * after initial page load. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 * @link <http://github.com/ahlechandre/chart-handler>
+	 */
+	var chartHandler = {
+	  /**
+	   * Registers the charts for future use. Can be called for register multiple
+	   * charts or only one. This method append items in a registereds array.
+	   * 
+	   * @param {chartHandler.ChartConfig|Array<chartHandler.chartConfig>} The config data of charts
+	   * to be registereds.
+	   */
+	  register: function register(ChartConfig) {},
+
+	  /**
+	   * Renders the chart of a given container selector. The chart must be registered.
+	   * 
+	   * @param {chartHandler.ChartConfig.containerSelector} 
+	   */
+	  render: function render(containerSelector) {},
+
+	  /**
+	   * Renders all registered charts.
+	   * 
+	   */
+	  renderAll: function renderAll() {},
+
+	  /**
+	   * Renders all registered charts that is not rendered yet.
+	   * 
+	   */
+	  renderAllDiff: function renderAllDiff() {},
+
+	  /**
+	   * Draw again all rendered charts with their data and options updates.
+	   * 
+	   */
+	  upgradeAll: function upgradeAll() {},
+
+	  /**
+	   * Returns the array with all registereds charts.
+	   * 
+	   * @return {array}
+	   */
+	  getRegistereds: function getRegistereds() {},
+
+	  /**
+	   * Returns the array with all rendereds charts.
+	   * 
+	   * @return {array}
+	   */
+	  getRendereds: function getRendereds() {},
+
+	  /**
+	   * Initializes the basics of module.
+	   * 
+	   */
+	  init: function init() {}
+	};
+
+	chartHandler = function () {
+	  'use strict';
+
+	  /**
+	   * Stories the packages that must be loaded.
+	   * 
+	   */
+
+	  var _defaultPackages = ['line', 'bar', 'corechart'];
+
+	  /**
+	   * Stories the strings used by the module.
+	   * 
+	   */
+	  var _constants = {
+	    GOOGLE_CHARTS_JS_FILE: '//www.gstatic.com/charts/loader.js',
+	    DATASET_CHART_UPGRADED_CAMEL: 'chartUpgraded',
+	    DATASET_CHART_UPGRADED: 'chart-upgraded',
+	    CHART_CONTAINER_COMPONENT: 'Chart',
+	    OPTIONS_HEIGHT: 400
+	  };
+
+	  /** @type {Array<chartHandler.ChartConfig>} */
+	  var _registeredCharts = [];
+
+	  /** @type {Array<chartHandler.Chart>} */
+	  var _renderedCharts = [];
+
+	  /**
+	   * Queries for a registered chart by your container selector and return it.
+	   * 
+	   * @param {chartHandler.ChartConfig.containerSelector}
+	   * @return {chartHandler.ChartConfig.containerSelector|null} 
+	   */
+	  var _findRegisteredChart = function _findRegisteredChart(containerSelector) {
+	    var registered /** @type {string} */;
+
+	    if (!containerSelector) throw new Error('Container selector was not defined.');
+
+	    for (registered in _registeredCharts) {
+
+	      if (_registeredCharts[registered]['containerSelector'] === containerSelector) return _registeredCharts[registered];
+	    }
+	    return null;
+	  };
+
+	  /**
+	   * Searches for a already registered chart by your container.
+	   * 
+	   * @param {chartHandler.ChartConfig}
+	   * @return {boolean}
+	   */
+	  var _existsRegisteredChart = function _existsRegisteredChart(ChartConfig) {
+	    var registered /** @type {string} */;
+
+	    if (!ChartConfig['containerSelector']) throw new Error('Container selector was not indentified for a chart of type: ' + ChartConfig['type']);
+
+	    for (registered in _registeredCharts) {
+
+	      if (_registeredCharts[registered]['containerSelector'] === ChartConfig['containerSelector']) return true;
+	    }
+	    return false;
+	  };
+
+	  /**
+	   * Append the passed chart data to registered array.
+	   * 
+	   * @param {chartHandler.ChartConfig} Data to push in _registeredCharts.
+	   * @return {boolean} True if sucessfully registered.
+	   */
+	  var _registerInternal = function _registerInternal(ChartConfig) {
+	    // The item to append at registereds.
+	    var config = {};
+
+	    if (!ChartConfig) return false;
+
+	    if (_existsRegisteredChart(ChartConfig)) throw new Error('Container selector already exists for: ' + ChartConfig['containerSelector']);
+
+	    config['type'] = ChartConfig['type'];
+	    config['containerSelector'] = ChartConfig['containerSelector'];
+	    config['options'] = ChartConfig['options'];
+	    config['dataTable'] = ChartConfig['dataTable'];
+
+	    // Append the config.
+	    _registeredCharts.push(config);
+	    return true;
+	  };
+
+	  /**
+	   * Registers the charts for future use. Can be called for register multiple
+	   * charts or only one. This method append items in a registereds array.
+	   * 
+	   * @param {chartHandler.ChartConfig|Array<chartHandler.chartConfig>} The config data of charts
+	   * to be registereds.
+	   */
+	  var _register = function _register(ChartConfig) {
+	    var config;
+
+	    if (ChartConfig instanceof Array) {
+	      // Register multiple charts.
+
+	      for (config in ChartConfig) {
+	        _registerInternal(ChartConfig[config]);
+	      }
+	    } else if (ChartConfig instanceof Object) {
+	      // Register only one chart.
+	      _registerInternal(ChartConfig);
+	    } else {
+	      throw new Error('The data chart is not valid.');
+	    }
+	  };
+
+	  /**
+	   * Returns the google visualization object for type.
+	   * 
+	   * @param {object|array} The data of chart.
+	   * @param {boolean} Defines the type of data table.
+	   * @return {object|null}
+	   */
+	  var _getDataTable = function _getDataTable(dataTable, isArrayToDataTable) {
+	    var data = {};
+	    var column /** @type {string} */;
+
+	    if (isArrayToDataTable) {
+	      data = google.visualization.arrayToDataTable(dataTable);
+	      return data;
+	    }
+	    // Must to specifies the data type and label of each column.
+	    data = new google.visualization.DataTable();
+
+	    for (column in dataTable.columns) {
+	      // Passing the column type and title.
+	      data.addColumn(dataTable.columns[column], column);
+	    }
+	    data.addRows(dataTable.rows);
+	    return data;
+	  };
+
+	  /**
+	   * Returns the essentials of a chart item.
+	   * 
+	   * @param {chartHandler.ChartConfig}
+	   * @return {chartHandler.Chart}
+	   */
+	  var _getChart = function _getChart(ChartConfig) {
+	    var chart = {};
+	    var isArrayToDataTable /** @type {boolean} */;
+	    chart = ChartConfig;
+	    chart['container'] = document.querySelector(ChartConfig['containerSelector']) || null;
+
+	    // chartHandler must not works without container element.
+	    if (!chart['container']) throw new Error('The container element was not found for selector: ' + ChartConfig['containerSelector']);
+
+	    // chartHandler must not works without data table.
+	    if (!chart['dataTable']) throw new Error('The data table for chart "' + chart['containerSelector'] + '" was not defined.');
+
+	    isArrayToDataTable = chart['dataTable'] instanceof Array;
+	    chart['data'] = _getDataTable(chart['dataTable'], isArrayToDataTable);
+
+	    return chart;
+	  };
+
+	  /**
+	   * Returns the essentials of a chart item.
+	   * 
+	   * @param {chartHandler.Chart}
+	   * @return {chartHandler.Chart.googleChart}
+	   */
+	  var _getGoogleChart = function _getGoogleChart(Chart) {
+	    var googleChart = {};
+
+	    switch (Chart.type.toLowerCase()) {
+	      case 'bar':
+	        googleChart = new google.charts.Bar(Chart.container);
+	        break;
+	      case 'line':
+	        googleChart = new google.charts.Line(Chart.container);
+	        break;
+	      case 'pie':
+	        googleChart = new google.visualization.PieChart(Chart.container);
+	        break;
+	    }
+	    return googleChart;
+	  };
+
+	  /**
+	   * Append the chart in rendereds array and indicates the chart 
+	   * container as upgraded.
+	   * 
+	   * @param {chartHandler.Chart}
+	   */
+	  var _upgradeChart = function _upgradeChart(Chart) {
+	    var rendered /** @type {string} */;
+	    var isRendered = false;
+
+	    for (rendered in _renderedCharts) {
+	      // Chart already is upgraded.
+	      if (_renderedCharts[rendered]['containerSelector'] === Chart['containerSelector']) return;
+	    }
+	    // Append the chart in rendereds array.
+	    _renderedCharts.push(Chart);
+	    // Put the chart in container element.
+	    Chart.container[_constants.CHART_CONTAINER_COMPONENT] = Chart;
+	    // Dataset flag to identifies if is already upgraded.
+	    Chart.container.dataset[_constants.DATASET_CHART_UPGRADED_CAMEL] = Chart['type'];
+	  };
+
+	  /**
+	   * Returns the default width used to render the charts.
+	   * 
+	   * @param {chartHandler.Chart.container} The element used to get offset width.
+	   * @return {number}
+	   */
+	  var _getOptionsWidth = function _getOptionsWidth(container) {
+
+	    if (!container) throw new Error('Container of chart was not found.');
+
+	    return container.offsetWidth;
+	  };
+
+	  /**
+	   * Returns the default height used to render the charts.
+	   * 
+	   * @return {number}
+	   */
+	  var _getOptionsHeight = function _getOptionsHeight() {
+	    return _constants.OPTIONS_HEIGHT;
+	  };
+
+	  /**
+	   * Defines the default options for chart. 
+	   * 
+	   * @param {chartHandler.Chart}
+	   * @return {chartHandler.Chart.options}
+	   */
+	  var _setDefaultOptions = function _setDefaultOptions(chart) {
+
+	    // Options must be a object.
+	    if (!(chart['options'] instanceof Object)) chart['options'] = {};
+
+	    // Gets the width of chart if it is not defined.
+	    if (typeof chart['options']['width'] === 'undefined') chart['options']['width'] = _getOptionsWidth(chart['container']);
+
+	    if (typeof chart['options']['height'] === 'undefined') chart['options']['height'] = _getOptionsHeight();
+	  };
+
+	  /**
+	   * Draw the defined chart in your container element.
+	   * 
+	   * @param {chartHandler.Chart}
+	   */
+	  var _draw = function _draw(Chart) {
+	    _setDefaultOptions(Chart);
+	    Chart['googleChart'].draw(Chart['data'], Chart['options']);
+	    // Indicates the chart container as upgraded.
+	    _upgradeChart(Chart);
+	  };
+
+	  /**
+	   * Renders the a chart item. 
+	   * 
+	   * @param {chartHandler.ChartConfig.containerSelector} 
+	   */
+	  var _renderInternal = function _renderInternal(containerSelector) {
+	    var registeredChart = /** @type {chartHandler.ChartConfig|null} */_findRegisteredChart(containerSelector);
+	    var chart /** @type {chartHandler.Chart} */;
+
+	    if (!registeredChart) throw new Error('Chart to render was not found.');
+
+	    chart = _getChart(registeredChart);
+	    chart['googleChart'] = _getGoogleChart(chart);
+
+	    if (!chart['googleChart']) throw new Error('The type "' + chart['type'] + '" is not valid in chartHandler');
+
+	    // Now draw the chart.
+	    _draw(chart);
+	  };
+
+	  /**
+	   * Verifies if the Google visualization is available. Renders the chart of 
+	   * a given container selector. The chart must be registered.
+	   * 
+	   * @param {chartHandler.ChartConfig.containerSelector} 
+	   */
+	  var _render = function _render(containerSelector) {
+
+	    if (typeof google === 'undefined') return;
+
+	    if (typeof google.visualization === 'undefined') {
+	      // Google charts library was not loaded yet.
+	      google.charts.setOnLoadCallback(function () {
+	        return function () {
+	          _renderInternal(containerSelector);
+	        };
+	      }());
+	      return;
+	    }
+	    _renderInternal(containerSelector);
+	  };
+
+	  /**
+	   * Renders all registered charts. Only internal calls.
+	   * 
+	   */
+	  var _renderAllInternal = function _renderAllInternal() {
+	    var registered /** @type {string} */;
+
+	    for (registered in _registeredCharts) {
+	      // Renders the given item.
+	      _renderInternal(_registeredCharts[registered]['containerSelector']);
+	    }
+	  };
+
+	  /** 
+	   * Renders all registered charts that is not rendered. Only internal calls.
+	   * 
+	   */
+	  var _renderAllDiffInternal = function _renderAllDiffInternal() {
+	    var registered /** @type {string} */;
+	    var rendered /** @type {string} */;
+	    var isRendered /** @type {boolean} */;
+	    // Defines if the container element is present in DOM.
+	    var containerExists /** @type {boolean} */;
+
+	    for (registered in _registeredCharts) {
+	      // Initializes the flag as false.
+	      isRendered = false;
+
+	      // Searches for registered in rendereds.
+	      for (rendered in _renderedCharts) {
+
+	        if (_registeredCharts[registered]['containerSelector'] === _renderedCharts[rendered]['containerSelector']) isRendered = true;
+	      }
+
+	      // Only renders the chart if it is not rendered.
+	      if (!isRendered) {
+	        containerExists = document.querySelector(_registeredCharts[registered]['containerSelector']) ? true : false;
+
+	        // Only renders the chart if the container is present in the DOM.
+	        if (containerExists) {
+	          // Renders the given item.
+	          _renderInternal(_registeredCharts[registered]['containerSelector']);
+	        }
+	      }
+	    }
+	  };
+
+	  /**
+	   * Upgrade all rendereds charts.
+	   * 
+	   */
+	  var _upgradeAll = function _upgradeAll() {
+	    var renderedElements = document.querySelectorAll('[data-' + _constants.DATASET_CHART_UPGRADED + ']');
+
+	    for (var i = 0; i < renderedElements.length; i++) {
+	      _draw(renderedElements[i][_constants.CHART_CONTAINER_COMPONENT]);
+	    }
+	  };
+
+	  /**
+	   * Verifies if the Google visualization is available. Renders all registered charts.
+	   * 
+	   */
+	  var _renderAll = function _renderAll() {
+
+	    if (typeof google === 'undefined') return;
+
+	    if (typeof google.visualization === 'undefined') {
+	      // Google charts library was not loaded yet.
+	      google.charts.setOnLoadCallback(function () {
+	        return function () {
+	          _renderAllInternal();
+	        };
+	      }());
+	      return;
+	    }
+	    _renderAllInternal();
+	  };
+
+	  /**
+	   * Verifies if the Google visualization is available. Renders all registered charts that
+	   * is not rendered yet.
+	   * 
+	   */
+	  var _renderAllDiff = function _renderAllDiff() {
+
+	    if (typeof google.visualization === 'undefined') {
+	      // Google charts library was not loaded yet.
+	      google.charts.setOnLoadCallback(function () {
+	        return function () {
+	          _renderAllDiffInternal();
+	        };
+	      }());
+	      return;
+	    }
+	    _renderAllDiffInternal();
+	  };
+
+	  /**
+	   * Load the google charts packages supported by the module.
+	   * 
+	   */
+	  var _loadPackages = function _loadPackages() {
+
+	    // Check if google charts library is available.
+	    if (typeof google === 'undefined' || typeof google.charts === 'undefined') throw new Error('Please, load the Google Chart library.');
+
+	    google.charts.load('43', {
+	      packages: _defaultPackages
+	    });
+	  };
+
+	  /**
+	   * Creates the script element and loads dinamically the google charts library. 
+	   * After append the script element in document head, tries to load the packages.
+	   * 
+	   */
+	  var _forceLoadPackages = function _forceLoadPackages() {
+	    var scriptElement = document.createElement('script');
+	    scriptElement.setAttribute('type', 'text/javascript');
+	    scriptElement.setAttribute('src', _constants.GOOGLE_CHARTS_JS_FILE);
+	    document.head.appendChild(scriptElement);
+
+	    // Waits 1 second and try to load packages.
+	    setTimeout(function () {
+	      _loadPackages();
+	      console.warn('chartHandler was forced to load Google charts library. We recommend that you must define manually this. Please, visit the Google charts website and see how include their script in your page.');
+	    }, 1000);
+	  };
+
+	  /**
+	   * Returns the array with all registereds charts.
+	   * 
+	   * @return {array}
+	   */
+	  var _getRegistereds = function _getRegistereds() {
+	    return _registeredCharts;
+	  };
+
+	  /**
+	   * Returns the array with all rendereds charts.
+	   * 
+	   * @return {array}
+	   */
+	  var _getRendereds = function _getRendereds() {
+	    return _renderedCharts;
+	  };
+
+	  /**
+	   * Initializes the basics of module.
+	   * 
+	   */
+	  var _init = function _init() {
+
+	    if (typeof google === 'undefined' || typeof google.charts === 'undefined') return;
+
+	    _loadPackages();
+	  };
+
+	  // Now return the functions that should be made public.
+	  return {
+	    register: _register,
+	    render: _render,
+	    renderAll: _renderAll,
+	    renderAllDiff: _renderAllDiff,
+	    upgradeAll: _upgradeAll,
+	    getRegistereds: _getRegistereds,
+	    getRendereds: _getRendereds,
+	    init: _init,
+	    forceLoadPackages: _forceLoadPackages
+	  };
+	}();
+
+	/**
+	 * The config data of a chart to be registered.
+	 * 
+	 * @typedef {{
+	 *   type: string,
+	 *   containerSelector: string,
+	 *   options: object,
+	 *   dataTable: object|array,
+	 * }}
+	 */
+	chartHandler.ChartConfig;
+
+	/**
+	 * The internal config data of a registered chart.
+	 * 
+	 * @typedef {{
+	 *   type: string,
+	 *   containerSelector: string,
+	 *   container: HTMLElement,
+	 *   options: object,
+	 *   visualization: object,
+	 *   googleChart: object,
+	 *   dataTable: object|array,
+	 * }}
+	 */
+	chartHandler.Chart;
+
+	window['chartHandler'] = chartHandler;
+
+	window.addEventListener('load', function () {
+	  chartHandler.init();
+	});
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * The chart definition for projeto estados. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 */
+
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Stories the data config used by chartHandler to register it.
+	   * 
+	   * @type {object}
+	   */
+
+	  var chartConfig = {};
+
+	  /**
+	   * Stories the data table used by getChartConfig to insert data in chart.
+	   * 
+	   * @type {array}
+	   */
+	  var dataTable = [];
+
+	  /**
+	   * Stories the css classes for future use.
+	   * 
+	   */
+	  var cssClasses = {
+	    CHART_MESSAGE: 'vint-chart__message'
+	  };
+
+	  /**
+	   * 
+	   * @return {HTMLElement} 
+	   */
+	  var getNotFoundData = function getNotFoundData() {
+	    var messageContainer = document.createElement('div');
+	    var iconElement = document.createElement('i');
+	    var messageElement = document.createElement('span');
+	    messageContainer.classList.add(cssClasses.CHART_MESSAGE);
+	    iconElement.classList.add('material-icons');
+	    iconElement.textContent = constants.CHART_ICON;
+	    messageElement.textContent = constants.CHART_NOT_FOUND_MESSAGE;
+	    messageContainer.appendChild(iconElement);
+	    messageContainer.appendChild(messageElement);
+	    return messageContainer;
+	  };
+
+	  /**
+	   * Stories the constants for future use.
+	   * 
+	   */
+	  var constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    REQUEST_HANDLER: 'dashboard::onRequestChartProjeto',
+	    CHART_TYPE: 'pie',
+	    CHART_OPTIONS_COLORS: ['#9575CD', '#5E35B1', '#311B92'],
+	    CHART_CONTAINER_SELECTOR: '#chart-projeto-estados',
+	    CHART_ICON: 'insert_chart',
+	    CHART_NOT_FOUND_MESSAGE: 'Nenhum dado para ser exibido.',
+	    CHART_IS_3D: true,
+	    CHART_HEIGHT: 400
+	  };
+
+	  /**
+	   * Stories the container element of chart.
+	   * 
+	   * @type {HTMLElement}
+	   */
+	  var container = {};
+
+	  /**
+	   * Returns the container element of chart.
+	   * 
+	   * @return {HTMLElement}
+	   */
+	  var getContainer = function getContainer() {
+	    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	  };
+
+	  /**
+	   * Returns the data config of chart.
+	   * 
+	   * @return {object}
+	   */
+	  var getChartConfig = function getChartConfig() {
+	    var chartConfig = {
+	      type: constants.CHART_TYPE,
+	      containerSelector: constants.CHART_CONTAINER_SELECTOR,
+	      options: {
+	        is3D: constants.CHART_IS_3D,
+	        colors: constants.CHART_OPTIONS_COLORS,
+	        height: constants.CHART_HEIGHT // Default: 400.
+	      },
+	      dataTable: dataTable
+	    };
+
+	    return chartConfig;
+	  };
+
+	  /**
+	   * Registers the chart in chartHandler.
+	   * 
+	   * @return {boolean} 
+	   */
+	  var registerChart = function registerChart() {
+	    chartConfig = getChartConfig();
+
+	    if (typeof chartHandler === 'undefined') {
+	      console.warn('Please, load chartHandler.js before execute this.');
+	      return false;
+	    }
+	    // Registering.
+	    chartHandler.register(chartConfig);
+	    return true;
+	  };
+
+	  /**
+	   * Displays the not found data message. 
+	   * 
+	   */
+	  var showNotFound = function showNotFound() {
+	    var messageElement = getNotFoundData();
+	    var chartContainer = document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	    chartContainer.parentNode.style.height = constants.CHART_HEIGHT + 'px';
+	    chartContainer.innerHTML = '';
+	    chartContainer.appendChild(messageElement);
+	  };
+
+	  /**
+	   * Process the response with success.
+	   *
+	   * @param {object} The response of server. 
+	   */
+	  var processResponseSuccess = function processResponseSuccess(response) {
+	    var registered /** @type {boolean} */;
+
+	    if (!response.hasOwnProperty('dataTable') || !response['dataTable']) {
+	      showNotFound();
+	      return;
+	    }
+	    dataTable = response['dataTable'];
+	    registered = registerChart();
+
+	    if (!registered) {
+	      showNotFound();
+	      return;
+	    }
+	    // All right, renders the chart.
+	    chartHandler.render(chartConfig['containerSelector']);
+	  };
+
+	  /**
+	   * Defines the options of ajax request.
+	   * 
+	   * @return {object}
+	   */
+	  var getAjaxOptions = function getAjaxOptions() {
+	    var onSuccess = function onSuccess(response) {
+	      processResponseSuccess(response);
+	    };
+	    var onError = function onError(obj, status, err) {
+	      showNotFound();
+	    };
+	    var onComplete = function onComplete() {};
+
+	    var headers = [];
+	    headers[constants.OCTOBER_REQUEST_HANDLER] = constants.REQUEST_HANDLER;
+
+	    return {
+	      success: onSuccess.bind(this),
+	      type: 'post',
+	      error: onError.bind(this),
+	      complete: onComplete.bind(this),
+	      headers: headers
+	    };
+	  };
+
+	  /**
+	   * Sends an ajax request to server. 
+	   * 
+	   * @param {object} Ajax options
+	   */
+	  var sendAjaxRequest = function sendAjaxRequest(options) {
+
+	    // Dependency.
+	    if (!$ || !$.ajax) {
+	      console.warn('Please, load jQuery ajax to execute this.');
+	      return;
+	    }
+
+	    $.ajax(options);
+	  };
+
+	  /**
+	   * Gets the data and renders the chart.
+	   * 
+	   */
+	  var renderChart = function renderChart() {
+	    var ajaxOptions = getAjaxOptions();
+	    sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Initializes the chart.
+	   * 
+	   */
+	  var init = function init() {
+	    container = getContainer();
+
+	    if (!container) return;
+
+	    renderChart();
+	  };
+
+	  window.addEventListener('load', function () {
+	    init();
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * The chart definition for publicacao estados. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 */
+
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Stories the data config used by chartHandler to register it.
+	   * 
+	   * @type {object}
+	   */
+
+	  var chartConfig = {};
+
+	  /**
+	   * Stories the data table used by getChartConfig to insert data in chart.
+	   * 
+	   * @type {array}
+	   */
+	  var dataTable = [];
+
+	  /**
+	   * Stories the css classes for future use.
+	   * 
+	   */
+	  var cssClasses = {
+	    CHART_MESSAGE: 'vint-chart__message'
+	  };
+
+	  /**
+	   * Stories the constants for future use.
+	   * 
+	   */
+	  var constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    REQUEST_HANDLER: 'dashboard::onRequestChartPublicacao',
+	    CHART_TYPE: 'pie',
+	    CHART_OPTIONS_COLORS: ['#F06292', '#D81B60', '#880E4F', '#64B5F6', '#1E88E5', '#0D47A1'],
+	    CHART_CONTAINER_SELECTOR: '#chart-publicacao-tipos',
+	    CHART_HEIGHT: 400,
+	    CHART_IS_3D: true,
+	    CHART_ICON: 'insert_chart',
+	    CHART_NOT_FOUND_MESSAGE: 'Nenhum dado para ser exibido.'
+	  };
+
+	  /**
+	   * Stories the container element of chart.
+	   * 
+	   * @type {HTMLElement}
+	   */
+	  var container = {};
+
+	  /**
+	   * Returns the container element of chart.
+	   * 
+	   * @return {HTMLElement}
+	   */
+	  var getContainer = function getContainer() {
+	    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	  };
+
+	  /**
+	   * 
+	   * @return {HTMLElement} 
+	   */
+	  var getNotFoundData = function getNotFoundData() {
+	    var messageContainer = document.createElement('div');
+	    var iconElement = document.createElement('i');
+	    var messageElement = document.createElement('span');
+	    messageContainer.classList.add(cssClasses.CHART_MESSAGE);
+	    iconElement.classList.add('material-icons');
+	    iconElement.textContent = constants.CHART_ICON;
+	    messageElement.textContent = constants.CHART_NOT_FOUND_MESSAGE;
+	    messageContainer.appendChild(iconElement);
+	    messageContainer.appendChild(messageElement);
+	    return messageContainer;
+	  };
+
+	  /**
+	   * Returns the data config of chart.
+	   * 
+	   * @return {object}
+	   */
+	  var getChartConfig = function getChartConfig() {
+	    var chartConfig = {
+	      type: constants.CHART_TYPE,
+	      containerSelector: constants.CHART_CONTAINER_SELECTOR,
+	      options: {
+	        is3D: constants.CHART_IS_3D,
+	        sliceVisibilityThreshold: 0, // Displays 0 values.
+	        colors: constants.CHART_OPTIONS_COLORS,
+	        height: constants.CHART_HEIGHT // Default: 400.
+	      },
+	      dataTable: dataTable
+	    };
+
+	    return chartConfig;
+	  };
+
+	  /**
+	   * Registers the chart in chartHandler.
+	   * 
+	   * @return {boolean} 
+	   */
+	  var registerChart = function registerChart() {
+	    chartConfig = getChartConfig();
+
+	    if (typeof chartHandler === 'undefined') {
+	      console.warn('Please, load chartHandler.js before execute this.');
+	      return false;
+	    }
+	    // Registering.
+	    chartHandler.register(chartConfig);
+
+	    return true;
+	  };
+
+	  /**
+	   * Displays the not found data message. 
+	   * 
+	   */
+	  var showNotFound = function showNotFound() {
+	    var messageElement = getNotFoundData();
+	    var chartContainer = document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	    chartContainer.parentNode.style.height = constants.CHART_HEIGHT + 'px';
+	    chartContainer.innerHTML = '';
+	    chartContainer.appendChild(messageElement);
+	  };
+
+	  /**
+	   * Process the response with success.
+	   *
+	   * @param {object} The response of server. 
+	   */
+	  var processResponseSuccess = function processResponseSuccess(response) {
+	    var registered /** @type {boolean} */;
+
+	    if (!response.hasOwnProperty('dataTable') || !response['dataTable']) {
+	      showNotFound();
+	      return;
+	    }
+	    dataTable = response['dataTable'];
+	    registered = registerChart();
+
+	    if (!registered) {
+	      showNotFound();
+	      return;
+	    }
+	    // All right, renders the chart.
+	    chartHandler.render(chartConfig['containerSelector']);
+	  };
+
+	  /**
+	   * Defines the options of ajax request.
+	   * 
+	   * @return {object}
+	   */
+	  var getAjaxOptions = function getAjaxOptions() {
+	    var onSuccess = function onSuccess(response) {
+	      processResponseSuccess(response);
+	    };
+	    var onError = function onError(obj, status, err) {
+	      showNotFound();
+	    };
+	    var onComplete = function onComplete() {};
+
+	    var headers = [];
+	    headers[constants.OCTOBER_REQUEST_HANDLER] = constants.REQUEST_HANDLER;
+
+	    return {
+	      success: onSuccess.bind(this),
+	      type: 'post',
+	      error: onError.bind(this),
+	      complete: onComplete.bind(this),
+	      headers: headers
+	    };
+	  };
+
+	  /**
+	   * Sends an ajax request to server. 
+	   * 
+	   * @param {object} Ajax options
+	   */
+	  var sendAjaxRequest = function sendAjaxRequest(options) {
+
+	    // Dependency.
+	    if (!$ || !$.ajax) {
+	      console.warn('Please, load jQuery ajax to execute this.');
+	      return;
+	    }
+
+	    $.ajax(options);
+	  };
+
+	  /**
+	   * Gets the data and renders the chart.
+	   * 
+	   */
+	  var renderChart = function renderChart() {
+	    var ajaxOptions = getAjaxOptions();
+	    sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Initializes the chart.
+	   * 
+	   */
+	  var init = function init() {
+	    container = getContainer();
+
+	    if (!container) return;
+
+	    renderChart();
+	  };
+
+	  window.addEventListener('load', function () {
+	    init();
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * The chart definition for membro status. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 */
+
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Stories the data config used by chartHandler to register it.
+	   * 
+	   * @type {object}
+	   */
+
+	  var chartConfig = {};
+
+	  /**
+	   * Stories the data table used by getChartConfig to insert data in chart.
+	   * 
+	   * @type {array}
+	   */
+	  var dataTable = [];
+
+	  /**
+	   * Stories the css classes for future use.
+	   * 
+	   */
+	  var cssClasses = {
+	    CHART_MESSAGE: 'vint-chart__message'
+	  };
+
+	  /**
+	   * 
+	   * @return {HTMLElement} 
+	   */
+	  var getNotFoundData = function getNotFoundData() {
+	    var messageContainer = document.createElement('div');
+	    var iconElement = document.createElement('i');
+	    var messageElement = document.createElement('span');
+	    messageContainer.classList.add(cssClasses.CHART_MESSAGE);
+	    iconElement.classList.add('material-icons');
+	    iconElement.textContent = constants.CHART_ICON;
+	    messageElement.textContent = constants.CHART_NOT_FOUND_MESSAGE;
+	    messageContainer.appendChild(iconElement);
+	    messageContainer.appendChild(messageElement);
+	    return messageContainer;
+	  };
+
+	  /**
+	   * Stories the constants for future use.
+	   * 
+	   */
+	  var constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    REQUEST_HANDLER: 'dashboard::onRequestChartMembro',
+	    CHART_TYPE: 'bar',
+	    CHART_OPTIONS_COLORS: ['#9575CD'],
+	    CHART_CONTAINER_SELECTOR: '#chart-membro-status',
+	    CHART_ICON: 'insert_chart',
+	    CHART_NOT_FOUND_MESSAGE: 'Nenhum dado para ser exibido.',
+	    CHART_OPTIONS_LEGEND_POSITION: 'none',
+	    CHART_HEIGHT: 300
+	  };
+
+	  /**
+	   * Stories the container element of chart.
+	   * 
+	   * @type {HTMLElement}
+	   */
+	  var container = {};
+
+	  /**
+	   * Returns the container element of chart.
+	   * 
+	   * @return {HTMLElement}
+	   */
+	  var getContainer = function getContainer() {
+	    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	  };
+
+	  /**
+	   * Returns the data config of chart.
+	   * 
+	   * @return {object}
+	   */
+	  var getChartConfig = function getChartConfig() {
+	    var chartConfig = {
+	      type: constants.CHART_TYPE,
+	      containerSelector: constants.CHART_CONTAINER_SELECTOR,
+	      options: {
+	        colors: constants.CHART_OPTIONS_COLORS,
+	        legend: {
+	          position: constants.CHART_OPTIONS_LEGEND_POSITION
+	        },
+	        height: constants.CHART_HEIGHT // Default: 400.
+	      },
+	      dataTable: dataTable
+	    };
+
+	    return chartConfig;
+	  };
+
+	  /**
+	   * Registers the chart in chartHandler.
+	   * 
+	   * @return {boolean} 
+	   */
+	  var registerChart = function registerChart() {
+	    chartConfig = getChartConfig();
+
+	    if (typeof chartHandler === 'undefined') {
+	      console.warn('Please, load chartHandler.js before execute this.');
+	      return false;
+	    }
+	    // Registering.
+	    chartHandler.register(chartConfig);
+	    return true;
+	  };
+
+	  /**
+	   * Displays the not found data message. 
+	   * 
+	   */
+	  var showNotFound = function showNotFound() {
+	    var messageElement = getNotFoundData();
+	    var chartContainer = document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	    chartContainer.parentNode.style.height = constants.CHART_HEIGHT + 'px';
+	    chartContainer.innerHTML = '';
+	    chartContainer.appendChild(messageElement);
+	  };
+
+	  /**
+	   * Process the response with success.
+	   *
+	   * @param {object} The response of server. 
+	   */
+	  var processResponseSuccess = function processResponseSuccess(response) {
+	    var registered /** @type {boolean} */;
+
+	    if (!response.hasOwnProperty('dataTable') || !response['dataTable']) {
+	      showNotFound();
+	      return;
+	    }
+	    dataTable = response['dataTable'];
+	    registered = registerChart();
+
+	    if (!registered) {
+	      showNotFound();
+	      return;
+	    }
+	    // All right, renders the chart.
+	    chartHandler.render(chartConfig['containerSelector']);
+	  };
+
+	  /**
+	   * Defines the options of ajax request.
+	   * 
+	   * @return {object}
+	   */
+	  var getAjaxOptions = function getAjaxOptions() {
+	    var onSuccess = function onSuccess(response) {
+	      processResponseSuccess(response);
+	    };
+	    var onError = function onError(obj, status, err) {
+	      showNotFound();
+	    };
+	    var onComplete = function onComplete() {};
+
+	    var headers = [];
+	    headers[constants.OCTOBER_REQUEST_HANDLER] = constants.REQUEST_HANDLER;
+
+	    return {
+	      success: onSuccess.bind(this),
+	      type: 'post',
+	      error: onError.bind(this),
+	      complete: onComplete.bind(this),
+	      headers: headers
+	    };
+	  };
+
+	  /**
+	   * Sends an ajax request to server. 
+	   * 
+	   * @param {object} Ajax options
+	   */
+	  var sendAjaxRequest = function sendAjaxRequest(options) {
+
+	    // Dependency.
+	    if (!$ || !$.ajax) {
+	      console.warn('Please, load jQuery ajax to execute this.');
+	      return;
+	    }
+
+	    $.ajax(options);
+	  };
+
+	  /**
+	   * Gets the data and renders the chart.
+	   * 
+	   */
+	  var renderChart = function renderChart() {
+	    var ajaxOptions = getAjaxOptions();
+	    sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Initializes the chart.
+	   * 
+	   */
+	  var init = function init() {
+	    container = getContainer();
+
+	    if (!container) return;
+
+	    renderChart();
+	  };
+
+	  window.addEventListener('load', function () {
+	    init();
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * The chart definition for programa estados. 
+	 * 
+	 * @author Alexandre Thebaldi <ahlechandre@gmail.com>
+	 */
+
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Stories the data config used by chartHandler to register it.
+	   * 
+	   * @type {object}
+	   */
+
+	  var chartConfig = {};
+
+	  /**
+	   * Stories the data table used by getChartConfig to insert data in chart.
+	   * 
+	   * @type {array}
+	   */
+	  var dataTable = [];
+
+	  /**
+	   * Stories the css classes for future use.
+	   * 
+	   */
+	  var cssClasses = {
+	    CHART_MESSAGE: 'vint-chart__message'
+	  };
+
+	  /**
+	   * 
+	   * @return {HTMLElement} 
+	   */
+	  var getNotFoundData = function getNotFoundData() {
+	    var messageContainer = document.createElement('div');
+	    var iconElement = document.createElement('i');
+	    var messageElement = document.createElement('span');
+	    messageContainer.classList.add(cssClasses.CHART_MESSAGE);
+	    iconElement.classList.add('material-icons');
+	    iconElement.textContent = constants.CHART_ICON;
+	    messageElement.textContent = constants.CHART_NOT_FOUND_MESSAGE;
+	    messageContainer.appendChild(iconElement);
+	    messageContainer.appendChild(messageElement);
+	    return messageContainer;
+	  };
+
+	  /**
+	   * Stories the constants for future use.
+	   * 
+	   */
+	  var constants = {
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER',
+	    REQUEST_HANDLER: 'dashboard::onRequestChartPrograma',
+	    CHART_TYPE: 'bar',
+	    CHART_OPTIONS_COLORS: ['#F06292'],
+	    CHART_CONTAINER_SELECTOR: '#chart-programa-estados',
+	    CHART_ICON: 'insert_chart',
+	    CHART_NOT_FOUND_MESSAGE: 'Nenhum dado para ser exibido.',
+	    CHART_HEIGHT: 300,
+	    CHART_OPTIONS_LEGEND_POSITION: 'none'
+	  };
+
+	  /**
+	   * Stories the container element of chart.
+	   * 
+	   * @type {HTMLElement}
+	   */
+	  var container = {};
+
+	  /**
+	   * Returns the container element of chart.
+	   * 
+	   * @return {HTMLElement}
+	   */
+	  var getContainer = function getContainer() {
+	    return document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	  };
+
+	  /**
+	   * Returns the data config of chart.
+	   * 
+	   * @return {object}
+	   */
+	  var getChartConfig = function getChartConfig() {
+	    var chartConfig = {
+	      type: constants.CHART_TYPE,
+	      containerSelector: constants.CHART_CONTAINER_SELECTOR,
+	      options: {
+	        colors: constants.CHART_OPTIONS_COLORS,
+	        legend: {
+	          position: constants.CHART_OPTIONS_LEGEND_POSITION
+	        },
+	        height: constants.CHART_HEIGHT // Default: 400.
+	      },
+	      dataTable: dataTable
+	    };
+
+	    return chartConfig;
+	  };
+
+	  /**
+	   * Registers the chart in chartHandler.
+	   * 
+	   * @return {boolean} 
+	   */
+	  var registerChart = function registerChart() {
+	    chartConfig = getChartConfig();
+
+	    if (typeof chartHandler === 'undefined') {
+	      console.warn('Please, load chartHandler.js before execute this.');
+	      return false;
+	    }
+	    // Registering.
+	    chartHandler.register(chartConfig);
+	    return true;
+	  };
+
+	  /**
+	   * Displays the not found data message. 
+	   * 
+	   */
+	  var showNotFound = function showNotFound() {
+	    var messageElement = getNotFoundData();
+	    var chartContainer = document.querySelector(constants.CHART_CONTAINER_SELECTOR);
+	    chartContainer.parentNode.style.height = constants.CHART_HEIGHT + 'px';
+	    chartContainer.innerHTML = '';
+	    chartContainer.appendChild(messageElement);
+	  };
+
+	  /**
+	   * Process the response with success.
+	   *
+	   * @param {object} The response of server. 
+	   */
+	  var processResponseSuccess = function processResponseSuccess(response) {
+	    var registered /** @type {boolean} */;
+
+	    if (!response.hasOwnProperty('dataTable') || !response['dataTable']) {
+	      showNotFound();
+	      return;
+	    }
+	    dataTable = response['dataTable'];
+	    registered = registerChart();
+
+	    if (!registered) {
+	      showNotFound();
+	      return;
+	    }
+	    // All right, renders the chart.
+	    chartHandler.render(chartConfig['containerSelector']);
+	  };
+
+	  /**
+	   * Defines the options of ajax request.
+	   * 
+	   * @return {object}
+	   */
+	  var getAjaxOptions = function getAjaxOptions() {
+	    var onSuccess = function onSuccess(response) {
+	      processResponseSuccess(response);
+	    };
+	    var onError = function onError(obj, status, err) {
+	      showNotFound();
+	    };
+	    var onComplete = function onComplete() {};
+
+	    var headers = [];
+	    headers[constants.OCTOBER_REQUEST_HANDLER] = constants.REQUEST_HANDLER;
+
+	    return {
+	      success: onSuccess.bind(this),
+	      type: 'post',
+	      error: onError.bind(this),
+	      complete: onComplete.bind(this),
+	      headers: headers
+	    };
+	  };
+
+	  /**
+	   * Sends an ajax request to server. 
+	   * 
+	   * @param {object} Ajax options
+	   */
+	  var sendAjaxRequest = function sendAjaxRequest(options) {
+
+	    // Dependency.
+	    if (!$ || !$.ajax) {
+	      console.warn('Please, load jQuery ajax to execute this.');
+	      return;
+	    }
+
+	    $.ajax(options);
+	  };
+
+	  /**
+	   * Gets the data and renders the chart.
+	   * 
+	   */
+	  var renderChart = function renderChart() {
+	    var ajaxOptions = getAjaxOptions();
+	    sendAjaxRequest(ajaxOptions);
+	  };
+
+	  /**
+	   * Initializes the chart.
+	   * 
+	   */
+	  var init = function init() {
+	    container = getContainer();
+
+	    if (!container) return;
+
+	    renderChart();
+	  };
+
+	  window.addEventListener('load', function () {
+	    init();
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }
 /******/ ]);

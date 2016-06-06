@@ -76,6 +76,10 @@
 
 	__webpack_require__(16);
 
+	__webpack_require__(17);
+
+	__webpack_require__(18);
+
 	__webpack_require__(19);
 
 	__webpack_require__(20);
@@ -86,7 +90,17 @@
 
 	__webpack_require__(23);
 
-	__webpack_require__(24);
+	__webpack_require__(26);
+
+	__webpack_require__(27);
+
+	__webpack_require__(28);
+
+	__webpack_require__(29);
+
+	__webpack_require__(30);
+
+	__webpack_require__(31);
 
 /***/ },
 /* 1 */
@@ -11317,6 +11331,2417 @@
 
 /***/ },
 /* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	/**
+	 * VintProfilePersonal - A handler to Vint Profile Personal form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfilePersonal = function VintProfilePersonal(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._constants = {
+	    REQUEST_HANDLER: 'profilePersonal::onRequest',
+	    REQUEST_HANDLER_UPLOAD: 'profilePersonal::onUploadAvatar',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações pessoais foram atualizadas',
+	    OCTOBER_REQUEST_HANDLER: 'X-OCTOBER-REQUEST-HANDLER'
+	  };
+
+	  /**
+	   * Stories the css classes.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._cssClasses = {
+	    AVATAR_UPLOAD: 'vint-avatar-upload',
+	    AVATAR_UPLOAD_THUMB: 'vint-avatar-upload__thumb',
+	    AVATAR_UPLOAD_BUTTON: 'vint-avatar-upload__button'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._requiredFields = ['nome', 'descricao'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfilePersonal.prototype.fields = {};
+
+	  /**
+	   * Storie the valid avatar file or false
+	   * 
+	   * @type {File | boolean}
+	   */
+	  VintProfilePersonal.prototype._avatarFile = false;
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfilePersonal.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfilePersonal.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfilePersonal.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfilePersonal.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfilePersonal.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfilePersonal.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._patterns = function () {
+	    // input[type=file] pattern
+	    var addPhotoButton = this._form.querySelector('.' + this._cssClasses.AVATAR_UPLOAD_BUTTON);
+	    var onAddPhoto = function onAddPhoto(event) {
+	      event.preventDefault();
+	      // Simulates a click on input[type=file][name=avatar]
+	      // when add photo button is clicked
+	      this.fields.avatar.click();
+	    };
+	    var onChangePhoto = function onChangePhoto(event) {
+	      var isValid = this._avatarPattern(this.fields.avatar.files);
+	      if (isValid) {
+	        this._avatarFile = this.fields.avatar.files[0];
+	        this._displayAvatar(this.fields.avatar.files[0]);
+	      } else {
+	        this._avatarFile = false;
+	      }
+	    };
+	    addPhotoButton.addEventListener('click', onAddPhoto.bind(this));
+	    this.fields.avatar.addEventListener('change', onChangePhoto.bind(this));
+	  };
+
+	  /**
+	   * Shows the file that comes from input[type=file][name=avatar] 
+	   * 
+	   * @param {File}
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._displayAvatar = function (file) {
+	    var thumb = this._form.querySelector('.' + this._cssClasses.AVATAR_UPLOAD_THUMB);
+	    var onLoadEndFile = function onLoadEndFile(event) {
+	      thumb.style.backgroundImage = 'url(' + fileReader.result + ')';
+	    };
+	    var fileReader = new FileReader();
+
+	    if (file) {
+	      fileReader.readAsDataURL(file);
+	    }
+	    fileReader.addEventListener('loadend', onLoadEndFile.bind(this));
+	  };
+
+	  /**
+	   * Check if the files that comes from input[type=file][name=avatar]
+	   * is a valid image to be the avatar 
+	   * 
+	   * @param {FileList}
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._avatarPattern = function (fileList) {
+	    // No file selected
+	    if (!fileList.length) return false;
+
+	    // More than one file selected
+	    if (fileList.lenght > 1) {
+	      var message = 'Selecione apenas um arquivo';
+	      this.toast({
+	        message: message
+	      });
+	      return false;
+	    }
+	    var input = { 'photo': fileList[0] };
+	    var rules = {
+	      'photo': {
+	        'image': true,
+	        'mimes': ['jpg', 'png', 'jpeg'],
+	        'max_size': 1
+	      }
+	    };
+	    var messages = {
+	      'image': 'Selecione uma imagem',
+	      'mimes': 'Escolha uma imagem no formato jpg, jpeg ou png',
+	      'max_size': 'O limite de tamanho da imagem é 1MB'
+	    };
+	    var validator = this._filePatterns.make(input, rules, messages);
+	    if (validator.fails()) {
+	      for (var error in validator.errors) {
+	        var errorMessage = validator.errors[error];
+	        this.toast({
+	          message: errorMessage
+	        });
+	        break;
+	      }
+	      return false;
+	    }
+	    return true;
+	  };
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._filePatterns = {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the options to send a file to server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._getUploadRequestOptions = function (formData) {
+	    var requestHandler = this._constants.REQUEST_HANDLER_UPLOAD;
+	    var headerHandler = this._constants.OCTOBER_REQUEST_HANDLER;
+	    var headers = {};
+	    headers[headerHandler] = requestHandler;
+	    var onSuccess = function onSuccess(response) {
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        // Show the first message error that comes from server
+	        // if exists
+	        for (var error in response[this._constants.RESPONSE_VALIDATION_ERRORS]) {
+	          this.toast({
+	            message: response[this._constants.RESPONSE_VALIDATION_ERRORS][error]
+	          });
+	          break;
+	        }
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      headers: headers,
+	      data: formData,
+	      type: 'post',
+	      cache: false,
+	      processData: false,
+	      contentType: false,
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Send ajax request with file to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @return {boolean}
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._sendAjaxRequestUpload = function (requestHandler, requestOptions) {
+	    // Test if current avatar file is valid
+	    if (!this._avatarFile) return false;
+	    var formData = new FormData();
+	    formData.append('avatar', this._avatarFile);
+	    var options = this._getUploadRequestOptions(formData);
+	    // Assumes that jQuery ($) is available globally
+	    $.ajax(options);
+	    return true;
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfilePersonal.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      // First, send the avatar file via ajax
+	      this._sendAjaxRequestUpload();
+	      // After, send the others fields via ajax
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfilePersonal.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfilePersonal,
+	    classAsString: 'VintProfilePersonal',
+	    cssClass: 'vint-form--profile-personal'
+	  });
+	})();
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintProfileAcademic - A handler to Vint Profile Academic form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfileAcademic = function VintProfileAcademic(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._constants = {
+	    REQUEST_HANDLER: 'profileAcademic::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_FATAL_ERROR: 'fatalError',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações acadêmicas foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._requiredFields = ['curso', 'titulacao'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfileAcademic.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfileAcademic.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfileAcademic.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfileAcademic.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfileAcademic.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileAcademic.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfileAcademic.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._patterns = function () {
+	    var onChangeTitulacao = function onChangeTitulacao(event) {
+	      if (this.fields['titulacao'].value) {
+	        this.fields['titulacao-estado'].parentNode.MaterialSwitch.enable();
+	      } else {
+	        this.fields['titulacao-estado'].parentNode.MaterialSwitch.disable();
+	      }
+	    };
+	    this.fields['titulacao'].addEventListener('change', onChangeTitulacao.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._processResponse = function (response) {
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      var message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfileAcademic.prototype._formEvents = function () {
+	    var valid; /** @type {boolean} */
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfileAcademic.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfileAcademic,
+	    classAsString: 'VintProfileAcademic',
+	    cssClass: 'vint-form--profile-academic'
+	  });
+	})();
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintProfileGroup - A handler to Vint Profile Group form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintProfileGroup = function VintProfileGroup(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._constants = {
+	    REQUEST_HANDLER: 'profileGroup::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'Suas informações no grupo foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._requiredFields = ['tipo', 'entrada'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintProfileGroup.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintProfileGroup.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintProfileGroup.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintProfileGroup.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintProfileGroup.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintProfileGroup.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintProfileGroup.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintProfileGroup.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintProfileGroup.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._patterns = function () {
+	    // input[name=ativo] pattern
+	    var onChangeAtivo = function onChangeAtivo(event) {
+	      if (this.fields.ativo.checked) {
+	        // Case input[name=ativo] is checked, the input[name=saida] is not required
+	        // and remove it from _requiredFields array.
+	        if (this._requiredFields.indexOf('saida') !== -1) {
+	          this._requiredFields.splice(this._requiredFields.indexOf('saida'), 1);
+	        }
+	        this.fields.saida.setAttribute('disabled', '');
+	      } else {
+	        // Case input[name=ativo] is checked, the input[name=saida] is required
+	        // and add it to _requiredFields array.
+	        this._requiredFields[this._requiredFields.length] = 'saida';
+	        this.fields.saida.removeAttribute('disabled');
+	      }
+	    };
+	    this.fields.ativo.addEventListener('change', onChangeAtivo.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._processResponse = function (response) {
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      var message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintProfileGroup.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintProfileGroup.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintProfileGroup.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintProfileGroup,
+	    classAsString: 'VintProfileGroup',
+	    cssClass: 'vint-form--profile-group'
+	  });
+	})();
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsEmail - A handler to Vint Vint Settings Email form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsEmail = function VintSettingsEmail(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsEmail::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de e-mail foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._requiredFields = [];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsEmail.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsEmail.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsEmail.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsEmail.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsEmail.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsEmail.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsEmail.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsEmail.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsEmail.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsEmail,
+	    classAsString: 'VintSettingsEmail',
+	    cssClass: 'vint-form--settings-email'
+	  });
+	})();
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsAccount - A handler to Vint Settings Account form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsAccount = function VintSettingsAccount(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsAccount::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_USERNAME: 'username',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de conta foram atualizadas',
+	    ID_USERNAME_LINK: 'vint-field-username-link'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._formValid = true;
+
+	  /**
+	   * Flag used to check if was updated a item.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._updated = false;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._requiredFields = ['username'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._filePatterns = {};
+
+	  /**
+	   * Stories the current username for future tests.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._currentUsername = '';
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsAccount.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsAccount.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsAccount.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsAccount.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsAccount.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsAccount.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsAccount.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._patterns = function () {
+	    // At the init, the current username is input[name=username] value
+	    this._currentUsername = this.fields.username.value;
+	    // Case the current username is equal of the current value of input
+	    // has nothing to update
+	    this.disableSubmit();
+	    var onKeypressUsername = function onKeypressUsername(event) {
+	      // Prevent the 'space' on username
+	      if (event.keyCode === 32) event.preventDefault();
+	    };
+	    var onKeyupUsername = function onKeyupUsername(event) {
+	      if (this.fields.username.value !== this._currentUsername && event.keyCode !== 13) {
+	        // Only able the submit if the current username is different
+	        // of the current value of input. Also if key code is not 'enter'
+	        // because this key dispatch 'onsubmit' event on form and must not
+	        // able the submit button while the request's pending. 
+	        this.ableSubmit();
+	      } else {
+	        this.disableSubmit();
+	      }
+	    };
+
+	    this.fields.username.addEventListener('keypress', onKeypressUsername.bind(this));
+	    this.fields.username.addEventListener('keyup', onKeyupUsername.bind(this));
+	  };
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.toast({
+	        message: message
+	      });
+	      // Case the current username is equal of the current value of input
+	      // has nothing to update
+	      this.disableSubmit();
+	      this._updated = true;
+	      return;
+	    } else {
+	      this._updated = false;
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      var usernameLink /** @type {string} */;
+	      var usernameLinkElement /** @type {HTMLElement} */;
+
+	      this._processResponse(response);
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_USERNAME)) {
+	        // Change the current username value to the updated username
+	        // that comes from server
+	        this._currentUsername = response[this._constants.RESPONSE_USERNAME];
+	        usernameLinkElement = document.querySelector('#' + this._constants.ID_USERNAME_LINK);
+
+	        if (!usernameLinkElement) return;
+
+	        usernameLink = usernameLinkElement.getAttribute('href').split('@')[0] + '@' + this._currentUsername;
+	        usernameLinkElement.setAttribute('href', usernameLink);
+	        usernameLinkElement.textContent = usernameLink;
+	      }
+	    };
+	    var onComplete = function onComplete() {
+	      if (!this._updated) this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsAccount.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsAccount.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsAccount,
+	    classAsString: 'VintSettingsAccount',
+	    cssClass: 'vint-form--settings-account'
+	  });
+	})();
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsSecurity - A handler to Vint Vint Settings Security form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsSecurity = function VintSettingsSecurity(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._constants = {
+	    REQUEST_HANDLER: 'settingsSecurity::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso',
+	    MESSAGE_UPDATED: 'As configurações de segurança foram atualizadas'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._requiredFields = ['old_senha', 'new_senha', 'new_senha_confirmation'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsSecurity.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsSecurity.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsSecurity.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsSecurity.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsSecurity,
+	    classAsString: 'VintSettingsSecurity',
+	    cssClass: 'vint-form--settings-security'
+	  });
+	})();
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	/**
+	 * VintSettingsDelete - A handler to Vint Settings Delete form.
+	 * @license MIT
+	 * @author Alexandre Thebaldi (ahlechandre@gmail.com).
+	 */
+	(function () {
+	  'use strict';
+
+	  /**
+	   * Class constructor
+	   * 
+	   * @constructor
+	   * @param {HTMLElement} The form that will be handled
+	   */
+
+	  var VintSettingsDelete = function VintSettingsDelete(form) {
+	    this._form = form;
+
+	    // initialize the instance
+	    this.init();
+	  };
+
+	  /**
+	   * Stories constant properties.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._constants = {
+	    REQUEST_HANDLER: 'membroDisable::onRequest',
+	    RESPONSE_SUCCESS: 'success',
+	    RESPONSE_LOCATION: 'location',
+	    RESPONSE_VALIDATION_ERRORS: 'validationErrors',
+	    MESSAGE_UPDATED: 'Sua conta foi desativada',
+	    RESPONSE_BAD_REQUEST: 'badRequest',
+	    MESSAGE_BAD_REQUEST: 'Você não tem permissão para fazer isso'
+	  };
+
+	  /**
+	   * Flag used to check the form state.
+	   * 
+	   * @type {boolean}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._formValid = true;
+
+	  /**
+	   * Stories the value [name] attribute of all required fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._requiredFields = ['password'];
+
+	  /**
+	   * Stories all default error messages for fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._defaultErrorMessages = {};
+
+	  /**
+	   * Validates a file based on input, their required rules and referred messages 
+	   *  
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._filePatterns = {};
+
+	  /**
+	   * All fields (input, select) inside the form. Keys are the [name] attribute
+	   * and values are the refered HTMLElement.
+	   * 
+	   */
+	  VintSettingsDelete.prototype.fields = {};
+
+	  /**
+	   * Set all fields (input, select) inside ClassConstructor._form
+	   * and store in ClassConstructor.fields
+	   * 
+	   */
+	  VintSettingsDelete.prototype._setFields = function () {};
+
+	  /**
+	   * Jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._jqueryForm = {};
+
+	  /**
+	   * Define the jquery object for the form element. Will be used to call 
+	   * ajax requests.  
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._setJqueryForm = function () {};
+
+	  /**
+	   * Defines the form value of [data-request-loading] attribute. 
+	   * The value is a css selector for element that's will be displayed (e.g. loading bar) 
+	   * while the request is not completed.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._setRequestLoading = function () {};
+
+	  /**
+	   * Send ajax request to backend handler with request options 
+	   * 
+	   * @param {string} request backend handler
+	   * @param {object} request options
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._sendAjaxRequest = function (requestHandler, requestOptions) {};
+
+	  /**
+	   * Disable form submit action
+	   * 
+	   */
+	  VintSettingsDelete.prototype.disableSubmit = function () {};
+
+	  /**
+	   * Able form submit action
+	   * 
+	   */
+	  VintSettingsDelete.prototype.ableSubmit = function () {};
+
+	  /**
+	   * Reset all fields to default state and error messages.
+	   * 
+	   */
+	  VintSettingsDelete.prototype.resetValidationErrors = function () {};
+
+	  /**
+	   * Show the server validation errors.
+	   * 
+	   * @param {object} - keys are the field [name] attribute and values are the validation messages
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._displayValidationErrors = function (errors) {};
+
+	  /**
+	   * Show the validation error at the DOM. Uses the MDL textfield error pattern.
+	   * 
+	   * @param {HTMLElement} - field with validation error
+	   * @param {string} - validation error message 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._displayValidationErrorDOM = function (field, message) {};
+
+	  /**
+	  * Show the validation error at the console as a warn.
+	  * 
+	  * @param {string} - validation error message 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._displayValidationErrorConsole = function (message) {};
+
+	  /**
+	  * Toggle css class 'is-focused' on outer of fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._fieldsFocusedEffect = function () {};
+
+	  /**
+	  * Check all required fields (defined in <Constructor>._requiredFields property).
+	  * Add an error message on empty fields.
+	  * 
+	  * @private
+	  */
+	  VintSettingsDelete.prototype._checkRequiredFields = function () {};
+
+	  /**
+	   * Stories the initial value of all fields.
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._initialValues = {};
+
+	  /**
+	   * Change the current fields values to initial values (<Constructor>._initialValues). 
+	   * 
+	   */
+	  VintSettingsDelete.prototype.resetValues = function () {};
+
+	  /**
+	   * Define the required patterns for the fields of form 
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._patterns = function () {};
+
+	  /**
+	   * Handle the XMLHttpRequest (ajax) response
+	   * 
+	   * @param {object} - The response that comes from server
+	   * @return {undefined}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._processResponse = function (response) {
+	    var message /** @type {string} */;
+
+	    if (response.hasOwnProperty(this._constants.RESPONSE_BAD_REQUEST) && response[this._constants.RESPONSE_BAD_REQUEST]) {
+	      // Bad request was identified by server.
+	      message = this._constants.MESSAGE_BAD_REQUEST;
+	      this.toast({
+	        message: message
+	      });
+	      return;
+	    }
+
+	    if (!response.hasOwnProperty(this._constants.RESPONSE_SUCCESS)) return;
+
+	    if (response[this._constants.RESPONSE_SUCCESS]) {
+	      message = this._constants.MESSAGE_UPDATED;
+	      this.disableSubmit();
+	      this.toast({
+	        message: message
+	      });
+	      window.location.href = response[this._constants.RESPONSE_LOCATION] || '/';
+	      return;
+	    } else {
+
+	      if (response.hasOwnProperty(this._constants.RESPONSE_VALIDATION_ERRORS)) {
+	        this.resetValidationErrors();
+	        this._displayValidationErrors(response[this._constants.RESPONSE_VALIDATION_ERRORS]);
+	      }
+	    }
+	  };
+
+	  /**
+	   * Defines the options to send for server with XMLHttpRequest (ajax)
+	   * 
+	   * @return {object}
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._getDefaultRequestOptions = function () {
+	    var onSuccess = function onSuccess(response) {
+	      this._processResponse(response);
+	    };
+	    var onComplete = function onComplete() {
+	      this.ableSubmit();
+	    };
+
+	    return {
+	      success: onSuccess.bind(this),
+	      complete: onComplete.bind(this)
+	    };
+	  };
+
+	  /**
+	   * Defines the listeners to the required form events 
+	   * 
+	   * @private
+	   */
+	  VintSettingsDelete.prototype._formEvents = function () {
+	    var valid /** @type {boolean} */;
+	    var formOnSubmit = function formOnSubmit(event) {
+	      event.preventDefault();
+	      valid = this._checkRequiredFields();
+
+	      if (!valid) return false;
+	      this.disableSubmit();
+	      this._sendAjaxRequest(this._constants.REQUEST_HANDLER, this._getDefaultRequestOptions());
+	    };
+
+	    this._form.addEventListener('submit', formOnSubmit.bind(this));
+	  };
+
+	  /**
+	   * Initialize the instance
+	   * 
+	   */
+	  VintSettingsDelete.prototype.init = function () {
+	    // If has the form element
+	    if (this._form) {
+	      // Define the form value of [data-request-loading] attribute
+	      // to the selector of element that's will be displayed (loading)
+	      // while the request is not completed.
+	      this._setRequestLoading();
+	      // Define the jquery object for the this._form element. Will be used to call
+	      // ajax requests.
+	      this._setJqueryForm();
+	      // Storie all fields inside form in this.fields.
+	      this._setFields();
+	      // Add flag 'is-focused' on focus fields
+	      this._fieldsFocusedEffect();
+	      // Basic fields patterns
+	      this._patterns();
+	      // Add listeners to form events
+	      this._formEvents();
+	    }
+	  };
+
+	  // Assumes that formHandler is available globally
+	  formHandler.register({
+	    constructor: VintSettingsDelete,
+	    classAsString: 'VintSettingsDelete',
+	    cssClass: 'vint-form--settings-delete'
+	  });
+	})();
+
+/***/ },
+/* 12 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11630,7 +14055,7 @@
 	})();
 
 /***/ },
-/* 6 */
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -11980,7 +14405,7 @@
 	})();
 
 /***/ },
-/* 7 */
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12597,7 +15022,7 @@
 	})();
 
 /***/ },
-/* 8 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -13602,7 +16027,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 9 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -13930,7 +16355,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 10 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14171,7 +16596,7 @@
 	})();
 
 /***/ },
-/* 11 */
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14411,7 +16836,7 @@
 	})();
 
 /***/ },
-/* 12 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14651,7 +17076,7 @@
 	})();
 
 /***/ },
-/* 13 */
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14913,7 +17338,7 @@
 	})();
 
 /***/ },
-/* 14 */
+/* 21 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -15188,7 +17613,7 @@
 	})();
 
 /***/ },
-/* 15 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16057,7 +18482,7 @@
 	})();
 
 /***/ },
-/* 16 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -16577,7 +19002,7 @@
 	  if (( false ? 'undefined' : _typeof(module)) === 'object' && _typeof(module['exports']) === 'object') {
 	    // CommonJS support
 	    module['exports'] = dialogPolyfill;
-	  } else if ("function" === 'function' && 'amd' in __webpack_require__(18)) {
+	  } else if ("function" === 'function' && 'amd' in __webpack_require__(25)) {
 	    // AMD support
 	    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 	      return dialogPolyfill;
@@ -16587,10 +19012,10 @@
 	    window['dialogPolyfill'] = dialogPolyfill;
 	  }
 	})();
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(24)(module)))
 
 /***/ },
-/* 17 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -16606,14 +19031,14 @@
 
 
 /***/ },
-/* 18 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 19 */
+/* 26 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16872,7 +19297,7 @@
 	})();
 
 /***/ },
-/* 20 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -17448,7 +19873,7 @@
 	});
 
 /***/ },
-/* 21 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -17676,7 +20101,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 22 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -17906,7 +20331,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 23 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
@@ -18136,7 +20561,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 24 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
